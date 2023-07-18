@@ -1,5 +1,5 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import { skills } from "../../assets/data/data";
+import { pageInfo, skills } from "../../assets/data/data";
 import { ExperienceType, ISkill } from "../../common/interfaces";
 import "./skills.css";
 
@@ -86,7 +86,8 @@ export default function Skills() {
 
   return (
     <div className="section skills">
-      <div className="title">Skills</div>
+      <div className="title">{pageInfo.skills.title}</div>
+      <div className="description">{pageInfo.skills.description}</div>
       <div className="content">
         <div className="wrapper">
           <div className="scroll-container">

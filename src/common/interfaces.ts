@@ -10,6 +10,15 @@ export interface IPageRefs {
   contactRef: RefObject<HTMLElement>;
 }
 
+type PageKey = "about" | "career" | "skills" | "projects" | "contact";
+
+type PageInfo = {
+  title: string;
+  description: string;
+};
+
+export interface IPageInfo extends Record<PageKey, PageInfo> {}
+
 export interface ICareerItem {
   id: number;
   orgLogo: string;

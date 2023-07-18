@@ -1,6 +1,7 @@
 import { RefObject } from "react";
 import { handleScroll } from "../../common/utils/utilities";
 import "./about.css";
+import { pageInfo } from "../../assets/data/data";
 
 export default function About({
   contactRef,
@@ -9,7 +10,8 @@ export default function About({
 }) {
   return (
     <div className="section about">
-      <div className="title">Me, Myself & I</div>
+      <div className="title">{pageInfo.about.title}</div>
+      <div className="description">{pageInfo.about.description}</div>
       <div className="container">
         <div className="content">
           I specialize in full-stack development, creating and integrating
