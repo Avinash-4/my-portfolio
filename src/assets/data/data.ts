@@ -45,14 +45,38 @@ import PhoneIcon from "../../assets/images/phone.png";
 import WhatsAppIcon from "../../assets/images/whatsapp.png";
 import TelegramIcon from "../../assets/images/telegram.png";
 
-
 import {
   ICareerItem,
   IContactLink,
+  IPageInfo,
   IProjectDict,
   ISkillsDict,
   ISocialLink,
 } from "../../common/interfaces";
+
+export const pageInfo: IPageInfo = {
+  about: {
+    title: "Me Myself & I",
+    description: "A little boasting",
+  },
+  career: {
+    title: "Career",
+    description: "Learn, Grow, Excel",
+  },
+  skills: {
+    title: "Skills",
+    description: "My weapons of choice",
+  },
+  projects: {
+    title: "Projects",
+    description: "Bringing ideas to life - one at a time",
+  },
+  contact: {
+    title: "Contact",
+    description:
+      "Want to build something together? or hire me? or just say hi?",
+  },
+};
 
 export const carrerData: ICareerItem[] = [
   {
@@ -146,10 +170,11 @@ export const skills: ISkillsDict = {
     startDate: "03/2023",
     experienceType: "relative",
   },
-  dotnet : {
+  dotnet: {
     id: "dotnet",
     techName: ".NET",
-    description: "A framework used for building web applications, desktop applications, mobile applications, and web services.",
+    description:
+      "A framework used for building web applications, desktop applications, mobile applications, and web services.",
     icon: DotNetIcon,
     projectsCount: 1,
     skillLevelPercentage: 50,
@@ -169,10 +194,11 @@ export const skills: ISkillsDict = {
     experienceType: "relative",
     startDate: "08/2021",
   },
-  cosmosdb : {
+  cosmosdb: {
     id: "cosmosdb",
     techName: "Cosmos DB",
-    description: "A NoSQL database service used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
+    description:
+      "A NoSQL database service used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
     icon: CosmosDBIcon,
     projectsCount: 1,
     skillLevelPercentage: 40,
@@ -317,17 +343,18 @@ export const skills: ISkillsDict = {
     startDate: "05/2021",
     endDate: "08/2021",
   },
-  azure : {
-    id : "azure",
-    techName : "Azure Devops",
-    description : "Azure DevOps is a Software as a service (SaaS) platform from Microsoft that provides an end-to-end DevOps toolchain for developing and deploying software.",
-    icon : AzureIcon,
-    projectsCount : 1,
-    skillLevelPercentage : 30,
-    isActive : true,
-    experienceType : "relative",
-    startDate : "08/2022"
-  }
+  azure: {
+    id: "azure",
+    techName: "Azure Devops",
+    description:
+      "Azure DevOps is a Software as a service (SaaS) platform from Microsoft that provides an end-to-end DevOps toolchain for developing and deploying software.",
+    icon: AzureIcon,
+    projectsCount: 1,
+    skillLevelPercentage: 30,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "08/2022",
+  },
 };
 
 export const projects: IProjectDict = {
@@ -382,17 +409,18 @@ export const projects: IProjectDict = {
     gif: "",
     techStack: ["golang", "mongodb", "reactjs", "typescript"],
   },
-  pro4 :{
+  pro4: {
     id: "pro4",
     title: "Pro4",
-    description: "Pro4 is a versatile event registration website that simplifies the process of creating, managing, and promoting events. With customizable registration forms, secure payment collection, and convenient attendee engagement features, Pro4 streamlines event organization.",
+    description:
+      "Pro4 is a versatile event registration website that simplifies the process of creating, managing, and promoting events. With customizable registration forms, secure payment collection, and convenient attendee engagement features, Pro4 streamlines event organization.",
     githubLink: "",
     projectLink: "",
     image: Pro4Image,
     logo: "",
     gif: "",
     techStack: ["golang", "mongodb", "reactjs", "typescript"],
-  }
+  },
 };
 
 export const defaultProjectKey = "cubekart";

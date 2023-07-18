@@ -7,7 +7,7 @@ import LeftArrow from "../../assets/images/left-arrow.png";
 
 import "./careerhz.css";
 import { useEffect, useRef, useState } from "react";
-import { carrerData } from "../../assets/data/data";
+import { carrerData, pageInfo } from "../../assets/data/data";
 
 export default function CareerHZ() {
   const scrollContainerRef = useRef<HTMLDivElement>({} as HTMLDivElement);
@@ -36,7 +36,8 @@ export default function CareerHZ() {
 
   return (
     <div className="section careerhz">
-      <div className="title">Career</div>
+      <div className="title">{pageInfo.career.title}</div>
+      <div className="description">{pageInfo.career.description}</div>
       <div className="content">
         <div className="wrapper">
           <div className="scroll-container" ref={scrollContainerRef}>

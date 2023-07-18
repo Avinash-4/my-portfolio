@@ -34,7 +34,15 @@
 .section .title {
   font-size: 3rem;
   font-weight: 500;
-  margin-top: 6rem;
+  margin-top: 5rem;
   padding: 0;
   color: var(--secondary-color);
+}
+
+.section .description {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 1.5rem;
+  padding: 0;
+  color: var(--text-color2-gold);
 }

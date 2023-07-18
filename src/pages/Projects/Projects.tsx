@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-import { defaultProjectKey, projects, skills } from "../../assets/data/data";
+import {
+  defaultProjectKey,
+  pageInfo,
+  projects,
+  skills,
+} from "../../assets/data/data";
 import MonitorImage from "../../assets/images/monitor.png";
 import { IProject } from "../../common/interfaces";
 import NavigateIcon from "../../assets/images/navigate.png";
@@ -27,7 +32,8 @@ export default function Projects() {
 
   return (
     <div className="section projects">
-      <div className="title">Projects</div>
+      <div className="title">{pageInfo.projects.title}</div>
+      <div className="description">{pageInfo.projects.description}</div>
       <div className="content">
         <div className="wrapper">
           <div className="projects-details">

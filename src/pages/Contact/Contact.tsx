@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { contactLinks, socialLinks } from "../../assets/data/data";
+import { contactLinks, pageInfo, socialLinks } from "../../assets/data/data";
 import SendingIcon from "../../assets/images/sendingIcon.svg";
 import SentIcon from "../../assets/images/sent.png";
 import FailedIcon from "../../assets/images/failed.png";
@@ -71,7 +71,8 @@ export default function Contact() {
 
   return (
     <div className="section contact">
-      <div className="title">Lets Talk!</div>
+      <div className="title">{pageInfo.contact.title}</div>
+      <div className="description">{pageInfo.contact.description}</div>
       <div className="content">
         <div className="wrapper">
           <div className="platform-links">
