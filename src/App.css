@@ -46,4 +46,6 @@
   margin-top: 2rem;
   padding: 0;
   color: var(--text-color2-gold);
+  line-height: 1.5;
+  text-align: center;
 }
