@@ -2,6 +2,7 @@ import OneBancLogo from "../../assets/images/onebanc-logo.png";
 import SpcLogo from "../../assets/images/spc-logo.png";
 import VitLogo from "../../assets/images/vit-logo.png";
 import VitBGLogo from "../../assets/images/vit-logo-bg.png";
+
 import JestIcon from "../../assets/images/jest.png";
 import WebSocketsIcon from "../../assets/images/web-sockets.png";
 import FluentUIIcon from "../../assets/images/fluent-ui.png";
@@ -19,6 +20,9 @@ import ExpressIcon from "../../assets/images/express.png";
 import MongoDBIcon from "../../assets/images/mongo-db.png";
 import RestIcon from "../../assets/images/rest.png";
 import PythonIcon from "../../assets/images/python.png";
+import AzureIcon from "../../assets/images/azure.png";
+import CosmosDBIcon from "../../assets/images/cosmosdb.png";
+
 import CubekartImage from "../../assets/images/cubekart.png";
 import CubekartLogo from "../../assets/images/cubekart-logo.png";
 import CubeMusicImage from "../../assets/images/cubemusic.png";
@@ -31,6 +35,7 @@ import TrackerImage from "../../assets/images/tracker-image.png";
 import CubekartGif from "../../assets/images/cubekart.gif";
 import CubeMusicGif from "../../assets/images/cubemusic.gif";
 import CubeChatGif from "../../assets/images/cubechat.gif";
+
 import MailIcon from "../../assets/images/mail.png";
 import GitHubIcon from "../../assets/images/github.png";
 import LinkedInIcon from "../../assets/images/linkedin.png";
@@ -66,7 +71,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: OneBancLogo,
     orgName: "OneBanc Technologies",
     orgPosition: "Associate Frontend Developer",
-    orgTenure: "Oct 2021 - Feb 2022",
+    orgTenure: "July 2021 - Feb 2022",
     orgLink: "https://onebanc.ai",
     location: "Gurgaon, Haryana",
   },
@@ -126,7 +131,7 @@ export const skills: ISkillsDict = {
     projectsCount: 3,
     skillLevelPercentage: 60,
     isActive: true,
-    startDate: "06/2022",
+    startDate: "08/2021",
     experienceType: "relative",
   },
   golang: {
@@ -149,7 +154,7 @@ export const skills: ISkillsDict = {
     projectsCount: 1,
     skillLevelPercentage: 50,
     isActive: true,
-    startDate: "01/2023",
+    startDate: "08/2022",
     experienceType: "relative",
   },
   mongodb: {
@@ -163,6 +168,17 @@ export const skills: ISkillsDict = {
     isActive: true,
     experienceType: "relative",
     startDate: "08/2021",
+  },
+  cosmosdb : {
+    id: "cosmosdb",
+    techName: "Cosmos DB",
+    description: "A NoSQL database service used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
+    icon: CosmosDBIcon,
+    projectsCount: 1,
+    skillLevelPercentage: 40,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "08/2022",
   },
   html: {
     id: "html",
@@ -274,7 +290,7 @@ export const skills: ISkillsDict = {
     isActive: false,
     experienceType: "fixed",
     startDate: "08/2021",
-    endDate: "12/2021",
+    endDate: "06/2022",
   },
   restapi: {
     id: "restapi",
@@ -301,6 +317,17 @@ export const skills: ISkillsDict = {
     startDate: "05/2021",
     endDate: "08/2021",
   },
+  azure : {
+    id : "azure",
+    techName : "Azure Devops",
+    description : "Azure DevOps is a Software as a service (SaaS) platform from Microsoft that provides an end-to-end DevOps toolchain for developing and deploying software.",
+    icon : AzureIcon,
+    projectsCount : 1,
+    skillLevelPercentage : 30,
+    isActive : true,
+    experienceType : "relative",
+    startDate : "08/2022"
+  }
 };
 
 export const projects: IProjectDict = {
