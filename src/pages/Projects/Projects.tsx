@@ -13,6 +13,7 @@ import CodeIcon from "../../assets/images/code.png";
 import PlayIcon from "../../assets/images/play.png";
 
 import "./projects.css";
+import ImagePreloader from "../../common/utils/utilities";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<IProject>(
@@ -35,6 +36,12 @@ export default function Projects() {
       <div className="title">{pageInfo.projects.title}</div>
       <div className="description">{pageInfo.projects.description}</div>
       <div className="content">
+        <ImagePreloader
+          imageUrls={[
+            ...Object.values(projects).map((item) => item.image),
+            ...Object.values(projects).map((item) => item.gif),
+          ]}
+        />
         <div className="wrapper">
           <div className="projects-details">
             <ul className="projects-list">
@@ -103,7 +110,7 @@ export default function Projects() {
             {selectedProject?.gif && (
               <img
                 src={PlayIcon}
-                className= {showGif ? "play-icon playing" : "play-icon" }
+                className={showGif ? "play-icon playing" : "play-icon"}
                 onClick={playSelectedProjectGIF}
               />
             )}
