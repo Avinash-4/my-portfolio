@@ -103,7 +103,7 @@ export default function Projects() {
             {selectedProject?.gif && (
               <img
                 src={PlayIcon}
-                className="play-icon"
+                className= {showGif ? "play-icon playing" : "play-icon" }
                 onClick={playSelectedProjectGIF}
               />
             )}
