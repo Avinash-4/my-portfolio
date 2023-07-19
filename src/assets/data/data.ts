@@ -65,7 +65,7 @@ export const pageInfo: IPageInfo = {
   },
   skills: {
     title: "Skills",
-    description: "My weapons of choice",
+    description: "My weapons of choice - Drop in the slot to know more",
   },
   projects: {
     title: "Projects",
@@ -95,7 +95,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: OneBancLogo,
     orgName: "OneBanc Technologies",
     orgPosition: "Associate Frontend Developer",
-    orgTenure: "July 2021 - Feb 2022",
+    orgTenure: "Sep 2021 - Feb 2022",
     orgLink: "https://onebanc.ai",
     location: "Gurgaon, Haryana",
   },
