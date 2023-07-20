@@ -11,6 +11,7 @@ import { IProject } from "../../common/interfaces";
 import NavigateIcon from "../../assets/images/navigate.png";
 import CodeIcon from "../../assets/images/code.png";
 import PlayIcon from "../../assets/images/play.png";
+import LockIcon from "../../assets/images/lock.png";
 
 import "./projects.css";
 import ImagePreloader from "../../common/utils/utilities";
@@ -75,7 +76,7 @@ export default function Projects() {
               ))}
             </div>
             <div className="project-links">
-              {selectedProject.projectLink && (
+              {selectedProject.projectLink ? (
                 <a
                   href={selectedProject.projectLink}
                   target="_blank"
@@ -83,8 +84,15 @@ export default function Projects() {
                 >
                   Open website <img src={NavigateIcon} className="link-icon" />
                 </a>
+              ) : (
+                <span
+                  className="project-link private"
+                >
+                  Private website{" "}
+                  <img src={LockIcon} className="link-icon" />
+                </span>
               )}
-              {selectedProject.githubLink && (
+              {selectedProject.githubLink ? (
                 <a
                   href={selectedProject.githubLink}
                   target="_blank"
@@ -92,6 +100,12 @@ export default function Projects() {
                 >
                   Github repo <img src={CodeIcon} className="link-icon" />
                 </a>
+              ) : (
+                <span
+                  className="project-link private"
+                >
+                  Private repo <img src={LockIcon} className="link-icon" />
+                </span>
               )}
             </div>
           </div>
