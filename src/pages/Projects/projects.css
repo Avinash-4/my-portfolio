@@ -127,11 +127,13 @@
   border-radius: 5px;
   color: var(--primary-color);
   box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.466);
+  cursor: default;
 }
 
-.section.projects .projects-details .project-links .project-link:hover {
+.section.projects .projects-details .project-links .project-link:not(.private):hover {
   background-color: var(--ternery-color);
   color: var(--secondary-color);
+  cursor: pointer;
 }
 
 .section.projects .projects-details .project-links .link-icon {
