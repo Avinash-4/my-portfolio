@@ -1,0 +1,6 @@
+redirects = [
+  {
+    from = "/anudeep-m.netlify.app"
+    to = "https://anudeep.info"
+  }
+]
