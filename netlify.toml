@@ -1,6 +1,6 @@
-redirects = [
-  {
-    from = "/anudeep-m.netlify.app"
-    to = "https://anudeep.info"
-  }
-]
+[[redirects]]
+from = "/anudeep-m.netlify.app"
+to = "https://anudeep.info"
+status = 301
+force = false
+query = {path = ":path"}
