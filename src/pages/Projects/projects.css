@@ -132,7 +132,10 @@
   cursor: default;
 }
 
-.section.projects .projects-details .project-links .project-link:not(.private):hover {
+.section.projects
+  .projects-details
+  .project-links
+  .project-link:not(.private):hover {
   background-color: var(--ternery-color);
   color: var(--secondary-color);
   cursor: pointer;
@@ -210,6 +213,30 @@
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .section.projects .projects-details .project-card {
+    margin-right: 3rem;
+    animation: rotateBox 5s infinite;
+  }
+
+  @keyframes rotateBox {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-100%);
+    } /* Adjust the percentage to control individual box rotation duration */
+    40% {
+      transform: translateX(-220%);
+    } /* Each box will move to the left and then reappear from the right */
+    60% {
+      transform: translateX(-340%);
+    }
+    80% {
+      transform: translateX(-460%);
+    }
   }
 
   .section.projects .projects-details .project-card .title {
