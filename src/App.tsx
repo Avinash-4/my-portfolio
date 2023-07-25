@@ -25,6 +25,13 @@ function App() {
     contactRef: useRef<HTMLElement>(null),
   };
 
+  const isCareerHZRefActive: boolean = useIntersectionObserver(
+    refs.careerHZRef,
+    {
+      threshold: 0.5,
+    }
+  );
+
   const isProjectsRefActive: boolean = useIntersectionObserver(
     refs.projectsRef,
     {
@@ -45,7 +52,7 @@ function App() {
           <About contactRef={refs.contactRef} />
         </section>
         <section ref={refs.careerHZRef}>
-          <CareerHZ />
+          <CareerHZ isActive={isCareerHZRefActive}/>
         </section>
         {/* <section ref={refs.careerRef}>
           <Career />

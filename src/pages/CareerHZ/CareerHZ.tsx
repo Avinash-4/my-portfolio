@@ -9,7 +9,7 @@ import "./careerhz.css";
 import { useEffect, useRef, useState } from "react";
 import { carrerData, pageInfo } from "../../assets/data/data";
 
-export default function CareerHZ() {
+export default function CareerHZ({ isActive }: { isActive: boolean }) {
   const scrollContainerRef = useRef<HTMLDivElement>({} as HTMLDivElement);
   const [showScrollButtons, setShowScrollButtons] = useState<boolean>(false);
 
@@ -35,61 +35,66 @@ export default function CareerHZ() {
   };
 
   return (
-    <div className="section careerhz">
+    <div className={`section careerhz${isActive ? " open" : ""}`}>
       <div className="title">{pageInfo.career.title}</div>
       <div className="description">{pageInfo.career.description}</div>
       <div className="content">
         <div className="wrapper">
           <div className="scroll-container" ref={scrollContainerRef}>
             <ul className="step-progress">
-              {carrerData.sort((a, b) => b.id - a.id).map((item) => {
-                return (
-                  <li key={item.id} className="step-progress-item">
-                    <div className="step-progress-item-content">
-                      <div
-                        className="background-image-container"
-                        style={{ backgroundImage: `url(${item.orgBGLogo})` }}
-                      />
-                      <img src={item.orgLogo} className="org-detail org-logo" />
-                      <div>
-                        <div className="org-detail org-position">
-                          <img
-                            src={PositionImage}
-                            className="org-position-image"
-                          />
-                          {item.orgPosition}
-                        </div>
-                        <a
-                          href={item.orgLink}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="org-detail org-name"
-                        >
-                          <img
-                            src={OrganisationImage}
-                            className="org-position-image"
-                          />
-                          {item.orgName}
-                        </a>
-                        <div className="org-detail org-location">
-                          <img
-                            src={LocationImage}
-                            className="org-position-image"
-                          />
-                          {item.location}
-                        </div>
-                        <div className="org-detail org-tenure">
-                          <img
-                            src={TenureImage}
-                            className="org-position-image"
-                          />
-                          {item.orgTenure}
+              {carrerData
+                .sort((a, b) => b.id - a.id)
+                .map((item) => {
+                  return (
+                    <li key={item.id} className="step-progress-item">
+                      <div className="step-progress-item-content">
+                        <div
+                          className="background-image-container"
+                          style={{ backgroundImage: `url(${item.orgBGLogo})` }}
+                        />
+                        <img
+                          src={item.orgLogo}
+                          className="org-detail org-logo"
+                        />
+                        <div>
+                          <div className="org-detail org-position">
+                            <img
+                              src={PositionImage}
+                              className="org-position-image"
+                            />
+                            {item.orgPosition}
+                          </div>
+                          <a
+                            href={item.orgLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="org-detail org-name"
+                          >
+                            <img
+                              src={OrganisationImage}
+                              className="org-position-image"
+                            />
+                            {item.orgName}
+                          </a>
+                          <div className="org-detail org-location">
+                            <img
+                              src={LocationImage}
+                              className="org-position-image"
+                            />
+                            {item.location}
+                          </div>
+                          <div className="org-detail org-tenure">
+                            <img
+                              src={TenureImage}
+                              className="org-position-image"
+                            />
+                            {item.orgTenure}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                );
-              })}
+                    </li>
+                  );
+                })}
             </ul>
           </div>
           {showScrollButtons && (
