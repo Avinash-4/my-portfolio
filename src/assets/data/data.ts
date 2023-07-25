@@ -78,6 +78,22 @@ export const pageInfo: IPageInfo = {
   },
 };
 
+export const introInfo: {
+  name: string;
+  shortDesc: string;
+} = {
+  name: "Anudeep",
+  shortDesc: "I create value by building web",
+};
+
+export const aboutInfo: string = `I specialize in full-stack development, creating and integrating
+data-driven applications with effective interfaces to deliver dynamic
+user experiences. I also enjoy coding as a hobby, allowing me to
+explore new technologies and push the boundaries of what's possible.
+When I'm not coding, you can usually find me playing badminton or
+watching cricket. Trying to be a better version of myself every day in
+this fast moving world.`;
+
 export const carrerData: ICareerItem[] = [
   {
     id: 1,
@@ -141,7 +157,7 @@ export const skills: ISkillsDict = {
       "A JavaScript library used for building user interfaces, allowing developers to create reusable UI components and build complex applications.",
     icon: ReactIcon,
     projectsCount: 4,
-    skillLevelPercentage: 70,
+    skillLevelPercentage: 85,
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
@@ -153,7 +169,7 @@ export const skills: ISkillsDict = {
       "A typed superset of JavaScript that provides better type checking and enables better code organization, allowing for more maintainable codebases.",
     icon: TypeScriptIcon,
     projectsCount: 3,
-    skillLevelPercentage: 60,
+    skillLevelPercentage: 90,
     isActive: true,
     startDate: "08/2021",
     experienceType: "relative",
@@ -165,7 +181,7 @@ export const skills: ISkillsDict = {
       "Go is popular for its simplicity, fast compile times, efficient memory management, and built-in concurrency support, making it a great choice for building high-performance and scalable applications.",
     icon: GoLangIcon,
     projectsCount: 3,
-    skillLevelPercentage: 50,
+    skillLevelPercentage: 45,
     isActive: true,
     startDate: "03/2023",
     experienceType: "relative",
@@ -177,7 +193,7 @@ export const skills: ISkillsDict = {
       "A framework used for building web applications, desktop applications, mobile applications, and web services.",
     icon: DotNetIcon,
     projectsCount: 1,
-    skillLevelPercentage: 50,
+    skillLevelPercentage: 40,
     isActive: true,
     startDate: "08/2022",
     experienceType: "relative",
@@ -189,7 +205,7 @@ export const skills: ISkillsDict = {
       "A popular NoSQL database used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
     icon: MongoDBIcon,
     projectsCount: 3,
-    skillLevelPercentage: 40,
+    skillLevelPercentage: 50,
     isActive: true,
     experienceType: "relative",
     startDate: "08/2021",
@@ -213,7 +229,7 @@ export const skills: ISkillsDict = {
       "A markup language used to structure content on web pages, defining the layout and appearance of text, images, and other media.",
     icon: HTMLIcon,
     projectsCount: 10,
-    skillLevelPercentage: 80,
+    skillLevelPercentage: 90,
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
@@ -225,7 +241,7 @@ export const skills: ISkillsDict = {
       "A stylesheet language used to describe the presentation of HTML content, controlling its appearance, layout, and other visual aspects.",
     icon: CSSIcon,
     projectsCount: 10,
-    skillLevelPercentage: 80,
+    skillLevelPercentage: 90,
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
@@ -237,7 +253,7 @@ export const skills: ISkillsDict = {
       "A state management library used in conjunction with React to manage application state and data flow.",
     icon: ReduxIcon,
     projectsCount: 3,
-    skillLevelPercentage: 60,
+    skillLevelPercentage: 70,
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
@@ -274,7 +290,7 @@ export const skills: ISkillsDict = {
       "A JavaScript testing framework developed by Facebook, used for unit and integration testing of React applications and other JavaScript projects.",
     icon: JestIcon,
     projectsCount: 1,
-    skillLevelPercentage: 50,
+    skillLevelPercentage: 70,
     isActive: true,
     startDate: "06/2022",
     experienceType: "relative",
