@@ -26,7 +26,7 @@ export default function NavBar(props: INavBarProps) {
       <img
         className="logo-img"
         src={Logo}
-        alt="anufolio"
+        alt="portfolio-logo"
         onClick={() => handleScroll(introRef)}
       />
       <div
