@@ -16,7 +16,7 @@ import LockIcon from "../../assets/images/lock.png";
 import "./projects.css";
 import ImagePreloader from "../../common/utils/utilities";
 
-export default function Projects() {
+export default function Projects({ isCurrent }: { isCurrent: boolean }) {
   const [selectedProject, setSelectedProject] = useState<IProject>(
     projects[defaultProjectKey]
   );
@@ -33,7 +33,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="section projects">
+    <div className={`section projects${isCurrent ? " open" : ""}`}>
       <div className="title">{pageInfo.projects.title}</div>
       <div className="description">{pageInfo.projects.description}</div>
       <div className="content">
@@ -85,11 +85,8 @@ export default function Projects() {
                   Open website <img src={NavigateIcon} className="link-icon" />
                 </a>
               ) : (
-                <span
-                  className="project-link private"
-                >
-                  Private website{" "}
-                  <img src={LockIcon} className="link-icon" />
+                <span className="project-link private">
+                  Private website <img src={LockIcon} className="link-icon" />
                 </span>
               )}
               {selectedProject.githubLink ? (
@@ -101,9 +98,7 @@ export default function Projects() {
                   Github repo <img src={CodeIcon} className="link-icon" />
                 </a>
               ) : (
-                <span
-                  className="project-link private"
-                >
+                <span className="project-link private">
                   Private repo <img src={LockIcon} className="link-icon" />
                 </span>
               )}
