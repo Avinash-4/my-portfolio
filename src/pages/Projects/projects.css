@@ -218,20 +218,24 @@
   .section.projects .projects-details .project-card {
     margin-right: 3rem;
     animation: rotateBox 5s infinite;
+    -o-animation-iteration-count: 2;
+    -moz-animation-iteration-count: 2;
+    -webkit-animation-iteration-count: 2;
+    animation-iteration-count: 2;
   }
 
   @keyframes rotateBox {
-    0%,
+    0%, 10%,
     100% {
       transform: translateX(0);
     }
-    20% {
+    27% {
       transform: translateX(-100%);
     } /* Adjust the percentage to control individual box rotation duration */
-    40% {
+    45% {
       transform: translateX(-220%);
     } /* Each box will move to the left and then reappear from the right */
-    60% {
+    62% {
       transform: translateX(-340%);
     }
     80% {
