@@ -215,33 +215,10 @@
     justify-content: center;
   }
 
-  .section.projects.open .projects-details .project-card {
-    margin-right: 3rem;
-    animation: rotateBox 5s infinite;
-    -o-animation-iteration-count: 2;
-    -moz-animation-iteration-count: 2;
-    -webkit-animation-iteration-count: 2;
-    animation-iteration-count: 2;
+  .section.projects.open .projects-details .projects-list {
+    overflow-x: auto;
   }
 
-  @keyframes rotateBox {
-    0%, 10%,
-    100% {
-      transform: translateX(0);
-    }
-    27% {
-      transform: translateX(-100%);
-    } /* Adjust the percentage to control individual box rotation duration */
-    45% {
-      transform: translateX(-220%);
-    } /* Each box will move to the left and then reappear from the right */
-    62% {
-      transform: translateX(-340%);
-    }
-    80% {
-      transform: translateX(-460%);
-    }
-  }
 
   .section.projects .projects-details .project-card .title {
     font-size: 1rem;

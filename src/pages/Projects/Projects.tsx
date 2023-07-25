@@ -32,8 +32,21 @@ export default function Projects({ isCurrent }: { isCurrent: boolean }) {
     setShowGif(true);
   };
 
+  const projectCount = Object.keys(projects).length;
+  const boxAnimation = Array.from({ length: projectCount }, (_, index) => {
+    const percentage = 10 + index * (80 / (projectCount - 1));
+    return `${percentage}% { transform: translateX(-${index * 120}%); }`;
+  }).join(" ");
+
   return (
     <div className={`section projects${isCurrent ? " open" : ""}`}>
+      <style>
+        {`
+          @keyframes rotateBox {
+            ${boxAnimation}
+          }
+        `}
+      </style>
       <div className="title">{pageInfo.projects.title}</div>
       <div className="description">{pageInfo.projects.description}</div>
       <div className="content">
@@ -53,6 +66,12 @@ export default function Projects({ isCurrent }: { isCurrent: boolean }) {
                     className={`project-card ${
                       selectedProject.id === project.id ? "selected" : ""
                     }`}
+                    style={{
+                      marginRight: "3rem",
+                      animation: `rotateBox ${projectCount + "s"} infinite`,
+                      animationDelay: "1s",
+                      animationIterationCount: "2",
+                    }}
                     key={project.id}
                     onClick={() => changeSelectedProject(projectKey)}
                   >

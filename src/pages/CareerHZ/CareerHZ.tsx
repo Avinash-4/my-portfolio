@@ -34,8 +34,21 @@ export default function CareerHZ({ isActive }: { isActive: boolean }) {
     });
   };
 
+  const orgCount = Object.keys(carrerData).length;
+  const boxAnimation = Array.from({ length: orgCount }, (_, index) => {
+    const percentage = 10 + index * (80 / orgCount - 1);
+    return `${percentage}% { transform: translateX(-${index * 100}%); }`;
+  }).join(" ");
+
   return (
-    <div className={`section careerhz${isActive ? " open" : ""}`}>
+    <div className="section careerhz">
+      <style>
+        {`
+          @keyframes rotateCareerBox {
+            ${boxAnimation}
+          }
+        `}
+      </style>
       <div className="title">{pageInfo.career.title}</div>
       <div className="description">{pageInfo.career.description}</div>
       <div className="content">
@@ -46,7 +59,15 @@ export default function CareerHZ({ isActive }: { isActive: boolean }) {
                 .sort((a, b) => b.id - a.id)
                 .map((item) => {
                   return (
-                    <li key={item.id} className="step-progress-item">
+                    <li
+                      key={item.id}
+                      className="step-progress-item"
+                      style={{
+                        animation: `rotateCareerBox ${orgCount + "s"} infinite`,
+                        animationDelay: "1s",
+                        animationIterationCount: "2",
+                      }}
+                    >
                       <div className="step-progress-item-content">
                         <div
                           className="background-image-container"

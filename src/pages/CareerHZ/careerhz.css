@@ -143,30 +143,3 @@
 .section.careerhz .scroll-buttons .scroll-button:hover {
   background-color: var(--mini-background-color);
 }
-
-@media (max-width: 750px) {
-  .section.careerhz.open .step-progress-item {
-    animation: rotateBox 5s infinite;
-    -o-animation-iteration-count: 2;
-    -moz-animation-iteration-count: 2;
-    -webkit-animation-iteration-count: 2;
-    animation-iteration-count: 2;
-  }
-
-  @keyframes rotateBox {
-    0%,
-    10%,
-    100% {
-      transform: translateX(0);
-    }
-    37% {
-      transform: translateX(-100%);
-    }
-    54% {
-      transform: translateX(-200%);
-    }
-    80% {
-      transform: translateX(-300%);
-    }
-  }
-}
