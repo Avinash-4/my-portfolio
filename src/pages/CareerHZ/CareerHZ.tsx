@@ -65,7 +65,6 @@ export default function CareerHZ({ isActive }: { isActive: boolean }) {
                       style={{
                         animation: `rotateCareerBox ${orgCount + "s"} infinite`,
                         animationDelay: "1s",
-                        animationIterationCount: "2",
                       }}
                     >
                       <div className="step-progress-item-content">
@@ -118,7 +117,7 @@ export default function CareerHZ({ isActive }: { isActive: boolean }) {
                 })}
             </ul>
           </div>
-          {showScrollButtons && (
+          {showScrollButtons && false && (
             <div className="scroll-buttons">
               <img
                 src={LeftArrow}
