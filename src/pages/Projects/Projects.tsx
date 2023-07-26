@@ -42,9 +42,11 @@ export default function Projects({ isCurrent }: { isCurrent: boolean }) {
     <div className={`section projects${isCurrent ? " open" : ""}`}>
       <style>
         {`
+        @media (max-width: 750px) {
           @keyframes rotateBox {
             ${boxAnimation}
           }
+        }
         `}
       </style>
       <div className="title">{pageInfo.projects.title}</div>
