@@ -12,6 +12,7 @@ import { carrerData, pageInfo } from "../../assets/data/data";
 export default function CareerHZ({ isActive }: { isActive: boolean }) {
   const scrollContainerRef = useRef<HTMLDivElement>({} as HTMLDivElement);
   const [showScrollButtons, setShowScrollButtons] = useState<boolean>(false);
+  const stepItemRef = useRef<HTMLLIElement>({} as HTMLLIElement);
 
   useEffect(() => {
     setShowScrollButtons(
@@ -22,33 +23,22 @@ export default function CareerHZ({ isActive }: { isActive: boolean }) {
 
   const scrollLeft = () => {
     scrollContainerRef.current.scrollTo({
-      left: scrollContainerRef.current.scrollLeft - 100,
+      left:
+        scrollContainerRef.current.scrollLeft - stepItemRef.current.clientWidth,
       behavior: "smooth",
     });
   };
 
   const scrollRight = () => {
     scrollContainerRef.current.scrollTo({
-      left: scrollContainerRef.current.scrollLeft + 100,
+      left:
+        scrollContainerRef.current.scrollLeft + stepItemRef.current.clientWidth,
       behavior: "smooth",
     });
   };
 
-  const orgCount = Object.keys(carrerData).length;
-  const boxAnimation = Array.from({ length: orgCount }, (_, index) => {
-    const percentage = 10 + index * (80 / orgCount - 1);
-    return `${percentage}% { transform: translateX(-${index * 100}%); }`;
-  }).join(" ");
-
   return (
     <div className="section careerhz">
-      <style>
-        {`
-          @keyframes rotateCareerBox {
-            ${boxAnimation}
-          }
-        `}
-      </style>
       <div className="title">{pageInfo.career.title}</div>
       <div className="description">{pageInfo.career.description}</div>
       <div className="content">
@@ -62,10 +52,7 @@ export default function CareerHZ({ isActive }: { isActive: boolean }) {
                     <li
                       key={item.id}
                       className="step-progress-item"
-                      style={{
-                        animation: `rotateCareerBox ${orgCount + "s"} infinite`,
-                        animationDelay: "1s",
-                      }}
+                      ref={stepItemRef}
                     >
                       <div className="step-progress-item-content">
                         <div
@@ -117,7 +104,7 @@ export default function CareerHZ({ isActive }: { isActive: boolean }) {
                 })}
             </ul>
           </div>
-          {showScrollButtons && false && (
+          {showScrollButtons && (
             <div className="scroll-buttons">
               <img
                 src={LeftArrow}

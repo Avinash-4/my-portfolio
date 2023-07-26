@@ -215,8 +215,8 @@
     justify-content: center;
   }
 
-  .section.projects.open .projects-details .projects-list {
-    overflow-x: auto;
+  .section.projects .projects-details .projects-list {
+    overflow-x: hidden;
   }
 
 
