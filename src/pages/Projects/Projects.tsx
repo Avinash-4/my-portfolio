@@ -16,7 +16,7 @@ import LockIcon from "../../assets/images/lock.png";
 import "./projects.css";
 import ImagePreloader from "../../common/utils/utilities";
 
-export default function Projects() {
+export default function Projects({ isCurrent }: { isCurrent: boolean }) {
   const [selectedProject, setSelectedProject] = useState<IProject>(
     projects[defaultProjectKey]
   );
@@ -32,8 +32,21 @@ export default function Projects() {
     setShowGif(true);
   };
 
+  const projectCount = Object.keys(projects).length;
+  const boxAnimation = Array.from({ length: projectCount }, (_, index) => {
+    const percentage = 10 + index * (80 / (projectCount - 1));
+    return `${percentage}% { transform: translateX(-${index * 120}%); }`;
+  }).join(" ");
+
   return (
-    <div className="section projects">
+    <div className={`section projects${isCurrent ? " open" : ""}`}>
+      <style>
+        {`
+          @keyframes rotateBox {
+            ${boxAnimation}
+          }
+        `}
+      </style>
       <div className="title">{pageInfo.projects.title}</div>
       <div className="description">{pageInfo.projects.description}</div>
       <div className="content">
@@ -53,6 +66,11 @@ export default function Projects() {
                     className={`project-card ${
                       selectedProject.id === project.id ? "selected" : ""
                     }`}
+                    style={{
+                      marginRight: "3rem",
+                      animation: `rotateBox ${projectCount + "s"} infinite`,
+                      animationDelay: "1s",
+                    }}
                     key={project.id}
                     onClick={() => changeSelectedProject(projectKey)}
                   >
@@ -85,11 +103,8 @@ export default function Projects() {
                   Open website <img src={NavigateIcon} className="link-icon" />
                 </a>
               ) : (
-                <span
-                  className="project-link private"
-                >
-                  Private website{" "}
-                  <img src={LockIcon} className="link-icon" />
+                <span className="project-link private">
+                  Private website <img src={LockIcon} className="link-icon" />
                 </span>
               )}
               {selectedProject.githubLink ? (
@@ -101,9 +116,7 @@ export default function Projects() {
                   Github repo <img src={CodeIcon} className="link-icon" />
                 </a>
               ) : (
-                <span
-                  className="project-link private"
-                >
+                <span className="project-link private">
                   Private repo <img src={LockIcon} className="link-icon" />
                 </span>
               )}

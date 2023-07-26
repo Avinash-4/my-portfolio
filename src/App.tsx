@@ -12,6 +12,7 @@ import CareerHZ from "./pages/CareerHZ/CareerHZ";
 
 import "./App.css";
 import { TrackerWrapper } from "./components/TrackerWrapper";
+import { useIntersectionObserver } from "./common/hooks/useIntersectionObserver";
 
 function App() {
   const refs: IPageRefs = {
@@ -23,6 +24,20 @@ function App() {
     projectsRef: useRef<HTMLElement>(null),
     contactRef: useRef<HTMLElement>(null),
   };
+
+  const isCareerHZRefActive: boolean = useIntersectionObserver(
+    refs.careerHZRef,
+    {
+      threshold: 0.5,
+    }
+  );
+
+  const isProjectsRefActive: boolean = useIntersectionObserver(
+    refs.projectsRef,
+    {
+      threshold: 0.5,
+    }
+  );
 
   return (
     <div className="App">
@@ -37,7 +52,7 @@ function App() {
           <About contactRef={refs.contactRef} />
         </section>
         <section ref={refs.careerHZRef}>
-          <CareerHZ />
+          <CareerHZ isActive={isCareerHZRefActive}/>
         </section>
         {/* <section ref={refs.careerRef}>
           <Career />
@@ -46,7 +61,7 @@ function App() {
           <Skills />
         </section>
         <section ref={refs.projectsRef}>
-          <Projects />
+          <Projects isCurrent={isProjectsRefActive} />
         </section>
         <section ref={refs.contactRef}>
           <Contact />
@@ -62,4 +77,4 @@ const WrappedApp = () => (
   </TrackerWrapper>
 );
 
-export { WrappedApp as App};
+export { WrappedApp as App };

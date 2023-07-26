@@ -132,7 +132,10 @@
   cursor: default;
 }
 
-.section.projects .projects-details .project-links .project-link:not(.private):hover {
+.section.projects
+  .projects-details
+  .project-links
+  .project-link:not(.private):hover {
   background-color: var(--ternery-color);
   color: var(--secondary-color);
   cursor: pointer;
@@ -211,6 +214,11 @@
     display: flex;
     justify-content: center;
   }
+
+  .section.projects .projects-details .projects-list {
+    overflow-x: hidden;
+  }
+
 
   .section.projects .projects-details .project-card .title {
     font-size: 1rem;
