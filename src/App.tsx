@@ -15,6 +15,11 @@ import { TrackerWrapper } from "./components/TrackerWrapper";
 import { useIntersectionObserver } from "./common/hooks/useIntersectionObserver";
 
 function App() {
+  
+  if(window.location.href === "https://anudeep-m.netlify.app/"){
+    window.location.href = "https://anudeep.info"
+  }
+
   const refs: IPageRefs = {
     introRef: useRef<HTMLElement>(null),
     aboutRef: useRef<HTMLElement>(null),
