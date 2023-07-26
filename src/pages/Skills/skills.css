@@ -106,12 +106,26 @@
 .section.skills .skill-selector .drop-receiver {
   height: 6rem;
   width: 6rem;
-  border: 2px solid var(--secondary-color);
+  border: 2px solid var(--mini-background-color4);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 50px 1px rgba(255, 255, 255, 0.3);
+}
+
+.section.skills .skill-selector:not(.dropped) .drop-receiver {
+  animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: var(--mini-background-color5);
+  }
 }
 
 .section.skills .skill-selector.dragging .drop-receiver {
