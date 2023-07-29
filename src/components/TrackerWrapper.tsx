@@ -35,7 +35,7 @@ export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
       }),
     };
 
-    fetch(process.env.TRACKER_END_POINT + "/track", options);
+    fetch(process.env.TRACKER_END_POINT || "", options);
   };
 
   useEffect(() => {
