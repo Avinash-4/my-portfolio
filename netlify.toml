@@ -1,6 +1,0 @@
-[[redirects]]
-from = "/anudeep-m.netlify.app"
-to = "https://anudeep.info"
-status = 301
-force = true
-query = {path = ":path"}
