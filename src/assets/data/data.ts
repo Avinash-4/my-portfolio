@@ -21,6 +21,7 @@ import MongoDBIcon from "../../assets/images/mongo-db.png";
 import RestIcon from "../../assets/images/rest.png";
 import PythonIcon from "../../assets/images/python.png";
 import AzureIcon from "../../assets/images/azure.png";
+import GCPIcon from "../../assets/images/gcp.png";
 import CosmosDBIcon from "../../assets/images/cosmosdb.png";
 
 import CubekartImage from "../../assets/images/cubekart.png";
@@ -361,15 +362,27 @@ export const skills: ISkillsDict = {
   },
   azure: {
     id: "azure",
-    techName: "Azure Devops",
+    techName: "Microsoft Azure",
     description:
-      "Azure DevOps is a Software as a service (SaaS) platform from Microsoft that provides an end-to-end DevOps toolchain for developing and deploying software.",
+      "Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.",
     icon: AzureIcon,
     projectsCount: 1,
-    skillLevelPercentage: 30,
+    skillLevelPercentage: 20,
     isActive: true,
     experienceType: "relative",
     startDate: "08/2022",
+  },
+  gcp: {
+    id: "gcp",
+    techName: "Google Cloud Platform",
+    description:
+      "Google Cloud Platform is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products.",
+    icon: GCPIcon,
+    projectsCount: 1,
+    skillLevelPercentage: 10,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "06/2023",
   },
 };
 
