@@ -22,6 +22,8 @@ import RestIcon from "../../assets/images/rest.png";
 import PythonIcon from "../../assets/images/python.png";
 import AzureIcon from "../../assets/images/azure.png";
 import GCPIcon from "../../assets/images/gcp.png";
+import CsharpIcon from "../../assets/images/csharp.png";
+import SQLIcon from "../../assets/images/sql.png";
 import CosmosDBIcon from "../../assets/images/cosmosdb.png";
 
 import CubekartImage from "../../assets/images/cubekart.png";
@@ -175,6 +177,29 @@ export const skills: ISkillsDict = {
     startDate: "08/2021",
     experienceType: "relative",
   },
+  csharp: {
+    id: "csharp",
+    techName: "C#",
+    description: "C# is an object-oriented, component-oriented programming language. It is a programming language developed by Microsoft that runs on the .NET Framework. ",
+    icon : CsharpIcon,
+    projectsCount: 3,
+    skillLevelPercentage: 60,
+    isActive: true,
+    startDate: "06/2022",
+    experienceType: "relative",
+  },
+  dotnet: {
+    id: "dotnet",
+    techName: ".NET",
+    description:
+      "A framework used for building web applications, desktop applications, mobile applications, and web services.",
+    icon: DotNetIcon,
+    projectsCount: 2,
+    skillLevelPercentage: 60,
+    isActive: true,
+    startDate: "06/2022",
+    experienceType: "relative",
+  },
   golang: {
     id: "golang",
     techName: "Go",
@@ -187,17 +212,40 @@ export const skills: ISkillsDict = {
     startDate: "03/2023",
     experienceType: "relative",
   },
-  dotnet: {
-    id: "dotnet",
-    techName: ".NET",
+  sql : {
+    id: "sql",
+    techName: "SQL",
+    description: "SQL is a standard language for storing, manipulating, and retrieving data in relational database systems. SQL is used to query, insert, update and modify data.",
+    icon : SQLIcon,
+    projectsCount: 3,
+    skillLevelPercentage: 60,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "06/2022",
+  },
+  azure: {
+    id: "azure",
+    techName: "Microsoft Azure",
     description:
-      "A framework used for building web applications, desktop applications, mobile applications, and web services.",
-    icon: DotNetIcon,
+      "Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.",
+    icon: AzureIcon,
     projectsCount: 1,
     skillLevelPercentage: 40,
     isActive: true,
-    startDate: "08/2022",
     experienceType: "relative",
+    startDate: "08/2022",
+  },
+  gcp: {
+    id: "gcp",
+    techName: "Google Cloud Platform",
+    description:
+      "Google Cloud Platform is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products.",
+    icon: GCPIcon,
+    projectsCount: 1,
+    skillLevelPercentage: 20,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "06/2023",
   },
   mongodb: {
     id: "mongodb",
@@ -219,7 +267,7 @@ export const skills: ISkillsDict = {
     icon: CosmosDBIcon,
     projectsCount: 1,
     skillLevelPercentage: 40,
-    isActive: true,
+    isActive: false,
     experienceType: "relative",
     startDate: "08/2022",
   },
@@ -304,7 +352,7 @@ export const skills: ISkillsDict = {
     icon: NodeIcon,
     projectsCount: 3,
     skillLevelPercentage: 20,
-    isActive: true,
+    isActive: false,
     experienceType: "fixed",
     startDate: "08/2021",
     endDate: "12/2021",
@@ -359,31 +407,7 @@ export const skills: ISkillsDict = {
     experienceType: "fixed",
     startDate: "05/2021",
     endDate: "08/2021",
-  },
-  azure: {
-    id: "azure",
-    techName: "Microsoft Azure",
-    description:
-      "Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.",
-    icon: AzureIcon,
-    projectsCount: 1,
-    skillLevelPercentage: 20,
-    isActive: true,
-    experienceType: "relative",
-    startDate: "08/2022",
-  },
-  gcp: {
-    id: "gcp",
-    techName: "Google Cloud Platform",
-    description:
-      "Google Cloud Platform is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products.",
-    icon: GCPIcon,
-    projectsCount: 1,
-    skillLevelPercentage: 10,
-    isActive: true,
-    experienceType: "relative",
-    startDate: "06/2023",
-  },
+  }
 };
 
 export const projects: IProjectDict = {
