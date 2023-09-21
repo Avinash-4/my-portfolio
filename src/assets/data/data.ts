@@ -415,7 +415,7 @@ export const projects: IProjectDict = {
     id: "cubekart",
     title: "Cubekart",
     githubLink: "https://github.com/anudeep-m/Cubekart",
-    projectLink: "https://cubekart.onrender.com/",
+    projectLink: "https://cubekart.anudeep.info",
     image: CubekartImage,
     logo: CubekartLogo,
     gif: CubekartGif,
@@ -430,7 +430,7 @@ export const projects: IProjectDict = {
     description:
       "Cube Music is an online music streaming platform designed for playing songs. It offers various features for managing personal playlists, liked songs, adding songs to a queue, and creating albums. Additionally, Cube Music has an admin management system that enables administrators to add new albums.",
     githubLink: "https://github.com/anudeep-m/Cube-music",
-    projectLink: "https://cube-music.onrender.com/",
+    projectLink: "https://cube-music.anudeep.info",
     image: CubeMusicImage,
     logo: CubeMusicLogo,
     gif: CubeMusicGif,
@@ -443,7 +443,7 @@ export const projects: IProjectDict = {
     description:
       "Cube Chat is a real-time chat platform that allows users to communicate with their friends. It offers various functionalities, such as discovering people on Cube Chat, connecting with friends, and engaging in real-time conversations.",
     githubLink: "https://github.com/anudeep-m/Cube-chat",
-    projectLink: "https://cube-chat.onrender.com/",
+    projectLink: "https://cube-chat.anudeep.info",
     image: CubeChatImage,
     logo: CubeChatLogo,
     gif: CubeChatGif,
