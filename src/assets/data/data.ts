@@ -456,7 +456,7 @@ export const projects: IProjectDict = {
     description:
       "Website tracker is a tool designed to track and monitor the behavior and engagement of website users. It records and provides insights into the number of times a user has visited the website and the duration of time spent on the site during each visit.",
     githubLink: "https://github.com/anudeep-mp/tracker-api",
-    projectLink: "",
+    projectLink: "https://tracker.anudeep.info",
     image: TrackerImage,
     logo: TrackerLogo,
     gif: "",
