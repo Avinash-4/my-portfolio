@@ -180,8 +180,9 @@ export const skills: ISkillsDict = {
   csharp: {
     id: "csharp",
     techName: "C#",
-    description: "C# is an object-oriented, component-oriented programming language. It is a programming language developed by Microsoft that runs on the .NET Framework. ",
-    icon : CsharpIcon,
+    description:
+      "C# is an object-oriented, component-oriented programming language. It is a programming language developed by Microsoft that runs on the .NET Framework. ",
+    icon: CsharpIcon,
     projectsCount: 3,
     skillLevelPercentage: 60,
     isActive: true,
@@ -212,11 +213,12 @@ export const skills: ISkillsDict = {
     startDate: "03/2023",
     experienceType: "relative",
   },
-  sql : {
+  sql: {
     id: "sql",
     techName: "SQL",
-    description: "SQL is a standard language for storing, manipulating, and retrieving data in relational database systems. SQL is used to query, insert, update and modify data.",
-    icon : SQLIcon,
+    description:
+      "SQL is a standard language for storing, manipulating, and retrieving data in relational database systems. SQL is used to query, insert, update and modify data.",
+    icon: SQLIcon,
     projectsCount: 3,
     skillLevelPercentage: 60,
     isActive: true,
@@ -407,49 +409,22 @@ export const skills: ISkillsDict = {
     experienceType: "fixed",
     startDate: "05/2021",
     endDate: "08/2021",
-  }
+  },
 };
 
 export const projects: IProjectDict = {
-  cubekart: {
-    id: "cubekart",
-    title: "Cubekart",
-    githubLink: "https://github.com/anudeep-m/Cubekart",
-    projectLink: "https://cubekart.anudeep.info",
-    image: CubekartImage,
-    logo: CubekartLogo,
-    gif: CubekartGif,
+  pro4: {
+    id: "pro4",
+    title: "Pro4",
     description:
-      "Cubekart is an online shopping platform that enables customers to purchase products through a web application. The platform offers various features such as adding items to a virtual cart, placing orders, and leaving reviews. Additionally, Cubekart features an admin management system, allowing administrators to add new products and manage orders.",
-    techStack: ["reactjs", "nodejs", "expressjs", "mongodb"],
+      "Pro4 is a versatile event management website that simplifies the process of creating, managing, and promoting events. With customizable registration forms, secure payment collection, and convenient attendee engagement features, Pro4 streamlines event organization.",
+    githubLink: "",
+    projectLink: "",
+    image: Pro4Image,
+    logo: "",
+    gif: "",
+    techStack: ["golang", "mongodb", "reactjs", "typescript"],
   },
-
-  cubemusic: {
-    id: "cube-music",
-    title: "Cube Music",
-    description:
-      "Cube Music is an online music streaming platform designed for playing songs. It offers various features for managing personal playlists, liked songs, adding songs to a queue, and creating albums. Additionally, Cube Music has an admin management system that enables administrators to add new albums.",
-    githubLink: "https://github.com/anudeep-m/Cube-music",
-    projectLink: "https://cube-music.anudeep.info",
-    image: CubeMusicImage,
-    logo: CubeMusicLogo,
-    gif: CubeMusicGif,
-    techStack: ["reactjs", "nodejs", "expressjs", "mongodb"],
-  },
-
-  cubechat: {
-    id: "cube-chat",
-    title: "Cube Chat",
-    description:
-      "Cube Chat is a real-time chat platform that allows users to communicate with their friends. It offers various functionalities, such as discovering people on Cube Chat, connecting with friends, and engaging in real-time conversations.",
-    githubLink: "https://github.com/anudeep-m/Cube-chat",
-    projectLink: "https://cube-chat.anudeep.info",
-    image: CubeChatImage,
-    logo: CubeChatLogo,
-    gif: CubeChatGif,
-    techStack: ["reactjs", "nodejs", "expressjs", "mongodb", "websockets"],
-  },
-
   websitetracker: {
     id: "website-tracker",
     title: "Website tracker",
@@ -462,21 +437,45 @@ export const projects: IProjectDict = {
     gif: "",
     techStack: ["golang", "mongodb", "reactjs", "typescript"],
   },
-  pro4: {
-    id: "pro4",
-    title: "Pro4",
+  cubechat: {
+    id: "cube-chat",
+    title: "Cube Chat",
     description:
-      "Pro4 is a versatile event registration website that simplifies the process of creating, managing, and promoting events. With customizable registration forms, secure payment collection, and convenient attendee engagement features, Pro4 streamlines event organization.",
-    githubLink: "",
-    projectLink: "",
-    image: Pro4Image,
-    logo: "",
-    gif: "",
-    techStack: ["golang", "mongodb", "reactjs", "typescript"],
+      "Cube Chat is a real-time chat platform that allows users to communicate with their friends. It offers various functionalities, such as discovering people on Cube Chat, connecting with friends, and engaging in real-time conversations.",
+    githubLink: "https://github.com/anudeep-m/Cube-chat",
+    projectLink: "https://cube-chat.anudeep.info",
+    image: CubeChatImage,
+    logo: CubeChatLogo,
+    gif: CubeChatGif,
+    techStack: ["reactjs", "nodejs", "expressjs", "mongodb", "websockets"],
+  },
+  cubemusic: {
+    id: "cube-music",
+    title: "Cube Music",
+    description:
+      "Cube Music is an online music streaming platform designed for playing songs. It offers various features for managing personal playlists, liked songs, adding songs to a queue, and creating albums. Additionally, Cube Music has an admin management system that enables administrators to add new albums.",
+    githubLink: "https://github.com/anudeep-m/Cube-music",
+    projectLink: "https://cube-music.anudeep.info",
+    image: CubeMusicImage,
+    logo: CubeMusicLogo,
+    gif: CubeMusicGif,
+    techStack: ["reactjs", "nodejs", "expressjs", "mongodb"],
+  },
+  cubekart: {
+    id: "cubekart",
+    title: "Cubekart",
+    githubLink: "https://github.com/anudeep-m/Cubekart",
+    projectLink: "https://cubekart.anudeep.info",
+    image: CubekartImage,
+    logo: CubekartLogo,
+    gif: CubekartGif,
+    description:
+      "Cubekart is an online shopping platform that enables customers to purchase products through a web application. The platform offers various features such as adding items to a virtual cart, placing orders, and leaving reviews. Additionally, Cubekart features an admin management system, allowing administrators to add new products and manage orders.",
+    techStack: ["reactjs", "nodejs", "expressjs", "mongodb"],
   },
 };
 
-export const defaultProjectKey = "cubekart";
+export const defaultProjectKey = "pro4";
 
 export const contactLinks: IContactLink[] = [
   {

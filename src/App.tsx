@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { IPageRefs } from "./common/interfaces";
 import About from "./pages/About/About";
-import Career from "./pages/Career/Career";
 import Contact from "./pages/Contact/Contact";
 import Intro from "./pages/Intro/Intro";
 import Projects from "./pages/Projects/Projects";
@@ -15,11 +14,6 @@ import { TrackerWrapper } from "./components/TrackerWrapper";
 import { useIntersectionObserver } from "./common/hooks/useIntersectionObserver";
 
 function App() {
-  
-  if(window.location.href === "https://anudeep-m.netlify.app/"){
-    window.location.href = "https://anudeep.info"
-  }
-
   const refs: IPageRefs = {
     introRef: useRef<HTMLElement>(null),
     aboutRef: useRef<HTMLElement>(null),
@@ -57,7 +51,7 @@ function App() {
           <About contactRef={refs.contactRef} />
         </section>
         <section ref={refs.careerHZRef}>
-          <CareerHZ isActive={isCareerHZRefActive}/>
+          <CareerHZ isActive={isCareerHZRefActive} />
         </section>
         {/* <section ref={refs.careerRef}>
           <Career />
