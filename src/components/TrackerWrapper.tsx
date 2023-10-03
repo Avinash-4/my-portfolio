@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { useStorage } from "../common/hooks/useStorage";
 import { useInterval } from "../common/hooks/useInterval";
 
@@ -7,6 +7,7 @@ type WrapperProps = {
 };
 
 export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
+  const [referrer, setRefferer] = useState<string>("UK");
   const isMounted = useRef<boolean>(false);
 
   const [userId, setUserId, removeUserId] = useStorage(
@@ -21,17 +22,18 @@ export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
     window.sessionStorage
   );
 
-  const track = (userId: string, sessionId: string) => {
+  const track = (userId: string, sessionId: string, ref: string) => {
     const options: any = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Environment": process.env.ENVIRONMENT,
+        Environment: process.env.ENVIRONMENT,
       },
       body: JSON.stringify({
         userId: userId,
         sessionId: sessionId,
         timeStamp: new Date().toISOString(),
+        referrer: ref?.toUpperCase(),
       }),
     };
 
@@ -42,6 +44,10 @@ export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
     if (!isMounted.current) {
       let newUserId = userId;
       let newSessionId = sessionId;
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get("ref") || "UK";
+      setRefferer(ref);
+      history.replaceState({}, "", "/");
 
       if (!userId) {
         newUserId = self.crypto.randomUUID();
@@ -53,14 +59,14 @@ export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
         setSessionId(newSessionId);
       }
 
-      track(newUserId, newSessionId);
+      track(newUserId, newSessionId, ref);
       isMounted.current = true;
     }
   }, []);
 
   useInterval(() => {
     if (userId && sessionId) {
-      track(userId, sessionId);
+      track(userId, sessionId, referrer);
     }
   }, 15000);
 
