@@ -419,7 +419,7 @@ export const projects: IProjectDict = {
     description:
       "Pro4 is a versatile event management website that simplifies the process of creating, managing, and promoting events. With customizable registration forms, secure payment collection, and convenient attendee engagement features, Pro4 streamlines event organization.",
     githubLink: "",
-    projectLink: "",
+    projectLink: "https://pro4.anudeep.info",
     image: Pro4Image,
     logo: "",
     gif: "",
@@ -431,7 +431,7 @@ export const projects: IProjectDict = {
     description:
       "Website tracker is a tool designed to track and monitor the behavior and engagement of website users. It records and provides insights into the number of times a user has visited the website and the duration of time spent on the site during each visit.",
     githubLink: "https://github.com/anudeep-mp/tracker-api",
-    projectLink: "https://tracker.anudeep.info",
+    projectLink: "",
     image: TrackerImage,
     logo: TrackerLogo,
     gif: "",
