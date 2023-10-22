@@ -86,7 +86,7 @@ export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
     if (userId && sessionId) {
       track(userId, sessionId, referrer);
     }
-  }, 15000);
+  }, 5000);
 
   return <>{children}</>;
 };
