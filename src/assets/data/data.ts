@@ -1,5 +1,6 @@
 import OneBancLogo from "../../assets/images/onebanc-logo.png";
 import SpcLogo from "../../assets/images/spc-logo.png";
+import BcgLogo from "../../assets/images/bcg.png";
 import VitLogo from "../../assets/images/vit-logo.png";
 import VitBGLogo from "../../assets/images/vit-logo-bg.png";
 
@@ -124,8 +125,18 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: SpcLogo,
     orgName: "SkyPoint Cloud",
     orgPosition: "Software Development Engineer - I",
-    orgTenure: "June 2022 - Present",
+    orgTenure: "June 2022 - Nov 2023",
     orgLink: "https://skypointcloud.com",
+    location: "Bangalore, Karnataka",
+  },
+  {
+    id: 4,
+    orgLogo: BcgLogo,
+    orgBGLogo: BcgLogo,
+    orgName: "Boston Consulting Group",
+    orgPosition: "Software Engineer",
+    orgTenure: "Nov 2023 - Present",
+    orgLink: "https://bcg.com",
     location: "Bangalore, Karnataka",
   },
 ];
