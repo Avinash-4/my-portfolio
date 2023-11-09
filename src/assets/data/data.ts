@@ -115,7 +115,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: OneBancLogo,
     orgName: "OneBanc Technologies",
     orgPosition: "Software Developer",
-    orgTenure: "Aug 2021 - June 2022",
+    orgTenure: "July 2021 - June 2022",
     orgLink: "https://onebanc.ai",
     location: "Gurgaon, Haryana",
   },
