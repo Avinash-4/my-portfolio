@@ -2,8 +2,6 @@ import PositionImage from "../../assets/images/position.png";
 import LocationImage from "../../assets/images/location.png";
 import OrganisationImage from "../../assets/images/organisation.png";
 import TenureImage from "../../assets/images/tenure.png";
-import RightArrow from "../../assets/images/right-arrow.png";
-import LeftArrow from "../../assets/images/left-arrow.png";
 
 import "./careerhz.css";
 import { useEffect, useRef, useState } from "react";
