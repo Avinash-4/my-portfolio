@@ -42,19 +42,20 @@ a {
 
 :root {
   font-size: 16px;
-  --primary-color: #e63329;
-  --secondary-color: #f8eaea;
-  --ternery-color: rgb(255, 122, 122);
-  --nav-background-color: #181818;
-  --main-background-color: #000000;
-  --mini-background-color: rgba(120, 98, 207, 0.329);
-  --mini-background-color2: #ffffff40;
-  --mini-background-color3: #ffffff50;
-  --mini-background-color4: #e6332965;
-  --mini-background-color5: #e6332940;
-  --text-color1-white: #ffffff;
-  --text-color2-gold: #e5b582;
-  --text-color3-blue: #84b2fb;
+  --primary-hue: 240;
+  --primary-color: hsl(var(--primary-hue), 86%, 44%);
+  --secondary-color: hsl(var(--primary-hue), 76%, 94%);
+  --ternery-color: hsl(var(--primary-hue), 100%, 74%);
+  --nav-background-color: hsl(var(--primary-hue), 0%, 9%);
+  --main-background-color: hsl(var(--primary-hue), 0%, 0%);
+  --mini-background-color: hsla(var(--primary-hue), 60%, 60%, 0.329);
+  --mini-background-color2: hsla(var(--primary-hue), 0%, 100%, 0.25);
+  --mini-background-color3: hsla(var(--primary-hue), 0%, 100%, 0.3);
+  --mini-background-color4: hsla(var(--primary-hue), 86%, 44%, 0.4);
+  --mini-background-color5: hsla(var(--primary-hue), 86%, 44%, 0.25);
+  --text-color1-white: hsl(var(--primary-hue), 0%, 100%);
+  --text-color2-gold: hsl(var(--primary-hue), 60%, 70%);
+  --text-color3-blue: hsl(var(--primary-hue), 54%, 69%);
   --break-line-gradient-color1: var(--primary-color);
   --break-line-gradient-color2: transparent;
   --scroll-thumb-bg-color: #24123a;
