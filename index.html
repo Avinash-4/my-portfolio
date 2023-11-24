@@ -67,6 +67,18 @@
       href="./public/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./public/manifest.json" />
+    <style>
+        :root {
+            --primary-hue: 240;
+        }
+    </style>
+    <script>
+        function changePrimaryHue(newHue) {
+            document.documentElement.style.setProperty('--primary-hue', newHue);
+        }
+        const randomHue = Math.floor(Math.random() * 1000) + 1;
+        changePrimaryHue(randomHue);
+    </script>
   </head>
 
   <body>
