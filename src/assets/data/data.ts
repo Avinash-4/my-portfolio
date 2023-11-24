@@ -525,10 +525,10 @@ export const socialLinks: ISocialLink[] = [
     socialId: "anudeep-mp",
   },
   {
-    id: "twitter",
+    id: "x",
     icon: TwitterIcon,
-    link: "https://twitter.com/i__anudeep",
-    label: "Twitter",
+    link: "https://x.com/i__anudeep",
+    label: "X",
     socialId: "i__anudeep",
   },
   {
