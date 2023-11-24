@@ -33,19 +33,37 @@ export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
         userId: userId,
         sessionId: sessionId,
         timeStamp: new Date().toISOString(),
-        referrer: ref?.toUpperCase(),
+        referrer: ref,
       }),
     };
 
     fetch(process.env.TRACKER_END_POINT || "", options);
   };
 
+  function extractDomainName(url: string) : string | null {
+    // Remove any leading whitespace and trailing slashes
+    url = url.trim().replace(/\/+$/, '');
+  
+    // Use a regular expression to extract the domain name
+    const domainRegex = /^(?:https?:\/\/)?(?:www\.)?([a-zA-Z0-9.-]+)\.[a-zA-Z]{2,}(?:\/|$)/;
+    const matches = url.match(domainRegex);
+  
+    if (matches && matches.length > 1) {
+      const domain = matches[1];
+      const capitalizedDomain = domain.charAt(0).toUpperCase() + domain.slice(1);
+      return capitalizedDomain;
+    } else {
+      return null;
+    }
+  }
+
   useEffect(() => {
     if (!isMounted.current) {
       let newUserId = userId;
       let newSessionId = sessionId;
       const params = new URLSearchParams(window.location.search);
-      const ref = params.get("ref") || "UK";
+      const ref = extractDomainName(document.referrer) || params.get("ref") || "Unknown";
+      
       setRefferer(ref);
       history.replaceState({}, "", "/");
 
@@ -68,7 +86,7 @@ export const TrackerWrapper: React.FC<WrapperProps> = ({ children }) => {
     if (userId && sessionId) {
       track(userId, sessionId, referrer);
     }
-  }, 15000);
+  }, 10000);
 
   return <>{children}</>;
 };

@@ -1,5 +1,6 @@
 import OneBancLogo from "../../assets/images/onebanc-logo.png";
 import SpcLogo from "../../assets/images/spc-logo.png";
+import BcgLogo from "../../assets/images/bcg.png";
 import VitLogo from "../../assets/images/vit-logo.png";
 import VitBGLogo from "../../assets/images/vit-logo-bg.png";
 
@@ -114,7 +115,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: OneBancLogo,
     orgName: "OneBanc Technologies",
     orgPosition: "Software Developer",
-    orgTenure: "Aug 2021 - June 2022",
+    orgTenure: "July 2021 - June 2022",
     orgLink: "https://onebanc.ai",
     location: "Gurgaon, Haryana",
   },
@@ -124,8 +125,18 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: SpcLogo,
     orgName: "SkyPoint Cloud",
     orgPosition: "Software Development Engineer - I",
-    orgTenure: "June 2022 - Present",
+    orgTenure: "June 2022 - Nov 2023",
     orgLink: "https://skypointcloud.com",
+    location: "Bangalore, Karnataka",
+  },
+  {
+    id: 4,
+    orgLogo: BcgLogo,
+    orgBGLogo: BcgLogo,
+    orgName: "Boston Consulting Group",
+    orgPosition: "Software Engineer",
+    orgTenure: "Nov 2023 - Present",
+    orgLink: "https://bcg.com",
     location: "Bangalore, Karnataka",
   },
 ];
@@ -409,7 +420,7 @@ export const projects: IProjectDict = {
     description:
       "Pro4 is a versatile event management website that simplifies the process of creating, managing, and promoting events. With customizable registration forms, secure payment collection, and convenient attendee engagement features, Pro4 streamlines event organization.",
     githubLink: "",
-    projectLink: "",
+    projectLink: "https://pro4.anudeep.info",
     image: Pro4Image,
     logo: "",
     gif: "",
@@ -421,7 +432,7 @@ export const projects: IProjectDict = {
     description:
       "Website tracker is a tool designed to track and monitor the behavior and engagement of website users. It records and provides insights into the number of times a user has visited the website and the duration of time spent on the site during each visit.",
     githubLink: "https://github.com/anudeep-mp/tracker-api",
-    projectLink: "https://tracker.anudeep.info",
+    projectLink: "",
     image: TrackerImage,
     logo: TrackerLogo,
     gif: "",
