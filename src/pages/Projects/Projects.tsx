@@ -10,7 +10,6 @@ import MonitorImage from "../../assets/images/monitor.png";
 import { IProject } from "../../common/interfaces";
 import NavigateIcon from "../../assets/images/navigate.png";
 import CodeIcon from "../../assets/images/code.png";
-import PlayIcon from "../../assets/images/play.png";
 import LockIcon from "../../assets/images/lock.png";
 
 import "./projects.css";
@@ -139,11 +138,12 @@ export default function Projects({ isCurrent }: { isCurrent: boolean }) {
               className="project-image"
             />
             {selectedProject?.gif && (
-              <img
-                src={PlayIcon}
-                className={showGif ? "play-icon playing" : "play-icon"}
-                onClick={playSelectedProjectGIF}
-              />
+              <svg id="svg" className={showGif ? "play-icon playing" : "play-icon"}
+                onClick={playSelectedProjectGIF} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 400,400" >
+               <g id="svgg">
+               <path id="path0" d="M185.938 1.035 C 12.748 17.975,-62.503 224.852,61.455 343.255 C 182.815 459.175,381.858 384.951,398.479 217.578 C 410.377 97.768,304.088 -10.522,185.938 1.035 M214.587 160.156 C 244.345 181.641,268.692 199.570,268.692 200.000 C 268.692 200.700,163.514 277.115,158.366 280.156 C 156.597 281.200,156.250 268.036,156.250 200.000 C 156.250 131.964,156.597 118.800,158.366 119.844 C 159.529 120.531,184.829 138.672,214.587 160.156 " stroke="none" fill="var(--ternery-color)" fill-rule="evenodd"></path>
+               </g>
+              </svg>
             )}
           </div>
         </div>
