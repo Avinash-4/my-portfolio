@@ -13,6 +13,7 @@ import JavaScriptIcon from "../../assets/images/javascript.png";
 import DotNetIcon from "../../assets/images/dot-net.png";
 import NodeIcon from "../../assets/images/node.png";
 import ReactIcon from "../../assets/images/react.png";
+import AngularIcon from "../../assets/images/angular.png";
 import ReduxIcon from "../../assets/images/redux.png";
 import GoLangIcon from "../../assets/images/go.png";
 import HTMLIcon from "../../assets/images/html.png";
@@ -212,6 +213,18 @@ export const skills: ISkillsDict = {
     skillLevelPercentage: 45,
     isActive: true,
     startDate: "03/2023",
+    experienceType: "relative",
+  },
+  angular: {
+    id: "angular",
+    techName: "Angular",
+    description:
+      "Angular is an open-source, JavaScript framework written in TypeScript. Google maintains it, and its primary purpose is to develop single-page applications.",
+    icon: AngularIcon,
+    projectsCount: 2,
+    skillLevelPercentage: 50,
+    isActive: true,
+    startDate: "11/2023",
     experienceType: "relative",
   },
   sql: {
@@ -424,7 +437,7 @@ export const projects: IProjectDict = {
     image: Pro4Image,
     logo: "",
     gif: "",
-    techStack: ["golang", "mongodb", "reactjs", "typescript"],
+    techStack: ["golang", "gcp", "angular"],
   },
   websitetracker: {
     id: "website-tracker",
