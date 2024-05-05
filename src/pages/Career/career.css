@@ -57,7 +57,7 @@
 }
 
 .section.career .org-tenure {
-  color: var(--text-color2-gold);
+  color: var(--text-color2);
 }
 
 .section.career .step-progress::before {
@@ -71,7 +71,7 @@
   background: linear-gradient(
     to bottom,
     var(--break-line-gradient-color1),
-    var(--text-color1-white)
+    var(--text-color1)
   );
 }
 

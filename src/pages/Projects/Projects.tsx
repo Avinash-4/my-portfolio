@@ -88,7 +88,7 @@ export default function Projects({ isCurrent }: { isCurrent: boolean }) {
             <div className="tech-stack">
               {selectedProject.techStack.map((tech) => (
                 <img
-                  src={skills[tech]?.icon}
+                  src={skills.find((x) => x.id === tech)?.icon}
                   className="tech-icon"
                   key={tech}
                 />

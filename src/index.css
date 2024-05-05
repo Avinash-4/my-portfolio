@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400&family=Delius&family=Foldit:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400&family=Delius&family=Foldit:wght@500&display=swap");
 
 body {
   margin: 0;
@@ -40,7 +40,7 @@ a {
   text-decoration: none;
 }
 
-:root {
+/* :root {
   font-size: 16px;
   --primary-hue: 240;
   --primary-color: hsl(var(--primary-hue), 86%, 44%);
@@ -53,9 +53,9 @@ a {
   --mini-background-color3: hsla(var(--primary-hue), 0%, 100%, 0.3);
   --mini-background-color4: hsla(var(--primary-hue), 86%, 44%, 0.4);
   --mini-background-color5: hsla(var(--primary-hue), 86%, 44%, 0.25);
-  --text-color1-white: hsl(var(--primary-hue), 0%, 100%);
-  --text-color2-gold: hsl(var(--primary-hue), 60%, 70%);
-  --text-color3-blue: hsl(var(--primary-hue), 54%, 69%);
+  --text-color1: hsl(var(--primary-hue), 0%, 100%);
+  --text-color2: hsl(var(--primary-hue), 60%, 70%);
+  --text-color3: hsl(var(--primary-hue), 54%, 69%);
   --break-line-gradient-color1: var(--primary-color);
   --break-line-gradient-color2: transparent;
   --scroll-thumb-bg-color: #24123a;
@@ -65,6 +65,126 @@ a {
   --donut-block-3-color: #6b569b;
   --donut-block-4-color: #a32f76;
   --donut-block-5-color: #d70b52;
+} */
+
+:root {
+  /* Light Mode Variables */
+  --light-primary-hue: 720;
+  --light-primary-color: hsl(var(--light-primary-hue), 86%, 44%);
+  --light-secondary-color: hsl(var(--light-primary-hue), 76%, 24%);
+  --light-ternary-color: hsl(var(--light-primary-hue), 100%, 24%);
+  --light-nav-background-color: hsl(var(--light-primary-hue), 30%, 90%);
+  --light-main-background-color: hsl(var(--light-primary-hue), 40%, 95%);
+  --light-mini-background-color: hsla(
+    var(--light-primary-hue),
+    60%,
+    60%,
+    0.25
+  );
+  --light-mini-background-color2: hsla(
+    var(--light-primary-hue),
+    0%,
+    100%,
+    0.75
+  );
+  --light-mini-background-color3: hsla(var(--light-primary-hue), 0%, 100%, 0.75);
+  --light-mini-background-color4: hsla(var(--light-primary-hue), 86%, 44%, 0.4);
+  --light-mini-background-color5: hsla(
+    var(--light-primary-hue),
+    86%,
+    44%,
+    0.25
+  );
+  --light-text-color1: hsl(var(--light-primary-hue), 0%, 10%);
+  --light-text-color2: hsl(var(--light-primary-hue), 60%, 40%);
+  --light-text-color3: hsl(var(--light-primary-hue), 54%, 50%);
+  --light-break-line-gradient-color1: var(--light-primary-color);
+  --light-break-line-gradient-color2: transparent;
+  --light-scroll-thumb-bg-color: hsl(var(--light-primary-hue), 100%, 34%, 0.2);
+  --light-scroll-thumb-thickness: 4px;
+  --light-donut-block-1-color: #ff5500;
+  --light-donut-block-2-color: #ff7f0e;
+  --light-donut-block-3-color: #ffbf00;
+  --light-donut-block-4-color: #eeff00;
+  --light-donut-block-5-color: #85ff00;
+
+  /* Dark Mode Variables */
+  --dark-primary-hue: 180;
+  --dark-primary-color: hsl(var(--dark-primary-hue), 86%, 44%);
+  --dark-secondary-color: hsl(var(--dark-primary-hue), 76%, 44%);
+  --dark-ternary-color: hsl(var(--dark-primary-hue), 100%, 34%);
+  --dark-nav-background-color: hsl(var(--dark-primary-hue), 0%, 20%);
+  --dark-main-background-color: hsl(var(--dark-primary-hue), 0%, 10%);
+  --dark-mini-background-color: hsla(var(--dark-primary-hue), 60%, 60%, 0.329);
+  --dark-mini-background-color2: hsla(var(--dark-primary-hue), 0%, 20%, 0.25);
+  --dark-mini-background-color3: hsla(var(--dark-primary-hue), 0%, 20%, 0.3);
+  --dark-mini-background-color4: hsla(var(--dark-primary-hue), 86%, 44%, 0.4);
+  --dark-mini-background-color5: hsla(var(--dark-primary-hue), 86%, 44%, 0.25);
+  --dark-text-color1: hsl(var(--dark-primary-hue), 0%, 90%);
+  --dark-text-color2: hsl(var(--dark-primary-hue), 60%, 70%);
+  --dark-text-color3: hsl(var(--dark-primary-hue), 54%, 69%);
+  --dark-break-line-gradient-color1: var(--dark-primary-color);
+  --dark-break-line-gradient-color2: transparent;
+  --dark-scroll-thumb-bg-color: hsl(var(--light-primary-hue), 100%, 34%, 0.2);
+  --dark-scroll-thumb-thickness: 4px;
+  --dark-donut-block-1-color: #00e676;
+  --dark-donut-block-2-color: #49f2c8;
+  --dark-donut-block-3-color: #c6d400;
+  --dark-donut-block-4-color: #ff6929;
+  --dark-donut-block-5-color: #ff1f1f;
+}
+
+/* Apply the appropriate variables based on mode */
+.app.light-mode {
+  --primary-hue: var(--light-primary-hue);
+  --primary-color: var(--light-primary-color);
+  --secondary-color: var(--light-secondary-color);
+  --ternery-color: var(--light-ternary-color);
+  --nav-background-color: var(--light-nav-background-color);
+  --main-background-color: var(--light-main-background-color);
+  --mini-background-color: var(--light-mini-background-color);
+  --mini-background-color2: var(--light-mini-background-color2);
+  --mini-background-color3: var(--light-mini-background-color3);
+  --mini-background-color4: var(--light-mini-background-color4);
+  --mini-background-color5: var(--light-mini-background-color5);
+  --text-color1: var(--light-text-color1);
+  --text-color2: var(--light-text-color2);
+  --text-color3: var(--light-text-color3);
+  --break-line-gradient-color1: var(--light-break-line-gradient-color1);
+  --break-line-gradient-color2: var(--light-break-line-gradient-color2);
+  --scroll-thumb-bg-color: var(--light-scroll-thumb-bg-color);
+  --scroll-thumb-thickness: var(--light-scroll-thumb-thickness);
+  --donut-block-1-color: var(--light-donut-block-1-color);
+  --donut-block-2-color: var(--light-donut-block-2-color);
+  --donut-block-3-color: var(--light-donut-block-3-color);
+  --donut-block-4-color: var(--light-donut-block-4-color);
+  --donut-block-5-color: var(--light-donut-block-5-color);
+}
+
+.app.dark-mode {
+  --primary-hue: var(--dark-primary-hue);
+  --primary-color: var(--dark-primary-color);
+  --secondary-color: var(--dark-secondary-color);
+  --ternery-color: var(--dark-ternary-color);
+  --nav-background-color: var(--dark-nav-background-color);
+  --main-background-color: var(--dark-main-background-color);
+  --mini-background-color: var(--dark-mini-background-color);
+  --mini-background-color2: var(--dark-mini-background-color2);
+  --mini-background-color3: var(--dark-mini-background-color3);
+  --mini-background-color4: var(--dark-mini-background-color4);
+  --mini-background-color5: var(--dark-mini-background-color5);
+  --text-color1: var(--dark-text-color1);
+  --text-color2: var(--dark-text-color2);
+  --text-color3: var(--dark-text-color3);
+  --break-line-gradient-color1: var(--dark-break-line-gradient-color1);
+  --break-line-gradient-color2: var(--dark-break-line-gradient-color2);
+  --scroll-thumb-bg-color: var(--dark-scroll-thumb-bg-color);
+  --scroll-thumb-thickness: var(--dark-scroll-thumb-thickness);
+  --donut-block-1-color: var(--dark-donut-block-1-color);
+  --donut-block-2-color: var(--dark-donut-block-2-color);
+  --donut-block-3-color: var(--dark-donut-block-3-color);
+  --donut-block-4-color: var(--dark-donut-block-4-color);
+  --donut-block-5-color: var(--dark-donut-block-5-color);
 }
 
 @media (min-width: 0px) and (max-width: 510px) {

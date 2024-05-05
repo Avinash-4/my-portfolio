@@ -58,7 +58,7 @@
 }
 
 .section.projects .projects-details .project-card {
-  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.466);
+  box-shadow: 0 0 10px 1px var(--mini-background-color);
   background: transparent;
   border-radius: 8px;
   padding: 1rem;
@@ -89,7 +89,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   height: fit-content;
-  color: var(--text-color3-blue);
+  color: var(--text-color3);
   margin: 0;
 }
 
@@ -128,7 +128,7 @@
   padding: 0.5rem;
   border-radius: 5px;
   color: var(--primary-color);
-  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.466);
+  box-shadow: 0 0 10px 1px var(--mini-background-color);
   cursor: default;
 }
 
@@ -136,7 +136,7 @@
   .projects-details
   .project-links
   .project-link:not(.private):hover {
-  background-color: var(--ternery-color);
+  background-color: var(--mini-background-color);
   color: var(--secondary-color);
   cursor: pointer;
 }

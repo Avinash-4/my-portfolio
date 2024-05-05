@@ -30,9 +30,7 @@ export interface ICareerItem {
   location: string;
 }
 
-export interface ISkillsDict {
-  [key: string]: ISkill;
-}
+export type ISkills = ISkill[];
 
 export type ExperienceType = "relative" | "fixed";
 
@@ -47,6 +45,7 @@ export interface IRelativeSkill {
   isActive: boolean;
   experienceType: "relative";
   startDate: string;
+  displayOrder: number;
 }
 
 export interface IFixedSkill {
@@ -60,6 +59,7 @@ export interface IFixedSkill {
   experienceType: "fixed";
   startDate: string;
   endDate: string;
+  displayOrder: number;
 }
 
 export interface IProject {

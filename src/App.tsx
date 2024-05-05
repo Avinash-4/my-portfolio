@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { IPageRefs } from "./common/interfaces";
 import About from "./pages/About/About";
@@ -23,6 +23,7 @@ function App() {
     projectsRef: useRef<HTMLElement>(null),
     contactRef: useRef<HTMLElement>(null),
   };
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const isCareerHZRefActive: boolean = useIntersectionObserver(
     refs.careerHZRef,
@@ -39,9 +40,13 @@ function App() {
   );
 
   return (
-    <div className="App">
+    <div className={`app ${isDarkMode ? " dark-mode" : " light-mode"}`}>
       <div className="side-nav-container">
-        <SideNav refs={refs} />
+        <SideNav
+          refs={refs}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+        />
       </div>
       <div className="body-container">
         <section ref={refs.introRef}>
