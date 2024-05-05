@@ -1,4 +1,4 @@
-.App {
+.app {
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -24,11 +24,11 @@
   height: 100vh;
   position: relative;
   background-color: var(--main-background-color);
-  color: var(--text-color1-white);
+  color: var(--text-color1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--text-color1-white);
+  color: var(--text-color1);
 }
 
 .section .title {
@@ -45,7 +45,7 @@
   margin: 0 2rem;
   margin-top: 2rem;
   padding: 0;
-  color: var(--text-color2-gold);
+  color: var(--text-color2);
   line-height: 1.5;
   text-align: center;
 }

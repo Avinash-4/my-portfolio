@@ -89,7 +89,7 @@
   width: 550px;
   height: 400px;
   margin: 0 5%;
-  box-shadow: 0 0 50px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 50px 1px var(--mini-background-color);
   background: transparent;
   border-radius: 1rem;
   padding: 2rem;

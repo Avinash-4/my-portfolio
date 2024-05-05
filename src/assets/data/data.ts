@@ -24,6 +24,9 @@ import RestIcon from "../../assets/images/rest.png";
 import PythonIcon from "../../assets/images/python.png";
 import AzureIcon from "../../assets/images/azure.png";
 import GCPIcon from "../../assets/images/gcp.png";
+import AWSIcon from "../../assets/images/aws.png";
+import DockerIcon from "../../assets/images/docker.png";
+import KubernetesIcon from "../../assets/images/kubernetes.png";
 import CsharpIcon from "../../assets/images/csharp.png";
 import SQLIcon from "../../assets/images/sql.png";
 import CosmosDBIcon from "../../assets/images/cosmosdb.png";
@@ -55,7 +58,7 @@ import {
   IContactLink,
   IPageInfo,
   IProjectDict,
-  ISkillsDict,
+  ISkills,
   ISocialLink,
 } from "../../common/interfaces";
 
@@ -142,9 +145,9 @@ export const carrerData: ICareerItem[] = [
   },
 ];
 
-export const skills: ISkillsDict = {
-  javascript: {
-    id: "javascript",
+export const skills: ISkills = [
+  {
+    id: "javaScript",
     techName: "JavaScript",
     description:
       "A scripting language used for creating interactive web pages and web applications, often used alongside HTML and CSS.",
@@ -154,8 +157,9 @@ export const skills: ISkillsDict = {
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
+    displayOrder: 1,
   },
-  reactjs: {
+  {
     id: "reactjs",
     techName: "React JS",
     description:
@@ -166,9 +170,10 @@ export const skills: ISkillsDict = {
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
+    displayOrder: 3,
   },
-  typescript: {
-    id: "typescript",
+  {
+    id: "yypeScript",
     techName: "TypeScript",
     description:
       "A typed superset of JavaScript that provides better type checking and enables better code organization, allowing for more maintainable codebases.",
@@ -178,32 +183,35 @@ export const skills: ISkillsDict = {
     isActive: true,
     startDate: "08/2021",
     experienceType: "relative",
+    displayOrder: 7,
   },
-  csharp: {
+  {
     id: "csharp",
     techName: "C#",
     description:
       "C# is an object-oriented, component-oriented programming language. It is a programming language developed by Microsoft that runs on the .NET Framework. ",
     icon: CsharpIcon,
     projectsCount: 3,
-    skillLevelPercentage: 60,
+    skillLevelPercentage: 70,
     isActive: true,
     startDate: "06/2022",
     experienceType: "relative",
+    displayOrder: 4,
   },
-  dotnet: {
+  {
     id: "dotnet",
     techName: ".NET",
     description:
       "A framework used for building web applications, desktop applications, mobile applications, and web services.",
     icon: DotNetIcon,
     projectsCount: 2,
-    skillLevelPercentage: 60,
+    skillLevelPercentage: 75,
     isActive: true,
     startDate: "06/2022",
     experienceType: "relative",
+    displayOrder: 5,
   },
-  golang: {
+  {
     id: "golang",
     techName: "Go",
     description:
@@ -214,20 +222,22 @@ export const skills: ISkillsDict = {
     isActive: true,
     startDate: "03/2023",
     experienceType: "relative",
+    displayOrder: 6,
   },
-  angular: {
+  {
     id: "angular",
     techName: "Angular",
     description:
       "Angular is an open-source, JavaScript framework written in TypeScript. Google maintains it, and its primary purpose is to develop single-page applications.",
     icon: AngularIcon,
-    projectsCount: 2,
-    skillLevelPercentage: 50,
+    projectsCount: 4,
+    skillLevelPercentage: 75,
     isActive: true,
-    startDate: "11/2023",
+    startDate: "09/2023",
     experienceType: "relative",
+    displayOrder: 3,
   },
-  sql: {
+  {
     id: "sql",
     techName: "SQL",
     description:
@@ -238,8 +248,9 @@ export const skills: ISkillsDict = {
     isActive: true,
     experienceType: "relative",
     startDate: "06/2022",
+    displayOrder: 8,
   },
-  azure: {
+  {
     id: "azure",
     techName: "Microsoft Azure",
     description:
@@ -247,23 +258,64 @@ export const skills: ISkillsDict = {
     icon: AzureIcon,
     projectsCount: 1,
     skillLevelPercentage: 40,
-    isActive: true,
+    isActive: false,
     experienceType: "relative",
     startDate: "08/2022",
+    displayOrder: 9,
   },
-  gcp: {
+  {
     id: "gcp",
     techName: "Google Cloud Platform",
     description:
       "Google Cloud Platform is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products.",
     icon: GCPIcon,
     projectsCount: 1,
-    skillLevelPercentage: 20,
+    skillLevelPercentage: 30,
     isActive: true,
     experienceType: "relative",
     startDate: "06/2023",
+    displayOrder: 11,
   },
-  mongodb: {
+  {
+    id: "aws",
+    techName: "AWS",
+    description:
+      "AWS offers a comprehensive suite of cloud computing services, providing scalable and reliable infrastructure for businesses to build and deploy applications without upfront hardware investment.",
+    icon: AWSIcon,
+    projectsCount: 1,
+    skillLevelPercentage: 25,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "12/2023",
+    displayOrder: 10,
+  },
+  {
+    id: "docker",
+    techName: "Docker",
+    description:
+      "Docker simplifies software development by packaging applications with their dependencies into containers, facilitating consistent deployment across different environments.",
+    icon: DockerIcon,
+    projectsCount: 1,
+    skillLevelPercentage: 25,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "04/2024",
+    displayOrder: 12,
+  },
+  {
+    id: "kubernetes",
+    techName: "Kubernetes",
+    description:
+      "Kubernetes automates the deployment and management of containerized applications, streamlining the orchestration of workloads across clusters of machines for improved scalability and resilience.",
+    icon: KubernetesIcon,
+    projectsCount: 1,
+    skillLevelPercentage: 25,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "04/2024",
+    displayOrder: 13,
+  },
+  {
     id: "mongodb",
     techName: "Mongo DB",
     description:
@@ -274,8 +326,9 @@ export const skills: ISkillsDict = {
     isActive: true,
     experienceType: "relative",
     startDate: "08/2021",
+    displayOrder: 14,
   },
-  cosmosdb: {
+  {
     id: "cosmosdb",
     techName: "Cosmos DB",
     description:
@@ -286,8 +339,9 @@ export const skills: ISkillsDict = {
     isActive: false,
     experienceType: "relative",
     startDate: "08/2022",
+    displayOrder: 12,
   },
-  html: {
+  {
     id: "html",
     techName: "HTML",
     description:
@@ -298,8 +352,9 @@ export const skills: ISkillsDict = {
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
+    displayOrder: 15,
   },
-  css: {
+  {
     id: "css",
     techName: "CSS",
     description:
@@ -310,8 +365,9 @@ export const skills: ISkillsDict = {
     isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
+    displayOrder: 16,
   },
-  redux: {
+  {
     id: "redux",
     techName: "Redux",
     description:
@@ -319,11 +375,12 @@ export const skills: ISkillsDict = {
     icon: ReduxIcon,
     projectsCount: 3,
     skillLevelPercentage: 70,
-    isActive: true,
+    isActive: false,
     startDate: "06/2021",
     experienceType: "relative",
+    displayOrder: 15,
   },
-  fluentui: {
+  {
     id: "fluentui",
     techName: "Fluent UI",
     description:
@@ -331,12 +388,13 @@ export const skills: ISkillsDict = {
     icon: FluentUIIcon,
     projectsCount: 1,
     skillLevelPercentage: 80,
-    isActive: true,
+    isActive: false,
     startDate: "06/2022",
     experienceType: "relative",
+    displayOrder: 16,
   },
-  bootstrap: {
-    id: "bootstrap",
+  {
+    id: "bootStrap",
     techName: "BootStrap",
     description:
       "A popular CSS framework used for building responsive and mobile-first web applications, providing a set of pre-built UI components and styles.",
@@ -347,8 +405,9 @@ export const skills: ISkillsDict = {
     experienceType: "fixed",
     startDate: "08/2021",
     endDate: "12/2021",
+    displayOrder: 17,
   },
-  jest: {
+  {
     id: "jest",
     techName: "Jest",
     description:
@@ -356,11 +415,12 @@ export const skills: ISkillsDict = {
     icon: JestIcon,
     projectsCount: 1,
     skillLevelPercentage: 70,
-    isActive: true,
+    isActive: false,
     startDate: "06/2022",
     experienceType: "relative",
+    displayOrder: 18,
   },
-  nodejs: {
+  {
     id: "nodejs",
     techName: "Node JS",
     description:
@@ -372,8 +432,9 @@ export const skills: ISkillsDict = {
     experienceType: "fixed",
     startDate: "08/2021",
     endDate: "12/2021",
+    displayOrder: 19,
   },
-  expressjs: {
+  {
     id: "expressjs",
     techName: "Express JS",
     description:
@@ -385,8 +446,9 @@ export const skills: ISkillsDict = {
     experienceType: "fixed",
     startDate: "08/2021",
     endDate: "12/2021",
+    displayOrder: 20,
   },
-  websockets: {
+  {
     id: "websockets",
     techName: "Web Sockets",
     description:
@@ -398,8 +460,9 @@ export const skills: ISkillsDict = {
     experienceType: "fixed",
     startDate: "08/2021",
     endDate: "06/2022",
+    displayOrder: 21,
   },
-  restapi: {
+  {
     id: "restapi",
     techName: "REST API",
     description:
@@ -410,8 +473,9 @@ export const skills: ISkillsDict = {
     isActive: false,
     experienceType: "relative",
     startDate: "06/2021",
+    displayOrder: 22,
   },
-  python: {
+  {
     id: "python",
     techName: "Python",
     description:
@@ -423,8 +487,9 @@ export const skills: ISkillsDict = {
     experienceType: "fixed",
     startDate: "05/2021",
     endDate: "08/2021",
+    displayOrder: 23,
   },
-};
+];
 
 export const projects: IProjectDict = {
   pro4: {
@@ -437,7 +502,7 @@ export const projects: IProjectDict = {
     image: Pro4Image,
     logo: "",
     gif: "",
-    techStack: ["golang", "gcp", "angular"],
+    techStack: ["golang", "gcp", "angular", "mongodb"],
   },
   websitetracker: {
     id: "website-tracker",

@@ -1,5 +1,7 @@
 import { IPageRefs } from "../../common/interfaces";
 import Logo from "../../assets/images/logo-nb.png";
+import DarkMode from "../../assets/images/dark-mode.png";
+import LightMode from "../../assets/images/light-mode.png";
 import "./sidenav.css";
 import Divider from "../Divider";
 import { handleScroll } from "../../common/utils/utilities";
@@ -7,6 +9,8 @@ import { useIntersectionObserver } from "../../common/hooks/useIntersectionObser
 
 interface INavBarProps {
   refs: IPageRefs;
+  isDarkMode: boolean;
+  setIsDarkMode: any;
 }
 
 export default function SideNav(props: INavBarProps) {
@@ -18,6 +22,12 @@ export default function SideNav(props: INavBarProps) {
     projectsRef,
     contactRef,
   } = props.refs;
+
+  const { isDarkMode, setIsDarkMode } = props;
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   const isIntroRefActive: boolean = useIntersectionObserver(introRef, {
     threshold: 0.5,
@@ -98,6 +108,12 @@ export default function SideNav(props: INavBarProps) {
           Contact
         </div>
       </div>
+      <img
+        className="view-mode"
+        src={isDarkMode ? LightMode : DarkMode}
+        alt="mode"
+        onClick={toggleDarkMode}
+      />
     </div>
   );
 }

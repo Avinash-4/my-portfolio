@@ -16,7 +16,7 @@
 }
 
 .side-nav .side-nav-item {
-  color: var(--text-color1-white);
+  color: var(--text-color1);
   padding: 1.5rem 0;
   width: 100%;
   cursor: pointer;
@@ -35,7 +35,7 @@
   color: var(--primary-color);
 }
 .side-nav .side-nav-item.active:hover {
-  color: var(--text-color2-gold);
+  color: var(--text-color2);
 }
 
 .side-nav .logo-img {
@@ -46,4 +46,11 @@
   border: 2px solid;
   border-color: var(--primary-color);
   border-radius: 50%;
+}
+
+.side-nav .view-mode{
+  height: 3rem;
+  width: 3rem;
+  padding: 2px;
+  cursor: pointer;
 }

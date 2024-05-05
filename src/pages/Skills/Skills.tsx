@@ -92,29 +92,32 @@ export default function Skills() {
         <div className="wrapper">
           <div className="scroll-container">
             <ul className="skills-basket">
-              {Object.keys(skills).map((skillKey) => {
-                const skill = skills[skillKey];
-                if (skill.isActive) {
-                  return (
-                    <li key={skill.id}>
-                      <div
-                        key={skill.id}
-                        className={`skill-card ${isTouchDevice ? "touch" : ""}`}
-                        draggable
-                        onDragStart={(e) => handleDragStart(e, skill)}
-                        onDragEnd={handleDragEnd}
-                        onClick={() => handleSkillClickForTouchDevices(skill)}
-                      >
-                        <img
-                          src={skill.icon}
-                          className="skill-image"
-                          draggable={false}
-                        />
-                      </div>
-                    </li>
-                  );
-                }
-              })}
+              {skills
+                .sort((a, b) => a.displayOrder - b.displayOrder)
+                .map((skill) => {
+                  if (skill.isActive) {
+                    return (
+                      <li key={skill.id}>
+                        <div
+                          key={skill.id}
+                          className={`skill-card ${
+                            isTouchDevice ? "touch" : ""
+                          }`}
+                          draggable
+                          onDragStart={(e) => handleDragStart(e, skill)}
+                          onDragEnd={handleDragEnd}
+                          onClick={() => handleSkillClickForTouchDevices(skill)}
+                        >
+                          <img
+                            src={skill.icon}
+                            className="skill-image"
+                            draggable={false}
+                          />
+                        </div>
+                      </li>
+                    );
+                  }
+                })}
             </ul>
           </div>
         </div>
