@@ -19,7 +19,7 @@ export default function SideNav(props: INavBarProps) {
   const {
     introRef,
     aboutRef,
-    careerHZRef,
+    careerRef,
     skillsRef,
     projectsRef,
     contactRef,
@@ -39,7 +39,7 @@ export default function SideNav(props: INavBarProps) {
     threshold: 0.5,
   });
 
-  const isCareerHZRefActive: boolean = useIntersectionObserver(careerHZRef, {
+  const isCareerRefActive: boolean = useIntersectionObserver(careerRef, {
     threshold: 0.5,
   });
 
@@ -83,16 +83,12 @@ export default function SideNav(props: INavBarProps) {
         </div>
         <Divider />
         <div
-          className={`side-nav-item ${isCareerHZRefActive && "active"}`}
-          onClick={() => handleScroll(careerHZRef)}
+          className={`side-nav-item ${isCareerRefActive && "active"}`}
+          onClick={() => handleScroll(careerRef)}
         >
           Career
         </div>
         <Divider />
-        {/* <div className="side-nav-item" onClick={() => handleScroll(careerRef)}>
-          Career
-        </div>
-        <Divider /> */}
         <div
           className={`side-nav-item ${isSkillsRefActive && "active"}`}
           onClick={() => handleScroll(skillsRef)}

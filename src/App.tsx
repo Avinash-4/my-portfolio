@@ -17,20 +17,12 @@ function App() {
   const refs: IPageRefs = {
     introRef: useRef<HTMLElement>(null),
     aboutRef: useRef<HTMLElement>(null),
-    careerHZRef: useRef<HTMLElement>(null),
     careerRef: useRef<HTMLElement>(null),
     skillsRef: useRef<HTMLElement>(null),
     projectsRef: useRef<HTMLElement>(null),
     contactRef: useRef<HTMLElement>(null),
   };
   const [isDarkMode, setIsDarkMode] = useState(true);
-
-  const isCareerHZRefActive: boolean = useIntersectionObserver(
-    refs.careerHZRef,
-    {
-      threshold: 0.5,
-    }
-  );
 
   const isProjectsRefActive: boolean = useIntersectionObserver(
     refs.projectsRef,
@@ -55,12 +47,9 @@ function App() {
         <section ref={refs.aboutRef}>
           <About contactRef={refs.contactRef} />
         </section>
-        <section ref={refs.careerHZRef}>
-          <Career isActive={isCareerHZRefActive} />
-        </section>
-        {/* <section ref={refs.careerRef}>
+        <section ref={refs.careerRef}>
           <Career />
-        </section> */}
+        </section>
         <section ref={refs.skillsRef}>
           <Skills />
         </section>
