@@ -1,6 +1,6 @@
 import { IPageRefs } from "../../common/interfaces";
 import Logo from "../../assets/images/logo.png";
-import LogoTwinkle from "../../assets/images/logo-twinkle.png";
+import LogoWinkEye from "../../assets/images/logo-wink.png";
 import DarkMode from "../../assets/images/dark-mode.png";
 import LightMode from "../../assets/images/light-mode.png";
 import "./sidenav.css";
@@ -16,18 +16,16 @@ interface INavBarProps {
 }
 
 export default function SideNav(props: INavBarProps) {
-  const {
-    introRef,
-    aboutRef,
-    careerRef,
-    skillsRef,
-    projectsRef,
-    contactRef,
-  } = props.refs;
+  const { introRef, aboutRef, careerRef, skillsRef, projectsRef, contactRef } =
+    props.refs;
 
   const { isDarkMode, setIsDarkMode } = props;
 
   const toggleDarkMode = () => {
+    setWinkEye(true);
+    setTimeout(() => {
+      setWinkEye(false);
+    }, 200);
     setIsDarkMode(!isDarkMode);
   };
 
@@ -55,17 +53,17 @@ export default function SideNav(props: INavBarProps) {
     threshold: 0.5,
   });
 
-  const [isHovered, setIsHovered] = useState(false);
+  const [isWinkEye, setWinkEye] = useState(false);
 
   return (
     <div className="side-nav">
       <img
         className="logo-img"
-        src={isHovered ? LogoTwinkle : Logo}
+        src={isWinkEye ? LogoWinkEye : Logo}
         alt="anufolio"
         onClick={() => handleScroll(introRef)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => setWinkEye(true)}
+        onMouseLeave={() => setWinkEye(false)}
       />
       <div className="nav-links">
         <div
