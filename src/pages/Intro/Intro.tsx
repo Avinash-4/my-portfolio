@@ -1,6 +1,6 @@
 import "./intro.css";
 
-import IntroImg from "../../assets/images/intro-nobg.png";
+import IntroImg from "../../assets/images/intro-nb.png";
 import { introInfo } from "../../assets/data/data";
 
 export default function Intro() {
@@ -11,9 +11,6 @@ export default function Intro() {
           <div className="heading-hi">hey! I'm</div>
           <div className="heading-name">{introInfo.name}</div>
           <div className="heading-desc">{introInfo.shortDesc}</div>
-          {/* <div className="heading-hobbies">
-            EAT &middot; PLAY &middot; CODE &middot; SLEEP &middot; REPEAT
-          </div> */}
         </div>
       </div>
       <div className="intro-image-container">

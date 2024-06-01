@@ -4,6 +4,10 @@
   flex-direction: row;
 }
 
+* {
+  transition: background-color 0.75s ease, color 0.2s ease;
+}
+
 .side-nav-container {
   width: 10%;
   height: 100%;

@@ -1,11 +1,13 @@
 import { IPageRefs } from "../../common/interfaces";
-import Logo from "../../assets/images/logo-nb.png";
+import Logo from "../../assets/images/logo.png";
+import LogoTwinkle from "../../assets/images/logo-twinkle.png";
 import DarkMode from "../../assets/images/dark-mode.png";
 import LightMode from "../../assets/images/light-mode.png";
 import "./sidenav.css";
 import Divider from "../Divider";
 import { handleScroll } from "../../common/utils/utilities";
 import { useIntersectionObserver } from "../../common/hooks/useIntersectionObserver";
+import { useState } from "react";
 
 interface INavBarProps {
   refs: IPageRefs;
@@ -53,13 +55,17 @@ export default function SideNav(props: INavBarProps) {
     threshold: 0.5,
   });
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="side-nav">
       <img
         className="logo-img"
-        src={Logo}
+        src={isHovered ? LogoTwinkle : Logo}
         alt="anufolio"
         onClick={() => handleScroll(introRef)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       />
       <div className="nav-links">
         <div

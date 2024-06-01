@@ -99,7 +99,7 @@ data-driven applications with effective interfaces to deliver dynamic
 user experiences. I also enjoy coding as a hobby, allowing me to
 explore new technologies and push the boundaries of what's possible.
 When I'm not coding, you can usually find me playing badminton or
-watching cricket. Trying to be a better version of myself every day in
+watching movies. Trying to be a better version of myself every day in
 this fast moving world.`;
 
 export const carrerData: ICareerItem[] = [
@@ -173,7 +173,7 @@ export const skills: ISkills = [
     displayOrder: 3,
   },
   {
-    id: "yypeScript",
+    id: "typeScript",
     techName: "TypeScript",
     description:
       "A typed superset of JavaScript that provides better type checking and enables better code organization, allowing for more maintainable codebases.",
@@ -209,7 +209,7 @@ export const skills: ISkills = [
     isActive: true,
     startDate: "06/2022",
     experienceType: "relative",
-    displayOrder: 5,
+    displayOrder: 2,
   },
   {
     id: "golang",
@@ -235,7 +235,7 @@ export const skills: ISkills = [
     isActive: true,
     startDate: "09/2023",
     experienceType: "relative",
-    displayOrder: 3,
+    displayOrder: 5,
   },
   {
     id: "sql",
