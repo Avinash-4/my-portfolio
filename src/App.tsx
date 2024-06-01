@@ -7,11 +7,11 @@ import Intro from "./pages/Intro/Intro";
 import Projects from "./pages/Projects/Projects";
 import Skills from "./pages/Skills/Skills";
 import SideNav from "./components/SideNav/SideNav";
-import CareerHZ from "./pages/CareerHZ/CareerHZ";
 
 import "./App.css";
 import { TrackerWrapper } from "./components/TrackerWrapper";
 import { useIntersectionObserver } from "./common/hooks/useIntersectionObserver";
+import Career from "./pages/Career/Career";
 
 function App() {
   const refs: IPageRefs = {
@@ -56,7 +56,7 @@ function App() {
           <About contactRef={refs.contactRef} />
         </section>
         <section ref={refs.careerHZRef}>
-          <CareerHZ isActive={isCareerHZRefActive} />
+          <Career isActive={isCareerHZRefActive} />
         </section>
         {/* <section ref={refs.careerRef}>
           <Career />
