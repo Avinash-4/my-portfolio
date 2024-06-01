@@ -125,13 +125,13 @@ a {
   --dark-text-color3: hsl(var(--dark-primary-hue), 54%, 69%);
   --dark-break-line-gradient-color1: var(--dark-primary-color);
   --dark-break-line-gradient-color2: transparent;
-  --dark-scroll-thumb-bg-color: hsl(var(--light-primary-hue), 100%, 34%, 0.2);
+  --dark-scroll-thumb-bg-color: hsl(var(--dark-primary-hue), 100%, 34%, 0.2);
   --dark-scroll-thumb-thickness: 4px;
-  --dark-donut-block-1-color: #00e676;
-  --dark-donut-block-2-color: #49f2c8;
-  --dark-donut-block-3-color: #c6d400;
-  --dark-donut-block-4-color: #ff6929;
-  --dark-donut-block-5-color: #ff1f1f;
+  --dark-donut-block-1-color: #ff5500;
+  --dark-donut-block-2-color: #ff7f0e;
+  --dark-donut-block-3-color: #ffbf00;
+  --dark-donut-block-4-color: #eeff00;
+  --dark-donut-block-5-color: #85ff00;
 }
 
 /* Apply the appropriate variables based on mode */
