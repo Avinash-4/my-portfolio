@@ -36,7 +36,7 @@ export default function Career() {
   };
 
   return (
-    <div className="section careerhz">
+    <div className="section career">
       <div className="title">{pageInfo.career.title}</div>
       <div className="description">{pageInfo.career.description}</div>
       <div className="content">
