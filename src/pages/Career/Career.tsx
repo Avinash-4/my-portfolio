@@ -3,11 +3,11 @@ import LocationImage from "../../assets/images/location.png";
 import OrganisationImage from "../../assets/images/organisation.png";
 import TenureImage from "../../assets/images/tenure.png";
 
-import "./careerhz.css";
+import "./career.css";
 import { useEffect, useRef, useState } from "react";
 import { carrerData, pageInfo } from "../../assets/data/data";
 
-export default function CareerHZ({ isActive }: { isActive: boolean }) {
+export default function Career() {
   const scrollContainerRef = useRef<HTMLDivElement>({} as HTMLDivElement);
   const [showScrollButtons, setShowScrollButtons] = useState<boolean>(false);
   const stepItemRef = useRef<HTMLLIElement>({} as HTMLLIElement);
