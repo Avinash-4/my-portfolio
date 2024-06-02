@@ -7,7 +7,7 @@ import "./sidenav.css";
 import Divider from "../Divider";
 import { handleScroll } from "../../common/utils/utilities";
 import { useIntersectionObserver } from "../../common/hooks/useIntersectionObserver";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface INavBarProps {
   refs: IPageRefs;
@@ -54,6 +54,37 @@ export default function SideNav(props: INavBarProps) {
   });
 
   const [isWinkEye, setWinkEye] = useState(false);
+  const [animatedViewerCount, setAnimatedViewerCount] = useState(0);
+
+  useEffect(() => {
+    getViewerCount();
+  }, []);
+
+  function getViewerCount() {
+    fetch(process.env.VIEWERCOUNT_END_POINT || "")
+      .then((x) => x.json())
+      .then((response) => {
+        if (response?.isSuccess && response.result?.viewerCount) {
+          animateCounter(0, response.result?.viewerCount);
+        }
+      });
+  }
+
+  function animateCounter(start: number, end: number) {
+    if (start === end) return;
+    const duration = 3000;
+    const increment = Math.ceil(end / (duration / 100));
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        current = end;
+        clearInterval(timer);
+      }
+      setAnimatedViewerCount(current);
+    }, 100);
+  }
 
   return (
     <div className="side-nav">
@@ -108,6 +139,7 @@ export default function SideNav(props: INavBarProps) {
           Contact
         </div>
       </div>
+      <div className="visits">Visits: {animatedViewerCount}</div>
       <img
         className="view-mode"
         src={isDarkMode ? LightMode : DarkMode}

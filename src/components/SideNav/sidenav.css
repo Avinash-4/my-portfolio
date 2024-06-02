@@ -23,7 +23,8 @@
   text-align: center;
 }
 
-.side-nav .side-nav-item.active {
+.side-nav .side-nav-item.active,
+.side-nav .visits {
   background: linear-gradient(
     90deg,
     var(--mini-background-color4),
@@ -53,4 +54,12 @@
   width: 3rem;
   padding: 2px;
   cursor: pointer;
+}
+
+.side-nav .visits {
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px;
+  color: var(--text-color1);
+  width: 100%;
 }
