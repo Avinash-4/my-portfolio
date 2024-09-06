@@ -1,14 +1,18 @@
-import OneBancLogo from "../../assets/images/onebanc-logo.png";
-import SpcLogo from "../../assets/images/spc-logo.png";
-import BcgLogo from "../../assets/images/bcg.png";
-import VitLogo from "../../assets/images/vit-logo.png";
-import VitBGLogo from "../../assets/images/vit-logo-bg.png";
-
+import tmobilebglogo from "../../assets/images/t-mobile-bg.png";
+import tmobilelogo from "../../assets/images/t-mobile.png";
+import Nationwidelogo from "../../assets/images/nationwide-logo.jpg";
+import Nationwidebglogo from "../../assets/images/Nationwide-Logo-bg.png";
+import Apollologo from "../../assets/images/apollo-logo.jpg";
+import ApolloBGlogo from "../../assets/images/Apollo-logo-bg.png";
+import IlensysLogo from "../../assets/images/Ilensys-logo.png";
+import AmericanAirlineslogo from "../../assets/images/AmericanAirlines-logo.jpg";
+import AmericanAirlinesbglogo from "../../assets/images/AmericanAirlinesbg-logo.png";
 import JestIcon from "../../assets/images/jest.png";
 import WebSocketsIcon from "../../assets/images/web-sockets.png";
-import FluentUIIcon from "../../assets/images/fluent-ui.png";
+import Mobile from "../../assets/images/mobileproject.png";
 import BootStrapIcon from "../../assets/images/bootstrap.png";
 import TypeScriptIcon from "../../assets/images/typescript.png";
+import Javaicon from "../../assets/images/javalogo.png";
 import JavaScriptIcon from "../../assets/images/javascript.png";
 import DotNetIcon from "../../assets/images/dot-net.png";
 import NodeIcon from "../../assets/images/node.png";
@@ -90,7 +94,7 @@ export const introInfo: {
   name: string;
   shortDesc: string;
 } = {
-  name: "Anudeep",
+  name: "Avinash",
   shortDesc: "I create value by building web",
 };
 
@@ -98,50 +102,54 @@ export const aboutInfo: string = `I specialize in full-stack development, creati
 data-driven applications with effective interfaces to deliver dynamic
 user experiences. I also enjoy coding as a hobby, allowing me to
 explore new technologies and push the boundaries of what's possible.
-When I'm not coding, you can usually find me playing badminton or
-watching movies. Trying to be a better version of myself every day in
+Trying to be a better version of myself every day in
 this fast moving world.`;
 
 export const carrerData: ICareerItem[] = [
   {
     id: 1,
-    orgLogo: VitLogo,
-    orgBGLogo: VitBGLogo,
-    orgName: "Vellore Institute of Technology",
-    orgPosition: "Bachelor of Technology",
-    orgTenure: "July 2017 - July 2021",
-    orgLink: "https://vit.ac.in",
-    location: "Vellore, Tamil Nadu",
+    orgLogo: Apollologo,
+    orgBGLogo: ApolloBGlogo,
+    orgName: "Apollo Health Systems",
+    orgPosition: "Jr. Java/ UI Developer",
+    orgTenure: "May 2018- July 2019",
+    location: "India",
   },
   {
     id: 2,
-    orgLogo: OneBancLogo,
-    orgBGLogo: OneBancLogo,
-    orgName: "OneBanc Technologies",
-    orgPosition: "Software Developer",
-    orgTenure: "July 2021 - June 2022",
-    orgLink: "https://onebanc.ai",
-    location: "Gurgaon, Haryana",
+    orgLogo: IlensysLogo,
+    orgBGLogo: IlensysLogo,
+    orgName: "Ilensys Technologies Pvt. Ltd",
+    orgPosition: "Angular/JavaScript Developer",
+    orgTenure: "Aug 2019 - Oct 2020",
+    location: "India",
   },
   {
     id: 3,
-    orgLogo: SpcLogo,
-    orgBGLogo: SpcLogo,
-    orgName: "SkyPoint Cloud",
-    orgPosition: "Software Development Engineer - I",
-    orgTenure: "June 2022 - Nov 2023",
-    orgLink: "https://skypointcloud.com",
-    location: "Bangalore, Karnataka",
+    orgLogo: tmobilelogo,
+    orgBGLogo: tmobilebglogo,
+    orgName: "T-mobile",
+    orgPosition: "Front end/UI Developer",
+    orgTenure: "Nov 2020 - Aug 2021",
+    location: "WA",
   },
   {
     id: 4,
-    orgLogo: BcgLogo,
-    orgBGLogo: BcgLogo,
-    orgName: "Boston Consulting Group",
-    orgPosition: "Software Engineer",
-    orgTenure: "Nov 2023 - Present",
-    orgLink: "https://bcg.com",
-    location: "Bangalore, Karnataka",
+    orgLogo: Nationwidelogo,
+    orgBGLogo: Nationwidebglogo,
+    orgName: "Nationwide Insurance",
+    orgPosition: "Full stack Developer",
+    orgTenure: "Oct 2021- Jun 2023",
+    location: "OH",
+  },
+  {
+    id: 5,
+    orgLogo: AmericanAirlineslogo,
+    orgBGLogo: AmericanAirlinesbglogo,
+    orgName: "American Airlines",
+    orgPosition: "Sr Software Engineer -@CyberSecurity",
+    orgTenure: "Aug 2023- present",
+    location: "TX",
   },
 ];
 
@@ -153,11 +161,11 @@ export const skills: ISkills = [
       "A scripting language used for creating interactive web pages and web applications, often used alongside HTML and CSS.",
     icon: JavaScriptIcon,
     projectsCount: 10,
-    skillLevelPercentage: 80,
+    skillLevelPercentage: 85,
     isActive: true,
-    startDate: "06/2021",
+    startDate: "06/2018",
     experienceType: "relative",
-    displayOrder: 1,
+    displayOrder: 3,
   },
   {
     id: "reactjs",
@@ -168,9 +176,9 @@ export const skills: ISkills = [
     projectsCount: 4,
     skillLevelPercentage: 85,
     isActive: true,
-    startDate: "06/2021",
+    startDate: "06/2019",
     experienceType: "relative",
-    displayOrder: 3,
+    displayOrder: 2,
   },
   {
     id: "typeScript",
@@ -181,49 +189,49 @@ export const skills: ISkills = [
     projectsCount: 3,
     skillLevelPercentage: 90,
     isActive: true,
-    startDate: "08/2021",
+    startDate: "08/2019",
     experienceType: "relative",
-    displayOrder: 7,
+    displayOrder: 1,
   },
   {
-    id: "csharp",
-    techName: "C#",
+    id: "java",
+    techName: "java",
     description:
-      "C# is an object-oriented, component-oriented programming language. It is a programming language developed by Microsoft that runs on the .NET Framework. ",
-    icon: CsharpIcon,
+      "Java is a high-level, class-based, object-oriented programming language ",
+    icon: Javaicon,
     projectsCount: 3,
     skillLevelPercentage: 70,
     isActive: true,
-    startDate: "06/2022",
+    startDate: "06/2021",
     experienceType: "relative",
     displayOrder: 4,
   },
-  {
-    id: "dotnet",
-    techName: ".NET",
-    description:
-      "A framework used for building web applications, desktop applications, mobile applications, and web services.",
-    icon: DotNetIcon,
-    projectsCount: 2,
-    skillLevelPercentage: 75,
-    isActive: true,
-    startDate: "06/2022",
-    experienceType: "relative",
-    displayOrder: 2,
-  },
-  {
-    id: "golang",
-    techName: "Go",
-    description:
-      "Go is popular for its simplicity, fast compile times, efficient memory management, and built-in concurrency support, making it a great choice for building high-performance and scalable applications.",
-    icon: GoLangIcon,
-    projectsCount: 3,
-    skillLevelPercentage: 45,
-    isActive: true,
-    startDate: "03/2023",
-    experienceType: "relative",
-    displayOrder: 6,
-  },
+  // {
+  //   id: "dotnet",
+  //   techName: ".NET",
+  //   description:
+  //     "A framework used for building web applications, desktop applications, mobile applications, and web services.",
+  //   icon: DotNetIcon,
+  //   projectsCount: 2,
+  //   skillLevelPercentage: 75,
+  //   isActive: true,
+  //   startDate: "06/2022",
+  //   experienceType: "relative",
+  //   displayOrder: 2,
+  // },
+  // {
+  //   id: "golang",
+  //   techName: "Go",
+  //   description:
+  //     "Go is popular for its simplicity, fast compile times, efficient memory management, and built-in concurrency support, making it a great choice for building high-performance and scalable applications.",
+  //   icon: GoLangIcon,
+  //   projectsCount: 3,
+  //   skillLevelPercentage: 45,
+  //   isActive: true,
+  //   startDate: "03/2023",
+  //   experienceType: "relative",
+  //   displayOrder: 6,
+  // },
   {
     id: "angular",
     techName: "Angular",
@@ -233,7 +241,7 @@ export const skills: ISkills = [
     projectsCount: 4,
     skillLevelPercentage: 75,
     isActive: true,
-    startDate: "09/2023",
+    startDate: "09/2020",
     experienceType: "relative",
     displayOrder: 5,
   },
@@ -247,8 +255,8 @@ export const skills: ISkills = [
     skillLevelPercentage: 60,
     isActive: true,
     experienceType: "relative",
-    startDate: "06/2022",
-    displayOrder: 8,
+    startDate: "06/2021",
+    displayOrder: 5,
   },
   {
     id: "azure",
@@ -257,11 +265,11 @@ export const skills: ISkills = [
       "Microsoft Azure is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.",
     icon: AzureIcon,
     projectsCount: 1,
-    skillLevelPercentage: 40,
+    skillLevelPercentage: 60,
     isActive: false,
     experienceType: "relative",
-    startDate: "08/2022",
-    displayOrder: 9,
+    startDate: "08/2020",
+    displayOrder: 7,
   },
   {
     id: "gcp",
@@ -271,10 +279,10 @@ export const skills: ISkills = [
     icon: GCPIcon,
     projectsCount: 1,
     skillLevelPercentage: 30,
-    isActive: true,
+    isActive: false,
     experienceType: "relative",
-    startDate: "06/2023",
-    displayOrder: 11,
+    startDate: "06/2022",
+    displayOrder: 8,
   },
   {
     id: "aws",
@@ -283,11 +291,11 @@ export const skills: ISkills = [
       "AWS offers a comprehensive suite of cloud computing services, providing scalable and reliable infrastructure for businesses to build and deploy applications without upfront hardware investment.",
     icon: AWSIcon,
     projectsCount: 1,
-    skillLevelPercentage: 25,
+    skillLevelPercentage: 75,
     isActive: true,
     experienceType: "relative",
-    startDate: "12/2023",
-    displayOrder: 10,
+    startDate: "12/2021",
+    displayOrder: 6,
   },
   {
     id: "docker",
@@ -296,11 +304,11 @@ export const skills: ISkills = [
       "Docker simplifies software development by packaging applications with their dependencies into containers, facilitating consistent deployment across different environments.",
     icon: DockerIcon,
     projectsCount: 1,
-    skillLevelPercentage: 25,
+    skillLevelPercentage: 75,
     isActive: true,
     experienceType: "relative",
-    startDate: "04/2024",
-    displayOrder: 12,
+    startDate: "04/2022",
+    displayOrder: 19,
   },
   {
     id: "kubernetes",
@@ -309,38 +317,38 @@ export const skills: ISkills = [
       "Kubernetes automates the deployment and management of containerized applications, streamlining the orchestration of workloads across clusters of machines for improved scalability and resilience.",
     icon: KubernetesIcon,
     projectsCount: 1,
-    skillLevelPercentage: 25,
+    skillLevelPercentage: 75,
     isActive: true,
     experienceType: "relative",
-    startDate: "04/2024",
-    displayOrder: 13,
+    startDate: "04/2022",
+    displayOrder: 10,
   },
-  {
-    id: "mongodb",
-    techName: "Mongo DB",
-    description:
-      "A popular NoSQL database used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
-    icon: MongoDBIcon,
-    projectsCount: 3,
-    skillLevelPercentage: 50,
-    isActive: true,
-    experienceType: "relative",
-    startDate: "08/2021",
-    displayOrder: 14,
-  },
-  {
-    id: "cosmosdb",
-    techName: "Cosmos DB",
-    description:
-      "A NoSQL database service used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
-    icon: CosmosDBIcon,
-    projectsCount: 1,
-    skillLevelPercentage: 40,
-    isActive: false,
-    experienceType: "relative",
-    startDate: "08/2022",
-    displayOrder: 12,
-  },
+  // {
+  //   id: "mongodb",
+  //   techName: "Mongo DB",
+  //   description:
+  //     "A popular NoSQL database used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
+  //   icon: MongoDBIcon,
+  //   projectsCount: 3,
+  //   skillLevelPercentage: 50,
+  //   isActive: true,
+  //   experienceType: "relative",
+  //   startDate: "08/2023",
+  //   displayOrder: 11,
+  // },
+  // {
+  //   id: "cosmosdb",
+  //   techName: "Cosmos DB",
+  //   description:
+  //     "A NoSQL database service used for storing and managing unstructured data, often used in web and mobile applications to provide flexible data storage.",
+  //   icon: CosmosDBIcon,
+  //   projectsCount: 1,
+  //   skillLevelPercentage: 40,
+  //   isActive: false,
+  //   experienceType: "relative",
+  //   startDate: "08/2022",
+  //   displayOrder: 12,
+  // },
   {
     id: "html",
     techName: "HTML",
@@ -350,9 +358,9 @@ export const skills: ISkills = [
     projectsCount: 10,
     skillLevelPercentage: 90,
     isActive: true,
-    startDate: "06/2021",
+    startDate: "06/2018",
     experienceType: "relative",
-    displayOrder: 15,
+    displayOrder: 12,
   },
   {
     id: "css",
@@ -363,9 +371,9 @@ export const skills: ISkills = [
     projectsCount: 10,
     skillLevelPercentage: 90,
     isActive: true,
-    startDate: "06/2021",
+    startDate: "06/2018",
     experienceType: "relative",
-    displayOrder: 16,
+    displayOrder: 13,
   },
   {
     id: "redux",
@@ -375,24 +383,24 @@ export const skills: ISkills = [
     icon: ReduxIcon,
     projectsCount: 3,
     skillLevelPercentage: 70,
-    isActive: false,
+    isActive: true,
     startDate: "06/2021",
     experienceType: "relative",
-    displayOrder: 15,
+    displayOrder: 14,
   },
-  {
-    id: "fluentui",
-    techName: "Fluent UI",
-    description:
-      "A design system developed by Microsoft for building user interfaces, offering a set of reusable components and tools for creating modern web and mobile applications.",
-    icon: FluentUIIcon,
-    projectsCount: 1,
-    skillLevelPercentage: 80,
-    isActive: false,
-    startDate: "06/2022",
-    experienceType: "relative",
-    displayOrder: 16,
-  },
+  // {
+  //   id: "fluentui",
+  //   techName: "Fluent UI",
+  //   description:
+  //     "A design system developed by Microsoft for building user interfaces, offering a set of reusable components and tools for creating modern web and mobile applications.",
+  //   icon: FluentUIIcon,
+  //   projectsCount: 1,
+  //   skillLevelPercentage: 80,
+  //   isActive: false,
+  //   startDate: "06/2022",
+  //   experienceType: "relative",
+  //   displayOrder: 16,
+  // },
   {
     id: "bootStrap",
     techName: "BootStrap",
@@ -401,11 +409,10 @@ export const skills: ISkills = [
     icon: BootStrapIcon,
     projectsCount: 3,
     skillLevelPercentage: 70,
-    isActive: false,
-    experienceType: "fixed",
-    startDate: "08/2021",
-    endDate: "12/2021",
-    displayOrder: 17,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "08/2019",
+    displayOrder: 15,
   },
   {
     id: "jest",
@@ -415,10 +422,10 @@ export const skills: ISkills = [
     icon: JestIcon,
     projectsCount: 1,
     skillLevelPercentage: 70,
-    isActive: false,
+    isActive: true,
     startDate: "06/2022",
     experienceType: "relative",
-    displayOrder: 18,
+    displayOrder: 16,
   },
   {
     id: "nodejs",
@@ -432,22 +439,22 @@ export const skills: ISkills = [
     experienceType: "fixed",
     startDate: "08/2021",
     endDate: "12/2021",
-    displayOrder: 19,
+    displayOrder: 17,
   },
-  {
-    id: "expressjs",
-    techName: "Express JS",
-    description:
-      "A popular web framework for Node JS that provides a robust set of features for web and mobile applications.",
-    icon: ExpressIcon,
-    projectsCount: 10,
-    skillLevelPercentage: 20,
-    isActive: false,
-    experienceType: "fixed",
-    startDate: "08/2021",
-    endDate: "12/2021",
-    displayOrder: 20,
-  },
+  // {
+  //   id: "expressjs",
+  //   techName: "Express JS",
+  //   description:
+  //     "A popular web framework for Node JS that provides a robust set of features for web and mobile applications.",
+  //   icon: ExpressIcon,
+  //   projectsCount: 10,
+  //   skillLevelPercentage: 20,
+  //   isActive: false,
+  //   experienceType: "fixed",
+  //   startDate: "08/2021",
+  //   endDate: "12/2021",
+  //   displayOrder: 20,
+  // },
   {
     id: "websockets",
     techName: "Web Sockets",
@@ -460,7 +467,7 @@ export const skills: ISkills = [
     experienceType: "fixed",
     startDate: "08/2021",
     endDate: "06/2022",
-    displayOrder: 21,
+    displayOrder: 18,
   },
   {
     id: "restapi",
@@ -473,7 +480,7 @@ export const skills: ISkills = [
     isActive: false,
     experienceType: "relative",
     startDate: "06/2021",
-    displayOrder: 22,
+    displayOrder: 19,
   },
   {
     id: "python",
@@ -482,75 +489,51 @@ export const skills: ISkills = [
       "A high-level programming language used for web development, data analysis, scientific computing, and more.",
     icon: PythonIcon,
     projectsCount: 4,
-    skillLevelPercentage: 20,
-    isActive: false,
+    skillLevelPercentage: 60,
+    isActive: true,
     experienceType: "fixed",
-    startDate: "05/2021",
-    endDate: "08/2021",
-    displayOrder: 23,
+    startDate: "08/2023",
+    endDate: "09/2024",
+    displayOrder: 20,
   },
 ];
 
 export const projects: IProjectDict = {
   pro4: {
     id: "pro4",
-    title: "Pro4",
+    title: "Mobile Cube",
     description:
-      "Pro4 is a versatile event management website that simplifies the process of creating, managing, and promoting events. With customizable registration forms, secure payment collection, and convenient attendee engagement features, Pro4 streamlines event organization.",
-    githubLink: "",
-    projectLink: "https://pro4.anudeep.info",
-    image: Pro4Image,
+      "This is a user website that provides various services related to the mobiles and vaiuos options to choose from the availability",
+    githubLink: "https://github.com/Avinash-4/Mobileproject",
+    projectLink: "",
+    image: Mobile,
     logo: "",
     gif: "",
-    techStack: ["golang", "gcp", "angular", "mongodb"],
+    techStack: ["reactjs", "mongodb", "sql", "python", "typeScript"],
   },
   websitetracker: {
     id: "website-tracker",
     title: "Website tracker",
     description:
       "Website tracker is a tool designed to track and monitor the behavior and engagement of website users. It records and provides insights into the number of times a user has visited the website and the duration of time spent on the site during each visit.",
-    githubLink: "https://github.com/anudeep-mp/tracker-api",
+    githubLink: "",
     projectLink: "",
-    image: TrackerImage,
-    logo: TrackerLogo,
+    image: Pro4Image,
+    logo: "",
     gif: "",
-    techStack: ["golang", "mongodb", "reactjs", "typescript"],
+    techStack: ["golang", "mongodb", "angular", "typeScript", "python"],
   },
   cubechat: {
     id: "cube-chat",
     title: "Cube Chat",
     description:
       "Cube Chat is a real-time chat platform that allows users to communicate with their friends. It offers various functionalities, such as discovering people on Cube Chat, connecting with friends, and engaging in real-time conversations.",
-    githubLink: "https://github.com/anudeep-m/Cube-chat",
-    projectLink: "https://cube-chat.anudeep.info",
-    image: CubeChatImage,
-    logo: CubeChatLogo,
-    gif: CubeChatGif,
+    githubLink: "",
+    projectLink: "",
+    image: Pro4Image,
+    logo: "",
+    gif: "",
     techStack: ["reactjs", "nodejs", "expressjs", "mongodb", "websockets"],
-  },
-  cubemusic: {
-    id: "cube-music",
-    title: "Cube Music",
-    description:
-      "Cube Music is an online music streaming platform designed for playing songs. It offers various features for managing personal playlists, liked songs, adding songs to a queue, and creating albums. Additionally, Cube Music has an admin management system that enables administrators to add new albums.",
-    githubLink: "https://github.com/anudeep-m/Cube-music",
-    projectLink: "https://cube-music.anudeep.info",
-    image: CubeMusicImage,
-    logo: CubeMusicLogo,
-    gif: CubeMusicGif,
-    techStack: ["reactjs", "nodejs", "expressjs", "mongodb"],
-  },
-  cubekart: {
-    id: "cubekart",
-    title: "Cubekart",
-    githubLink: "https://github.com/anudeep-m/Cubekart",
-    projectLink: "https://cubekart.anudeep.info",
-    image: CubekartImage,
-    logo: CubekartLogo,
-    gif: CubekartGif,
-    description:
-      "Cubekart is an online shopping platform that enables customers to purchase products through a web application. The platform offers various features such as adding items to a virtual cart, placing orders, and leaving reviews. Additionally, Cubekart features an admin management system, allowing administrators to add new products and manage orders.",
-    techStack: ["reactjs", "nodejs", "expressjs", "mongodb"],
   },
 };
 
@@ -560,30 +543,16 @@ export const contactLinks: IContactLink[] = [
   {
     id: "phone",
     icon: PhoneIcon,
-    link: "tel:+91-900-332-2159",
+    link: "tel:+18168952829",
     label: "Phone",
-    socialId: "+91-900-332-2159",
+    socialId: "+18168952829",
   },
   {
     id: "mail",
     icon: MailIcon,
-    link: "mailto:anudeep.mp7@gmail.com",
+    link: "mailto:avinashcm11@gmail.com",
     label: "Mail",
-    socialId: "anudeep.mp7@gmail.com",
-  },
-  {
-    id: "whatsapp",
-    icon: WhatsAppIcon,
-    link: "https://wa.me/919003322159",
-    label: "WhatsApp",
-    socialId: "+91-900-332-2159",
-  },
-  {
-    id: "telegram",
-    icon: TelegramIcon,
-    link: "https://t.me/i_anudeep",
-    label: "Telegram",
-    socialId: "@i_anudeep",
+    socialId: "avinashcm11@gmail.com",
   },
 ];
 
@@ -591,29 +560,15 @@ export const socialLinks: ISocialLink[] = [
   {
     id: "linkedin",
     icon: LinkedInIcon,
-    link: "https://www.linkedin.com/in/anudeep-m",
+    link: "https://www.linkedin.com/in/avinash444/",
     label: "LinkedIn",
-    socialId: "anudeep-m",
+    socialId: "Avinash chowdary",
   },
   {
     id: "github",
     icon: GitHubIcon,
-    link: "https://github.com/anudeep-mp",
+    link: "https://github.com/Avinash-4",
     label: "GitHub",
-    socialId: "anudeep-mp",
-  },
-  {
-    id: "x",
-    icon: TwitterIcon,
-    link: "https://x.com/i__anudeep",
-    label: "X",
-    socialId: "i__anudeep",
-  },
-  {
-    id: "instagram",
-    icon: InstagramIcon,
-    link: "https://instagram.com/i_anudeep",
-    label: "Instagram",
-    socialId: "i_anudeep",
+    socialId: "Avinash-4",
   },
 ];

@@ -25,7 +25,6 @@ export interface ICareerItem {
   orgName: string;
   orgPosition: string;
   orgTenure: string;
-  orgLink: string;
   location: string;
 }
 
