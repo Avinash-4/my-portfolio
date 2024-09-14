@@ -69,18 +69,6 @@ export default function Career() {
                             />
                             {item.orgPosition}
                           </div>
-                          <a
-                            href={item.orgLink}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="org-detail org-name"
-                          >
-                            <img
-                              src={OrganisationImage}
-                              className="org-position-image"
-                            />
-                            {item.orgName}
-                          </a>
                           <div className="org-detail org-location">
                             <img
                               src={LocationImage}
