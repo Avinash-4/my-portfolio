@@ -112,7 +112,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: ApolloBGlogo,
     orgName: "Apollo Health Systems",
     orgPosition: "Jr. Java/ UI Developer",
-    orgTenure: "May 2018- July 2019",
+    orgTenure: "2018 / 2019",
     location: "India",
   },
   {
@@ -121,7 +121,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: IlensysLogo,
     orgName: "Ilensys Technologies Pvt. Ltd",
     orgPosition: "Angular/JavaScript Developer",
-    orgTenure: "Aug 2019 - Oct 2020",
+    orgTenure: "2019 / 2020",
     location: "India",
   },
   {
@@ -130,7 +130,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: tmobilebglogo,
     orgName: "T-mobile",
     orgPosition: "Front end/UI Developer",
-    orgTenure: "Nov 2020 - Aug 2021",
+    orgTenure: "2020 / 2021",
     location: "WA",
   },
   {
@@ -139,7 +139,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: Nationwidebglogo,
     orgName: "Nationwide Insurance",
     orgPosition: "Full stack Developer",
-    orgTenure: "Oct 2021- Jun 2023",
+    orgTenure: "2022 / 2023",
     location: "OH",
   },
   {
@@ -148,7 +148,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: AmericanAirlinesbglogo,
     orgName: "American Airlines",
     orgPosition: "Sr Software Engineer -@CyberSecurity",
-    orgTenure: "Aug 2023- present",
+    orgTenure: "2023 - present",
     location: "TX",
   },
 ];
