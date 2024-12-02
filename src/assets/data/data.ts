@@ -113,7 +113,7 @@ export const carrerData: ICareerItem[] = [
     orgBGLogo: ApolloBGlogo,
     orgName: "Apollo Health Systems",
     orgPosition: "Jr. Java/ UI Developer",
-    orgTenure: "2018 / 2019",
+    orgTenure: "-",
     location: "India",
   },
   {
@@ -121,8 +121,8 @@ export const carrerData: ICareerItem[] = [
     orgLogo: IlensysLogo,
     orgBGLogo: IlensysLogo,
     orgName: "Ilensys Technologies Pvt. Ltd",
-    orgPosition: "Angular/JavaScript Developer",
-    orgTenure: "2019 / 2020",
+    orgPosition: "JavaScript Developer",
+    orgTenure: "-",
     location: "India",
   },
   {
