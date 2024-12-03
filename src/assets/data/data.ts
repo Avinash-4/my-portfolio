@@ -10,6 +10,7 @@ import AmericanAirlinesbglogo from "../../assets/images/AmericanAirlinesbg-logo.
 import JestIcon from "../../assets/images/jest.png";
 import WebSocketsIcon from "../../assets/images/web-sockets.png";
 import Mobile from "../../assets/images/mobileproject.png";
+import Dashboard from "../../assets/images/dashboard.jpg";
 import BootStrapIcon from "../../assets/images/bootstrap.png";
 import TypeScriptIcon from "../../assets/images/typescript.png";
 import Javaicon from "../../assets/images/javalogo.png";
@@ -500,10 +501,29 @@ export const skills: ISkills = [
 
 export const projects: IProjectDict = {
   pro4: {
+    id: "dashboard",
+    title: "Dashboard",
+    description:
+      "This is a Platform that provides various activities related to the internal services of the org, where we design using figma for various plugins/templates",
+    githubLink: "",
+    projectLink: "",
+    image: Dashboard,
+    logo: "",
+    gif: "",
+    techStack: [
+      "reactjs",
+      "mongodb",
+      "figma",
+      "sql",
+      "python",
+      "java",
+      "typeScript",
+    ],
+  },
+  pro45: {
     id: "pro4",
     title: "Mobile Cube",
-    description:
-      "This is a user website that provides various services related to the mobiles and vaiuos options to choose from the availability",
+    description: `This is a user website that provides various services related to the mobiles and vaiuos options to choose from the availability`,
     githubLink: "https://github.com/Avinash-4/Mobileproject",
     projectLink: "",
     image: Mobile,
