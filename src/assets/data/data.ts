@@ -2,8 +2,10 @@ import tmobilebglogo from "../../assets/images/t-mobile-bg.png";
 import tmobilelogo from "../../assets/images/t-mobile.png";
 import Nationwidelogo from "../../assets/images/nationwide-logo.jpg";
 import Nationwidebglogo from "../../assets/images/Nationwide-Logo-bg.png";
-import Apollologo from "../../assets/images/apollo-logo.jpg";
-import ApolloBGlogo from "../../assets/images/Apollo-logo-bg.png";
+import AirportAuthoritylogoBG from "../../assets/images/Airports_authority_of_India_Logo.png";
+import AirportAuthoritylogo from "../../assets/images/Airports-authority-logo-bg.png";
+import AmexLogoBG from "../../assets/images/amex-logo.png";
+import AmexLogo from "../../assets/images/American-Express-logo.png";
 import IlensysLogo from "../../assets/images/Ilensys-logo.png";
 import AmericanAirlineslogo from "../../assets/images/AmericanAirlines-logo.jpg";
 import AmericanAirlinesbglogo from "../../assets/images/AmericanAirlinesbg-logo.png";
@@ -96,7 +98,7 @@ export const introInfo: {
   shortDesc: string;
 } = {
   name: "Avinash",
-  shortDesc: "I create value by building web",
+  shortDesc: "I create value by building software",
 };
 
 export const aboutInfo: string = `I specialize in full-stack development, creating and integrating
@@ -109,48 +111,30 @@ this fast moving world.`;
 export const carrerData: ICareerItem[] = [
   {
     id: 1,
-    orgLogo: Apollologo,
-    orgBGLogo: ApolloBGlogo,
-    orgName: "Apollo Health Systems",
-    orgPosition: "Jr. Java/ UI Developer",
-    orgTenure: "-",
+    orgLogo: AirportAuthoritylogo,
+    orgBGLogo: AirportAuthoritylogoBG,
+    orgName: "Airports Authority of India",
+    orgPosition: "Software Developer",
+    orgTenure: "May 2020 - Apr 2021",
     location: "India",
   },
   {
     id: 2,
-    orgLogo: IlensysLogo,
-    orgBGLogo: IlensysLogo,
-    orgName: "Ilensys Technologies Pvt. Ltd",
-    orgPosition: "JavaScript Developer",
-    orgTenure: "-",
-    location: "India",
-  },
-  {
-    id: 3,
-    orgLogo: tmobilelogo,
-    orgBGLogo: tmobilebglogo,
-    orgName: "T-mobile",
-    orgPosition: "Front end/UI Developer",
-    orgTenure: "2020 / 2021",
-    location: "WA",
-  },
-  {
-    id: 4,
-    orgLogo: Nationwidelogo,
-    orgBGLogo: Nationwidebglogo,
-    orgName: "Nationwide Insurance",
-    orgPosition: "Full stack Developer",
-    orgTenure: "2022 / 2023",
-    location: "OH",
-  },
-  {
-    id: 5,
     orgLogo: AmericanAirlineslogo,
     orgBGLogo: AmericanAirlinesbglogo,
     orgName: "American Airlines",
-    orgPosition: "Sr Software Engineer -@CyberSecurity",
-    orgTenure: "2023 - present",
-    location: "TX",
+    orgPosition: "Software Engineer -@CyberSecurity",
+    orgTenure: "Sep 2022 - Dec 2024",
+    location: "Fortworth, TX",
+  },
+  {
+    id: 3,
+    orgLogo: AmexLogoBG,
+    orgBGLogo: AmexLogo,
+    orgName: "American Express",
+    orgPosition: "Software Developer",
+    orgTenure: "Jan 2025 - Current",
+    location: "Phoenix, AZ",
   },
 ];
 
@@ -161,10 +145,10 @@ export const skills: ISkills = [
     description:
       "A scripting language used for creating interactive web pages and web applications, often used alongside HTML and CSS.",
     icon: JavaScriptIcon,
-    projectsCount: 10,
+    projectsCount: 3,
     skillLevelPercentage: 85,
     isActive: true,
-    startDate: "06/2018",
+    startDate: "09/2022",
     experienceType: "relative",
     displayOrder: 3,
   },
@@ -174,10 +158,10 @@ export const skills: ISkills = [
     description:
       "A JavaScript library used for building user interfaces, allowing developers to create reusable UI components and build complex applications.",
     icon: ReactIcon,
-    projectsCount: 4,
+    projectsCount: 3,
     skillLevelPercentage: 85,
     isActive: true,
-    startDate: "06/2019",
+    startDate: "09/2022",
     experienceType: "relative",
     displayOrder: 2,
   },
@@ -188,9 +172,9 @@ export const skills: ISkills = [
       "A typed superset of JavaScript that provides better type checking and enables better code organization, allowing for more maintainable codebases.",
     icon: TypeScriptIcon,
     projectsCount: 3,
-    skillLevelPercentage: 90,
+    skillLevelPercentage: 80,
     isActive: true,
-    startDate: "08/2019",
+    startDate: "09/2022",
     experienceType: "relative",
     displayOrder: 1,
   },
@@ -201,9 +185,9 @@ export const skills: ISkills = [
       "Java is a high-level, class-based, object-oriented programming language ",
     icon: Javaicon,
     projectsCount: 3,
-    skillLevelPercentage: 70,
+    skillLevelPercentage: 85,
     isActive: true,
-    startDate: "06/2021",
+    startDate: "01/2023",
     experienceType: "relative",
     displayOrder: 4,
   },
@@ -242,7 +226,7 @@ export const skills: ISkills = [
     projectsCount: 4,
     skillLevelPercentage: 75,
     isActive: true,
-    startDate: "09/2020",
+    startDate: "09/2022",
     experienceType: "relative",
     displayOrder: 5,
   },
@@ -253,10 +237,10 @@ export const skills: ISkills = [
       "SQL is a standard language for storing, manipulating, and retrieving data in relational database systems. SQL is used to query, insert, update and modify data.",
     icon: SQLIcon,
     projectsCount: 3,
-    skillLevelPercentage: 60,
+    skillLevelPercentage: 80,
     isActive: true,
     experienceType: "relative",
-    startDate: "06/2021",
+    startDate: "09/2022",
     displayOrder: 5,
   },
   {
@@ -269,7 +253,7 @@ export const skills: ISkills = [
     skillLevelPercentage: 60,
     isActive: false,
     experienceType: "relative",
-    startDate: "08/2020",
+    startDate: "03/2023",
     displayOrder: 7,
   },
   {
@@ -282,7 +266,7 @@ export const skills: ISkills = [
     skillLevelPercentage: 30,
     isActive: false,
     experienceType: "relative",
-    startDate: "06/2022",
+    startDate: "08/2024",
     displayOrder: 8,
   },
   {
@@ -295,7 +279,7 @@ export const skills: ISkills = [
     skillLevelPercentage: 75,
     isActive: true,
     experienceType: "relative",
-    startDate: "12/2021",
+    startDate: "09/2022",
     displayOrder: 6,
   },
   {
@@ -308,7 +292,7 @@ export const skills: ISkills = [
     skillLevelPercentage: 75,
     isActive: true,
     experienceType: "relative",
-    startDate: "04/2022",
+    startDate: "09/2022",
     displayOrder: 19,
   },
   {
@@ -321,7 +305,7 @@ export const skills: ISkills = [
     skillLevelPercentage: 75,
     isActive: true,
     experienceType: "relative",
-    startDate: "04/2022",
+    startDate: "09/2022",
     displayOrder: 10,
   },
   // {
@@ -359,7 +343,7 @@ export const skills: ISkills = [
     projectsCount: 10,
     skillLevelPercentage: 90,
     isActive: true,
-    startDate: "06/2018",
+    startDate: "05/2020",
     experienceType: "relative",
     displayOrder: 12,
   },
@@ -372,7 +356,7 @@ export const skills: ISkills = [
     projectsCount: 10,
     skillLevelPercentage: 90,
     isActive: true,
-    startDate: "06/2018",
+    startDate: "06/2020",
     experienceType: "relative",
     displayOrder: 13,
   },
@@ -385,7 +369,7 @@ export const skills: ISkills = [
     projectsCount: 3,
     skillLevelPercentage: 70,
     isActive: true,
-    startDate: "06/2021",
+    startDate: "06/2022",
     experienceType: "relative",
     displayOrder: 14,
   },
@@ -412,7 +396,7 @@ export const skills: ISkills = [
     skillLevelPercentage: 70,
     isActive: true,
     experienceType: "relative",
-    startDate: "08/2019",
+    startDate: "08/2022",
     displayOrder: 15,
   },
   {
@@ -439,7 +423,7 @@ export const skills: ISkills = [
     isActive: false,
     experienceType: "fixed",
     startDate: "08/2021",
-    endDate: "12/2021",
+    endDate: "12/2025",
     displayOrder: 17,
   },
   // {
@@ -480,7 +464,7 @@ export const skills: ISkills = [
     skillLevelPercentage: 70,
     isActive: false,
     experienceType: "relative",
-    startDate: "06/2021",
+    startDate: "06/2020",
     displayOrder: 19,
   },
   {
@@ -563,16 +547,16 @@ export const contactLinks: IContactLink[] = [
   {
     id: "phone",
     icon: PhoneIcon,
-    link: "tel:+18168952829",
+    link: "tel:+19527159293",
     label: "Phone",
-    socialId: "+18168952829",
+    socialId: "+19527159293",
   },
   {
     id: "mail",
     icon: MailIcon,
-    link: "mailto:avinashcm11@gmail.com",
+    link: "mailto:avinash18ck@gmail.com",
     label: "Mail",
-    socialId: "avinashcm11@gmail.com",
+    socialId: "avinash18ck@gmail.com",
   },
 ];
 
@@ -580,7 +564,7 @@ export const socialLinks: ISocialLink[] = [
   {
     id: "linkedin",
     icon: LinkedInIcon,
-    link: "https://www.linkedin.com/in/avinash444/",
+    link: "https://www.linkedin.com/in/avinashchowdary04/",
     label: "LinkedIn",
     socialId: "Avinash chowdary",
   },
