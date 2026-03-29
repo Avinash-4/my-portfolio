@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400&family=Delius&family=Foldit:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500&display=swap");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Alegreya", serif, "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: show;
@@ -12,23 +9,16 @@ body {
   background-color: var(--main-background-color);
 }
 
-/* scroll bar css */
-body::-webkit-scrollbar {
-  width: 10px;
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--nav-background-color);
-}
+/* scroll bar */
+body::-webkit-scrollbar { width: 6px; }
+body::-webkit-scrollbar-track { background: var(--nav-background-color); }
 body::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-thumb-bg-color);
-  border-radius: 6px;
-  border: 3px solid var(--nav-background-color);
+  background: linear-gradient(180deg, var(--primary-color), var(--ternery-color));
+  border-radius: 10px;
 }
-/* scroll bar css */
 
 * {
-  font-family: "Delius", serif;
+  font-family: "Space Grotesk", "Inter", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -36,107 +26,67 @@ body::-webkit-scrollbar-thumb {
   -webkit-tap-highlight-color: transparent;
 }
 
-a {
-  text-decoration: none;
-}
-
-/* :root {
-  font-size: 16px;
-  --primary-hue: 240;
-  --primary-color: hsl(var(--primary-hue), 86%, 44%);
-  --secondary-color: hsl(var(--primary-hue), 76%, 94%);
-  --ternery-color: hsl(var(--primary-hue), 100%, 74%);
-  --nav-background-color: hsl(var(--primary-hue), 0%, 9%);
-  --main-background-color: hsl(var(--primary-hue), 0%, 0%);
-  --mini-background-color: hsla(var(--primary-hue), 60%, 60%, 0.329);
-  --mini-background-color2: hsla(var(--primary-hue), 0%, 100%, 0.25);
-  --mini-background-color3: hsla(var(--primary-hue), 0%, 100%, 0.3);
-  --mini-background-color4: hsla(var(--primary-hue), 86%, 44%, 0.4);
-  --mini-background-color5: hsla(var(--primary-hue), 86%, 44%, 0.25);
-  --text-color1: hsl(var(--primary-hue), 0%, 100%);
-  --text-color2: hsl(var(--primary-hue), 60%, 70%);
-  --text-color3: hsl(var(--primary-hue), 54%, 69%);
-  --break-line-gradient-color1: var(--primary-color);
-  --break-line-gradient-color2: transparent;
-  --scroll-thumb-bg-color: #24123a;
-  --scroll-thumb-thickness: 4px;
-  --donut-block-1-color: #009fe3;
-  --donut-block-2-color: #367bc0;
-  --donut-block-3-color: #6b569b;
-  --donut-block-4-color: #a32f76;
-  --donut-block-5-color: #d70b52;
-} */
+a { text-decoration: none; }
 
 :root {
-  /* Light Mode Variables */
-  --light-primary-hue: 720;
-  --light-primary-color: hsl(var(--light-primary-hue), 86%, 44%);
-  --light-secondary-color: hsl(var(--light-primary-hue), 76%, 24%);
-  --light-ternary-color: hsl(var(--light-primary-hue), 100%, 24%);
-  --light-nav-background-color: hsl(var(--light-primary-hue), 30%, 90%);
-  --light-main-background-color: hsl(var(--light-primary-hue), 40%, 95%);
-  --light-mini-background-color: hsla(
-    var(--light-primary-hue),
-    60%,
-    60%,
-    0.25
-  );
-  --light-mini-background-color2: hsla(
-    var(--light-primary-hue),
-    0%,
-    100%,
-    0.75
-  );
-  --light-mini-background-color3: hsla(var(--light-primary-hue), 0%, 100%, 0.75);
-  --light-mini-background-color4: hsla(var(--light-primary-hue), 86%, 44%, 0.4);
-  --light-mini-background-color5: hsla(
-    var(--light-primary-hue),
-    86%,
-    44%,
-    0.25
-  );
-  --light-text-color1: hsl(var(--light-primary-hue), 0%, 10%);
-  --light-text-color2: hsl(var(--light-primary-hue), 60%, 40%);
-  --light-text-color3: hsl(var(--light-primary-hue), 54%, 50%);
+  /* ─── Light Mode ─── */
+  --light-primary-color: #0066ff;
+  --light-secondary-color: #1a1f36;
+  --light-ternary-color: #6d28d9;
+  --light-nav-background-color: rgba(238, 242, 255, 0.96);
+  --light-main-background-color: #f0f4ff;
+  --light-mini-background-color: rgba(0, 102, 255, 0.08);
+  --light-mini-background-color2: rgba(255, 255, 255, 0.85);
+  --light-mini-background-color3: rgba(255, 255, 255, 0.9);
+  --light-mini-background-color4: rgba(0, 102, 255, 0.18);
+  --light-mini-background-color5: rgba(0, 102, 255, 0.1);
+  --light-text-color1: #0f172a;
+  --light-text-color2: #334155;
+  --light-text-color3: #0066ff;
   --light-break-line-gradient-color1: var(--light-primary-color);
   --light-break-line-gradient-color2: transparent;
-  --light-scroll-thumb-bg-color: hsl(var(--light-primary-hue), 100%, 34%, 0.2);
+  --light-scroll-thumb-bg-color: rgba(0, 102, 255, 0.3);
   --light-scroll-thumb-thickness: 4px;
-  --light-donut-block-1-color: #ff5500;
-  --light-donut-block-2-color: #ff7f0e;
-  --light-donut-block-3-color: #ffbf00;
-  --light-donut-block-4-color: #eeff00;
-  --light-donut-block-5-color: #85ff00;
+  --light-donut-block-1-color: #f43f5e;
+  --light-donut-block-2-color: #f97316;
+  --light-donut-block-3-color: #eab308;
+  --light-donut-block-4-color: #22c55e;
+  --light-donut-block-5-color: #0066ff;
+  --light-glow: rgba(0, 102, 255, 0.35);
+  --light-card-bg: rgba(255, 255, 255, 0.72);
+  --light-card-border: rgba(0, 102, 255, 0.18);
+  --light-grid-color: rgba(0, 102, 255, 0.055);
 
-  /* Dark Mode Variables */
-  --dark-primary-hue: 180;
-  --dark-primary-color: hsl(var(--dark-primary-hue), 86%, 44%);
-  --dark-secondary-color: hsl(var(--dark-primary-hue), 76%, 44%);
-  --dark-ternary-color: hsl(var(--dark-primary-hue), 100%, 34%);
-  --dark-nav-background-color: hsl(var(--dark-primary-hue), 0%, 20%);
-  --dark-main-background-color: hsl(var(--dark-primary-hue), 0%, 10%);
-  --dark-mini-background-color: hsla(var(--dark-primary-hue), 60%, 60%, 0.329);
-  --dark-mini-background-color2: hsla(var(--dark-primary-hue), 0%, 20%, 0.25);
-  --dark-mini-background-color3: hsla(var(--dark-primary-hue), 0%, 20%, 0.3);
-  --dark-mini-background-color4: hsla(var(--dark-primary-hue), 86%, 44%, 0.4);
-  --dark-mini-background-color5: hsla(var(--dark-primary-hue), 86%, 44%, 0.25);
-  --dark-text-color1: hsl(var(--dark-primary-hue), 0%, 90%);
-  --dark-text-color2: hsl(var(--dark-primary-hue), 60%, 70%);
-  --dark-text-color3: hsl(var(--dark-primary-hue), 54%, 69%);
+  /* ─── Dark Mode ─── */
+  --dark-primary-color: #00d4ff;
+  --dark-secondary-color: #7dd3fc;
+  --dark-ternary-color: #a78bfa;
+  --dark-nav-background-color: rgba(8, 18, 36, 0.94);
+  --dark-main-background-color: #060d18;
+  --dark-mini-background-color: rgba(0, 212, 255, 0.07);
+  --dark-mini-background-color2: rgba(0, 212, 255, 0.1);
+  --dark-mini-background-color3: rgba(167, 139, 250, 0.12);
+  --dark-mini-background-color4: rgba(0, 212, 255, 0.22);
+  --dark-mini-background-color5: rgba(0, 212, 255, 0.11);
+  --dark-text-color1: #e2e8f0;
+  --dark-text-color2: #94a3b8;
+  --dark-text-color3: #7dd3fc;
   --dark-break-line-gradient-color1: var(--dark-primary-color);
   --dark-break-line-gradient-color2: transparent;
-  --dark-scroll-thumb-bg-color: hsl(var(--dark-primary-hue), 100%, 34%, 0.2);
+  --dark-scroll-thumb-bg-color: rgba(0, 212, 255, 0.3);
   --dark-scroll-thumb-thickness: 4px;
-  --dark-donut-block-1-color: #ff5500;
-  --dark-donut-block-2-color: #ff7f0e;
-  --dark-donut-block-3-color: #ffbf00;
-  --dark-donut-block-4-color: #eeff00;
-  --dark-donut-block-5-color: #85ff00;
+  --dark-donut-block-1-color: #ff4d6d;
+  --dark-donut-block-2-color: #ff9f1c;
+  --dark-donut-block-3-color: #f8e71c;
+  --dark-donut-block-4-color: #06d6a0;
+  --dark-donut-block-5-color: #00d4ff;
+  --dark-glow: rgba(0, 212, 255, 0.4);
+  --dark-card-bg: rgba(0, 212, 255, 0.04);
+  --dark-card-border: rgba(0, 212, 255, 0.14);
+  --dark-grid-color: rgba(0, 212, 255, 0.04);
 }
 
-/* Apply the appropriate variables based on mode */
 .app.light-mode {
-  --primary-hue: var(--light-primary-hue);
   --primary-color: var(--light-primary-color);
   --secondary-color: var(--light-secondary-color);
   --ternery-color: var(--light-ternary-color);
@@ -159,10 +109,13 @@ a {
   --donut-block-3-color: var(--light-donut-block-3-color);
   --donut-block-4-color: var(--light-donut-block-4-color);
   --donut-block-5-color: var(--light-donut-block-5-color);
+  --glow: var(--light-glow);
+  --card-bg: var(--light-card-bg);
+  --card-border: var(--light-card-border);
+  --grid-color: var(--light-grid-color);
 }
 
 .app.dark-mode {
-  --primary-hue: var(--dark-primary-hue);
   --primary-color: var(--dark-primary-color);
   --secondary-color: var(--dark-secondary-color);
   --ternery-color: var(--dark-ternary-color);
@@ -185,34 +138,14 @@ a {
   --donut-block-3-color: var(--dark-donut-block-3-color);
   --donut-block-4-color: var(--dark-donut-block-4-color);
   --donut-block-5-color: var(--dark-donut-block-5-color);
+  --glow: var(--dark-glow);
+  --card-bg: var(--dark-card-bg);
+  --card-border: var(--dark-card-border);
+  --grid-color: var(--dark-grid-color);
 }
 
-@media (min-width: 0px) and (max-width: 510px) {
-  :root {
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 501px) and (max-width: 750px) {
-  :root {
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 751px) and (max-width: 1100px) {
-  :root {
-    font-size: 12px;
-  }
-}
-
-@media only screen and (min-device-width: 701px) and (max-device-width: 1000px) and (orientation: landscape) {
-  :root {
-    font-size: 10px;
-  }
-}
-
-@media only screen and (min-device-width: 120px) and (max-device-width: 700px) and (orientation: landscape) {
-  :root {
-    font-size: 8px;
-  }
-}
+@media (min-width: 0px) and (max-width: 510px) { :root { font-size: 12px; } }
+@media (min-width: 501px) and (max-width: 750px) { :root { font-size: 12px; } }
+@media (min-width: 751px) and (max-width: 1100px) { :root { font-size: 12px; } }
+@media only screen and (min-device-width: 701px) and (max-device-width: 1000px) and (orientation: landscape) { :root { font-size: 10px; } }
+@media only screen and (min-device-width: 120px) and (max-device-width: 700px) and (orientation: landscape) { :root { font-size: 8px; } }

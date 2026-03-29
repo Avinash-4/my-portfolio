@@ -15,51 +15,92 @@
   align-items: center;
 }
 
+/* ─── Nav Items ─── */
 .side-nav .side-nav-item {
-  color: var(--text-color1);
-  padding: 1.5rem 0;
+  color: var(--text-color2);
+  padding: 1.2rem 0;
   width: 100%;
   cursor: pointer;
   text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.side-nav .side-nav-item.active,
-.side-nav .visits {
-  background: linear-gradient(
-    90deg,
-    var(--mini-background-color4),
-    var(--nav-background-color)
-  );
+/* Right-edge neon indicator */
+.side-nav .side-nav-item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: linear-gradient(180deg, var(--primary-color), var(--ternery-color));
+  border-radius: 2px 0 0 2px;
+  transition: height 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 8px var(--glow);
+}
+
+.side-nav .side-nav-item.active::after {
+  height: 55%;
+}
+
+.side-nav .side-nav-item.active {
+  color: var(--primary-color);
+  background: linear-gradient(90deg, transparent, var(--mini-background-color4));
+  text-shadow: 0 0 12px var(--glow);
 }
 
 .side-nav .side-nav-item:not(.active):hover {
   color: var(--primary-color);
-}
-.side-nav .side-nav-item.active:hover {
-  color: var(--text-color2);
+  background: linear-gradient(90deg, transparent, var(--mini-background-color));
 }
 
+/* ─── Logo ─── */
 .side-nav .logo-img {
   height: 5rem;
   width: 5rem;
-  margin: 1rem 0;
+  margin: 1.25rem 0;
   cursor: pointer;
-  border: 2px solid;
-  border-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   border-radius: 50%;
+  box-shadow: 0 0 16px var(--glow), 0 0 32px var(--mini-background-color4);
+  transition: all 0.35s ease;
 }
 
-.side-nav .view-mode{
-  height: 3rem;
-  width: 3rem;
-  padding: 2px;
+.side-nav .logo-img:hover {
+  box-shadow: 0 0 28px var(--glow), 0 0 56px var(--mini-background-color4);
+  transform: scale(1.06);
+}
+
+/* ─── Mode Toggle ─── */
+.side-nav .view-mode {
+  height: 2.4rem;
+  width: 2.4rem;
+  padding: 3px;
   cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.35s ease;
+  margin-bottom: 0.5rem;
 }
 
+.side-nav .view-mode:hover {
+  filter: drop-shadow(0 0 8px var(--primary-color));
+  transform: rotate(30deg) scale(1.1);
+}
+
+/* ─── Visits Counter ─── */
 .side-nav .visits {
-  font-size: 1rem;
+  font-size: 0.7rem;
   text-align: center;
-  padding: 10px;
-  color: var(--text-color1);
+  padding: 8px 4px;
+  color: var(--text-color2);
   width: 100%;
+  letter-spacing: 0.8px;
+  background: linear-gradient(90deg, transparent, var(--mini-background-color), transparent);
 }

@@ -8,6 +8,7 @@ export default function Intro() {
     <div className="section intro">
       <div className="intro-text">
         <div className="content">
+          <div className="ai-badge">AI &amp; Full Stack Engineer</div>
           <div className="heading-hi">hey! I'm</div>
           <div className="heading-name">{introInfo.name}</div>
           <div className="heading-desc">{introInfo.shortDesc}</div>

@@ -14,20 +14,16 @@
   justify-content: center;
   width: 100%;
   position: relative;
-  position: relative;
   bottom: 2%;
 }
 
 .section.career .wrapper::before,
 .section.career .wrapper::after {
   width: 100%;
-  height: 2px;
+  height: 1px;
   content: "";
-  background: linear-gradient(
-    90deg,
-    var(--break-line-gradient-color1),
-    var(--break-line-gradient-color2)
-  );
+  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color), transparent);
+  box-shadow: 0 0 8px var(--glow);
 }
 
 .section.career .scroll-container {
@@ -37,28 +33,51 @@
 }
 
 .section.career .scroll-container::-webkit-scrollbar {
-  height: var(--scroll-thumb-thickness);
-  color: var(--ternery-color);
+  height: 4px;
 }
-
 .section.career .scroll-container::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-thumb-bg-color);
-  border-radius: 1rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color));
+  border-radius: 4px;
 }
 
 .section.career .step-progress {
-  margin: 6rem 0 4rem;
+  margin: 5rem 0 3.5rem;
   list-style: none;
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
 
+/* ─── Career Card ─── */
 .section.career .step-progress-item {
   padding: 2rem;
   position: relative;
   min-width: 25rem;
-  max-height: 12rem;
+  max-height: 14rem;
+  perspective: 1000px;
+}
+
+.section.career .step-progress-item-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    0 0 1px var(--card-border),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.section.career .step-progress-item:hover .step-progress-item-content {
+  transform: perspective(800px) rotateY(-6deg) rotateX(3deg) translateZ(8px);
+  box-shadow:
+    8px 12px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px var(--glow),
+    0 0 1px var(--primary-color);
 }
 
 .section.career .step-progress-item .background-image-container {
@@ -70,17 +89,20 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.15;
+  opacity: 0.08;
+  border-radius: 16px;
 }
 
+/* Timeline connector line */
 .section.career .step-progress-item::before {
   content: "";
   position: absolute;
   left: 7rem;
   top: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--text-color2);
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color), transparent);
+  opacity: 0.4;
 }
 
 .section.career .step-progress-item:last-child::before {
@@ -90,37 +112,44 @@
 .section.career .org-detail {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   width: fit-content;
-  margin: 1rem;
+  margin: 0.65rem 0.5rem;
   position: relative;
   z-index: 2;
-  color: var(--secondary-color);
+  color: var(--text-color1);
+  font-size: 0.9rem;
 }
 
 .section.career .org-detail .org-position-image {
   height: 1rem;
-  margin-right: 4px;
+  margin-right: 6px;
+  opacity: 0.8;
 }
 
 .section.career .org-name,
 .section.career .org-tenure {
-  color: var(--ternery-color);
+  color: var(--primary-color);
+  font-weight: 500;
 }
 
 .section.career .org-name:hover {
-  color: var(--primary-color);
+  color: var(--ternery-color);
 }
 
 .section.career .org-logo {
   width: 3.5rem;
   margin-top: 0.5rem;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   background-color: var(--main-background-color);
-  padding: 3px;
-  left: 5rem;
-  top: -2rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 4px;
+  left: 4.8rem;
+  top: -1.8rem;
+  box-shadow: 0 0 12px var(--mini-background-color4);
 }
 
 .section.career .scroll-buttons {
@@ -137,9 +166,12 @@
   margin: 0 0.3rem;
   border: 1px solid var(--primary-color);
   border-radius: 50%;
-  background-color: var(--main-background-color);
+  background-color: var(--mini-background-color);
+  box-shadow: 0 0 8px var(--mini-background-color4);
+  transition: all 0.25s ease;
 }
 
 .section.career .scroll-buttons .scroll-button:hover {
-  background-color: var(--mini-background-color);
+  background-color: var(--mini-background-color4);
+  box-shadow: 0 0 14px var(--glow);
 }

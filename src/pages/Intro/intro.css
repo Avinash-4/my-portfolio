@@ -5,6 +5,7 @@
   flex-direction: row;
 }
 
+/* ─── Left: Text Block ─── */
 .section.intro .intro-text {
   display: flex;
   flex-direction: column;
@@ -12,21 +13,115 @@
   align-items: flex-start;
   width: 50%;
   height: 100%;
-  }
+}
 
-  .section.intro .content {
+.section.intro .content {
   margin: 3rem;
 }
 
 .section.intro .intro-text::before,
 .section.intro .intro-text::after {
   width: 100%;
-  height: 2px;
+  height: 1px;
   content: "";
-  background: linear-gradient(90deg, var(--break-line-gradient-color1), var(--break-line-gradient-color2));
+  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color), transparent);
+  box-shadow: 0 0 8px var(--glow);
 }
 
+/* ─── AI Badge ─── */
+.section.intro .ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--mini-background-color4), var(--mini-background-color3));
+  border: 1px solid var(--card-border);
+  border-radius: 2rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  box-shadow: 0 0 12px var(--mini-background-color4);
+  animation: badgePulse 3s ease-in-out infinite;
+}
 
+.section.intro .ai-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+  animation: dotBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 12px var(--mini-background-color4); }
+  50%       { box-shadow: 0 0 24px var(--mini-background-color4), 0 0 8px var(--glow); }
+}
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ─── Greeting ─── */
+.section.intro .heading-hi {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-color2);
+  letter-spacing: 1px;
+}
+
+/* ─── Name ─── */
+.section.intro .heading-name {
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--ternery-color) 60%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px var(--glow));
+  animation: nameShimmer 4s ease-in-out infinite;
+}
+
+@keyframes nameShimmer {
+  0%, 100% { filter: drop-shadow(0 0 18px var(--glow)); }
+  50%       { filter: drop-shadow(0 0 32px var(--glow)) brightness(1.1); }
+}
+
+/* ─── Description ─── */
+.section.intro .heading-desc {
+  font-size: 1.4rem;
+  color: var(--text-color2);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.section.intro .heading-hi,
+.section.intro .heading-name,
+.section.intro .heading-desc,
+.section.intro .heading-hobbies {
+  line-height: 1.25em;
+}
+
+.section.intro .heading-hobbies {
+  font-size: 1.1rem;
+  line-height: 2em;
+  padding: 0 12px;
+  background-color: var(--mini-background-color);
+  border: 1px solid var(--card-border);
+  margin: 10px 0;
+  border-radius: 6px;
+  color: var(--text-color2);
+}
+
+/* ─── Right: Image ─── */
 .section.intro .intro-image-container {
   display: flex;
   justify-content: center;
@@ -37,62 +132,19 @@
 
 .section.intro .intro-img {
   height: 80%;
+  filter: drop-shadow(0 0 30px var(--mini-background-color4));
+  animation: floatImage 5s ease-in-out infinite;
 }
 
-.section.intro .heading-hi {
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: var(--secondary-color);
-}
-
-.section.intro .heading-name {
-  font-size: 4.5rem;
-  font-weight: 500;
-  color: var(--primary-color);
-  text-shadow: 1px 3px 15px var(--primary-color);
-  letter-spacing: 3px;
-}
-
-.section.intro .heading-desc {
-  font-size: 1.75rem;
-  color: var(--secondary-color);
-}
-
-.section.intro .heading-hi,
-.section.intro .heading-name,
-.section.intro .heading-desc,
-.section.intro .heading-hobbies {
-  line-height: 1.25em;
-}
-
-.section.intro .heading-hobbies{
-  font-family: 'Delius', serif;
-  font-size: 1.2rem;
-  line-height: 2em;
-  padding: 0 10px;
-  background-color: var(--nav-background-color);
-  margin: 10px 0;
-  border-radius: 5px;
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
 }
 
 @media (max-width: 800px) {
-  .section.intro .intro-text {
-    width: 100%;
-  }
-
-  .section.intro .heading-hi {
-    font-size: 1.25rem;
-  }
-  
-  .section.intro .heading-name {
-    font-size: 3.5rem;
-  }
-  
-  .section.intro .heading-desc {
-    font-size: 1.25rem;
-  }
-
-  .section.intro .intro-image-container {
-    display: none;
-  }
+  .section.intro .intro-text { width: 100%; }
+  .section.intro .heading-hi { font-size: 1.2rem; }
+  .section.intro .heading-name { font-size: 3.5rem; }
+  .section.intro .heading-desc { font-size: 1.2rem; }
+  .section.intro .intro-image-container { display: none; }
 }

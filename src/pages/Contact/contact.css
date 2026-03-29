@@ -21,13 +21,10 @@
 .section.contact .wrapper::before,
 .section.contact .wrapper::after {
   width: 100%;
-  height: 2px;
+  height: 1px;
   content: "";
-  background: linear-gradient(
-    90deg,
-    var(--break-line-gradient-color1),
-    var(--break-line-gradient-color2)
-  );
+  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color), transparent);
+  box-shadow: 0 0 8px var(--glow);
 }
 
 .section.contact .platform-links {
@@ -39,6 +36,7 @@
   height: 18rem;
 }
 
+/* ─── Contact Form Container ─── */
 .section.contact .contact-form {
   width: 40%;
   min-height: fit-content;
@@ -47,8 +45,17 @@
   align-items: center;
   padding: 0 2rem;
 }
+
 .section.contact .contact-form form {
   position: relative;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .section.contact .input-form-rail {
@@ -58,8 +65,7 @@
   justify-content: space-between;
   align-items: center;
   height: fit-content;
-  margin: 1rem 0;
-  --input-box-width: 30rem;
+  margin: 0.75rem 0;
 }
 
 .section.contact .input-form-rail.fourth-rail {
@@ -82,28 +88,29 @@
   min-width: 100%;
 }
 
+/* ─── Input Fields ─── */
 .section.contact .contact-form .input-field input,
 .section.contact .contact-form .input-field textarea {
   border: 0;
+  border-bottom: 1px solid var(--card-border);
   display: block;
   padding: 1.5rem 0.8rem 0.6rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.5em;
-  background-color: var(--mini-background-color2);
-  border-radius: 3px;
-  color: var(--secondary-color);
+  background-color: transparent;
+  border-radius: 0;
+  color: var(--text-color1);
+  transition: border-bottom-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.section.contact .contact-form .input-field textarea {
-  overflow-y: hidden;
-}
+.section.contact .contact-form .input-field textarea { overflow-y: hidden; }
 
 .section.contact .contact-form .input-field input:-webkit-autofill,
 .section.contact .contact-form .input-field input:-webkit-autofill:hover,
 .section.contact .contact-form .input-field input:-webkit-autofill:focus,
 .section.contact .contact-form .input-field input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: var(--secondary-color);
+  -webkit-text-fill-color: var(--text-color1);
 }
 
 .section.contact .contact-form .input-field input:focus,
@@ -112,8 +119,10 @@
 .section.contact .contact-form .input-field textarea:valid {
   outline: 0;
   border-bottom-color: var(--primary-color);
+  box-shadow: 0 2px 0 var(--primary-color), 0 4px 12px rgba(0, 212, 255, 0.15);
 }
 
+/* ─── Animated Label ─── */
 .section.contact .contact-form .input-field .form-label {
   position: absolute;
   top: 1.25rem;
@@ -124,10 +133,10 @@
 
 .section.contact .contact-form .input-field .form-label-letter {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   min-width: 5px;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  color: var(--ternery-color);
+  color: var(--text-color2);
 }
 
 input:focus + .form-label .form-label-letter,
@@ -135,44 +144,65 @@ input:valid + .form-label .form-label-letter,
 textarea:focus + .form-label .form-label-letter,
 textarea:valid + .form-label .form-label-letter {
   transform: translateY(-0.9rem);
-  font-size: 0.8rem !important;
+  font-size: 0.72rem !important;
+  color: var(--primary-color);
 }
 
+/* ─── Submit Button ─── */
 .section.contact .contact-form .submit-button {
-  background-color: var(--mini-background-color3);
-  padding: 1.1rem 0;
-  border-radius: 3px;
-  border: none;
+  background: linear-gradient(135deg, var(--mini-background-color4), var(--mini-background-color3));
+  border: 1px solid var(--primary-color);
+  padding: 0.9rem 0;
+  border-radius: 8px;
   cursor: pointer;
-  color: var(--ternery-color);
-  width: 45%;
+  color: var(--primary-color);
+  width: 50%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px var(--mini-background-color4);
 }
 
 .section.contact .contact-form .submit-button:hover {
-  background-color: var(--mini-background-color2);
+  background: var(--mini-background-color4);
+  box-shadow: 0 0 20px var(--glow), 0 4px 16px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
 }
 
 .section.contact .contact-form .submit-button:active {
-  transform: scale(0.95);
-  transition: transfrom 0.5s ease;
+  transform: scale(0.97);
 }
 
+/* ─── Contact Link Boxes ─── */
 .section.contact .platform-links .box-title {
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   margin: 0.5rem;
-  color: var(--secondary-color);
+  color: var(--text-color2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 .section.contact .platform-links .contact-links {
-  margin: 1rem;
+  margin: 0.75rem 1rem;
 }
 
 .section.contact .platforms .contact-link img,
 .section.contact .platforms .social-link img {
   height: 2rem;
-  margin: 1rem;
+  margin: 0.75rem;
+  transition: all 0.25s ease;
+  filter: grayscale(0.3);
 }
 
+.section.contact .platforms .contact-link img:hover,
+.section.contact .platforms .social-link img:hover {
+  transform: translateY(-4px) scale(1.12);
+  filter: grayscale(0) drop-shadow(0 0 8px var(--glow));
+}
+
+/* ─── Send Status ─── */
 .section.contact .sending-status {
   display: flex;
   align-items: center;
@@ -184,9 +214,7 @@ textarea:valid + .form-label .form-label-letter {
   margin-left: 0.5rem;
 }
 
-.section.contact .sending-status .button-text {
-  font-size: 1rem;
-}
+.section.contact .sending-status .button-text { font-size: 0.9rem; }
 
 @media (max-width: 750px) {
   .section.contact .content {
@@ -194,11 +222,11 @@ textarea:valid + .form-label .form-label-letter {
     align-items: center;
     justify-content: space-evenly;
   }
-
   .section.contact .contact-form,
   .section.contact .wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
   }
+  .section.contact .contact-form { padding: 0 1rem; }
 }

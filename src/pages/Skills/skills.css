@@ -33,13 +33,10 @@
 .section.skills .wrapper::before,
 .section.skills .wrapper::after {
   width: 100%;
-  height: 2px;
+  height: 1px;
   content: "";
-  background: linear-gradient(
-    90deg,
-    var(--break-line-gradient-color1),
-    var(--break-line-gradient-color2)
-  );
+  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color), transparent);
+  box-shadow: 0 0 8px var(--glow);
 }
 
 .section.skills .scroll-container {
@@ -51,48 +48,55 @@
   align-items: center;
 }
 
-.section.skills .scroll-container::-webkit-scrollbar {
-  height: var(--scroll-thumb-thickness);
-  color: var(--ternery-color);
-}
-
+.section.skills .scroll-container::-webkit-scrollbar { height: 4px; }
 .section.skills .scroll-container::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-thumb-bg-color);
-  border-radius: 1rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color));
+  border-radius: 4px;
 }
 
+/* ─── Skill Card ─── */
 .section.skills .skill-card {
   padding: 0.8rem;
-  margin: 1rem;
-  background-color: var(--mini-background-color);
-  border-radius: 40%;
-  opacity: 1;
+  margin: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 3.6rem;
   width: 3.6rem;
   cursor: grab;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.section.skills .skill-card.touch {
-  cursor: pointer;
+.section.skills .skill-card:hover {
+  transform: perspective(600px) translateZ(12px) scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 16px var(--glow);
+  border-color: var(--primary-color);
 }
 
-.section.skills .skill-card .skill-image {
-  height: 2rem;
-}
+.section.skills .skill-card.touch { cursor: pointer; }
 
-/* Skill record selector */
+.section.skills .skill-card .skill-image { height: 2rem; }
 
+/* ─── Skill Selector Panel ─── */
 .section.skills .skill-selector {
   width: 550px;
   height: 400px;
   margin: 0 5%;
-  box-shadow: 0 0 50px 1px var(--mini-background-color);
-  background: transparent;
-  border-radius: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
   padding: 2rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 0 0 1px var(--card-border),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .section.skills .box-rail {
@@ -102,7 +106,7 @@
   align-items: center;
 }
 
-/* First rail */
+/* ─── Drop Zone ─── */
 .section.skills .skill-selector .drop-receiver {
   height: 6rem;
   width: 6rem;
@@ -111,45 +115,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 50px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px var(--mini-background-color4), inset 0 0 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 .section.skills .skill-selector:not(.dropped) .drop-receiver {
-  animation: blink 1.5s linear infinite;
+  animation: blink 2s ease-in-out infinite;
 }
 
 @keyframes blink {
-  0%,
-  100% {
-    background-color: transparent;
-  }
-  50% {
-    background-color: var(--mini-background-color5);
-  }
+  0%, 100% { background-color: transparent; box-shadow: 0 0 20px var(--mini-background-color4); }
+  50%       { background-color: var(--mini-background-color5); box-shadow: 0 0 30px var(--glow); }
 }
 
 .section.skills .skill-selector.dragging .drop-receiver {
-  border: 2px solid var(--primary-color);
-  box-shadow: 0 0 50px 1px rgba(255, 255, 255, 0.5);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 30px var(--glow);
 }
 
 .section.skills .skill-selector.dropped .drop-receiver {
-  border: 2px solid var(--ternery-color);
-  box-shadow: 0 0 50px 1px rgba(255, 255, 255, 0.3);
+  border-color: var(--ternery-color);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
 }
 
-.section.skills .skill-selector .drop-receiver .skill-image {
-  height: 3rem;
-}
+.section.skills .skill-selector .drop-receiver .skill-image { height: 3rem; }
 
 .section.skills .skill-selector .box-title {
-  font-size: 2rem;
-  color: var(--ternery-color);
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary-color);
   margin-bottom: 1rem;
   padding-left: 2rem;
+  text-shadow: 0 0 12px var(--glow);
 }
 
-/* Second rail */
+/* ─── Description ─── */
 .section.skills .box-rail.second-rail {
   margin: 1rem;
   text-align: start;
@@ -157,12 +158,12 @@
 }
 
 .section.skills .skill-selector .box-description {
-  font-size: 1rem;
-  line-height: 1.5em;
-  color: var(--secondary-color);
+  font-size: 0.9rem;
+  line-height: 1.6em;
+  color: var(--text-color2);
 }
 
-/* Third rail */
+/* ─── Third Rail ─── */
 .section.skills .box-rail.third-rail {
   justify-content: space-between;
   flex-direction: row;
@@ -173,8 +174,9 @@
   padding: 0.8rem 1rem;
   margin: 0 1rem;
   color: var(--secondary-color);
-  border: 2px solid var(--ternery-color);
-  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--card-border);
+  background: var(--mini-background-color);
+  box-shadow: 0 0 12px var(--mini-background-color4), inset 0 1px 0 rgba(255,255,255,0.05);
   border-radius: 10px;
   font-size: 0.8rem;
   display: flex;
@@ -189,11 +191,7 @@
   justify-content: center;
 }
 
-.section.skills .box-rail.third-rail .chart-skills {
-  width: 8rem;
-  height: 4rem;
-}
-
+/* ─── Donut Meter ─── */
 .section.skills .skill-meter {
   width: var(--bar-width);
   height: var(--bar-height);
@@ -204,13 +202,14 @@
   --bar-width: 200px;
   --bar-height: 100px;
   --bar-border-radius: 50px;
+  filter: drop-shadow(0 0 6px var(--glow));
 }
 
 .section.skills .skill-meter:before {
   content: "";
   width: var(--bar-width);
   height: var(--bar-height);
-  border: var(--bar-border-radius) solid rgba(255, 255, 255, 0.15);
+  border: var(--bar-border-radius) solid rgba(255, 255, 255, 0.1);
   border-bottom: none;
   position: absolute;
   box-sizing: border-box;
@@ -236,42 +235,18 @@
   cursor: pointer;
 }
 
-.section.skills .skill-meter .block.first {
-  --percentage: 90;
-  --fill: var(--donut-block-1-color);
-}
-
-.section.skills .skill-meter .block.second {
-  --percentage: 72;
-  --fill: var(--donut-block-2-color);
-}
-
-.section.skills .skill-meter .block.third {
-  --percentage: 54;
-  --fill: var(--donut-block-3-color);
-}
-
-.section.skills .skill-meter .block.fourth {
-  --percentage: 36;
-  --fill: var(--donut-block-4-color);
-}
-
-.section.skills .skill-meter .block.fifth {
-  --percentage: 18;
-  --fill: var(--donut-block-5-color);
-}
+.section.skills .skill-meter .block.first  { --percentage: 90; --fill: var(--donut-block-1-color); }
+.section.skills .skill-meter .block.second { --percentage: 72; --fill: var(--donut-block-2-color); }
+.section.skills .skill-meter .block.third  { --percentage: 54; --fill: var(--donut-block-3-color); }
+.section.skills .skill-meter .block.fourth { --percentage: 36; --fill: var(--donut-block-4-color); }
+.section.skills .skill-meter .block.fifth  { --percentage: 18; --fill: var(--donut-block-5-color); }
 
 .section.skills .skill-meter .meter-pin {
   height: calc(var(--bar-height) * 0.75);
-  width: 4px;
+  width: 3px;
   border-radius: 100% 100% 2px 2px;
-  background: linear-gradient(
-    to top,
-    var(--ternery-color),
-    var(--secondary-color)
-  );
-  transition: border-width 0.5s ease-in-out;
-  background-color: var(--secondary-color);
+  background: linear-gradient(to top, var(--primary-color), var(--ternery-color));
+  box-shadow: 0 0 8px var(--glow);
   z-index: 10;
   position: absolute;
   left: calc(var(--bar-width) / 2);
@@ -294,82 +269,36 @@
   height: 10px;
   width: 10px;
   border-radius: 100%;
-  background-color: var(--ternery-color);
+  background: var(--primary-color);
+  box-shadow: 0 0 8px var(--glow);
   position: absolute;
   bottom: 0;
   left: calc(var(--bar-width) / 2 - 3px);
 }
 
 @media (max-width: 750px) {
-  .section.skills .content {
-    flex-direction: column;
-  }
-
-  .section.skills .skills-basket {
-    width: 100%;
-    max-height: 150px;
-    padding: 0;
-  }
-
-  .section.skills .scroll-container {
-    max-height: 200px;
-  }
-
-  .section.skills .skill-selector {
-    width: 90%;
-    height: fit-content;
-  }
-
-  .section.skills .wrapper {
-    margin: 2rem 0;
-  }
-
-  .section.skills .skill-card {
-    height: 2.5rem;
-    width: 2.5rem;
-  }
-
-  .section.skills .skill-card .skill-image {
-    height: 1.5rem;
-  }
-
-  .section.skills .skill-selector .drop-receiver {
-    height: 5rem;
-    width: 5rem;
-  }
-
-  .section.skills .skill-selector .drop-receiver .skill-image {
-    height: 2.5rem;
-  }
+  .section.skills .content { flex-direction: column; }
+  .section.skills .skills-basket { width: 100%; max-height: 150px; padding: 0; }
+  .section.skills .scroll-container { max-height: 200px; }
+  .section.skills .skill-selector { width: 90%; height: fit-content; }
+  .section.skills .wrapper { margin: 2rem 0; }
+  .section.skills .skill-card { height: 2.5rem; width: 2.5rem; }
+  .section.skills .skill-card .skill-image { height: 1.5rem; }
+  .section.skills .skill-selector .drop-receiver { height: 5rem; width: 5rem; }
+  .section.skills .skill-selector .drop-receiver .skill-image { height: 2.5rem; }
 }
 
 @media (max-width: 600px) {
-  .section.skills .box-rail.third-rail {
-    flex-direction: column;
-    align-items: center;
-  }
-
+  .section.skills .box-rail.third-rail { flex-direction: column; align-items: center; }
   .section.skills .box-rail.third-rail .experience-count,
-  .section.skills .box-rail.third-rail .skill-meter-box {
-    width: 100%;
-    margin: 1rem 0;
-  }
+  .section.skills .box-rail.third-rail .skill-meter-box { width: 100%; margin: 1rem 0; }
 }
 
 @-webkit-keyframes rotateMeterPinAnimation {
-  0% {
-    transform: rotate(var(--exisiting-skill-percentage));
-  }
-  20% {
-    transform: rotate(-90deg);
-  }
+  0%  { transform: rotate(var(--exisiting-skill-percentage)); }
+  20% { transform: rotate(-90deg); }
 }
-
 @keyframes rotateMeterPinAnimation {
-  0% {
-    transform: rotate(var(--exisiting-skill-percentage));
-  }
-  20% {
-    transform: rotate(-90deg);
-  }
+  0%  { transform: rotate(var(--exisiting-skill-percentage)); }
+  20% { transform: rotate(-90deg); }
 }
