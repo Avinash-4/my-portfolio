@@ -1,20 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500&display=swap");
 
+/* ─── Global Reset ─── */
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: show;
+  overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--main-background-color);
-}
-
-/* scroll bar */
-body::-webkit-scrollbar { width: 6px; }
-body::-webkit-scrollbar-track { background: var(--nav-background-color); }
-body::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--primary-color), var(--ternery-color));
-  border-radius: 10px;
+  cursor: none;
 }
 
 * {
@@ -24,22 +18,70 @@ body::-webkit-scrollbar-thumb {
   margin: 0;
   line-height: 1em;
   -webkit-tap-highlight-color: transparent;
+  cursor: none;
 }
 
-a { text-decoration: none; }
+/* Restore real cursor on text inputs */
+input,
+textarea,
+select {
+  cursor: text !important;
+}
 
+a,
+button,
+[data-hover],
+.skill-card,
+.project-card {
+  cursor: none;
+}
+
+/* ─── Text Selection ─── */
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: #e2f4ff;
+}
+
+/* ─── Focus Rings ─── */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--nav-background-color);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--primary-color),
+    var(--ternery-color)
+  );
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ─── CSS Variables ─── */
 :root {
-  /* ─── Light Mode ─── */
+  /* Light Mode */
   --light-primary-color: #0066ff;
   --light-secondary-color: #1a1f36;
   --light-ternary-color: #6d28d9;
   --light-nav-background-color: rgba(238, 242, 255, 0.96);
   --light-main-background-color: #f0f4ff;
-  --light-mini-background-color: rgba(0, 102, 255, 0.08);
+  --light-mini-background-color: rgba(0, 102, 255, 0.07);
   --light-mini-background-color2: rgba(255, 255, 255, 0.85);
   --light-mini-background-color3: rgba(255, 255, 255, 0.9);
-  --light-mini-background-color4: rgba(0, 102, 255, 0.18);
-  --light-mini-background-color5: rgba(0, 102, 255, 0.1);
+  --light-mini-background-color4: rgba(0, 102, 255, 0.16);
+  --light-mini-background-color5: rgba(0, 102, 255, 0.09);
   --light-text-color1: #0f172a;
   --light-text-color2: #334155;
   --light-text-color3: #0066ff;
@@ -54,22 +96,22 @@ a { text-decoration: none; }
   --light-donut-block-5-color: #0066ff;
   --light-glow: rgba(0, 102, 255, 0.35);
   --light-card-bg: rgba(255, 255, 255, 0.72);
-  --light-card-border: rgba(0, 102, 255, 0.18);
-  --light-grid-color: rgba(0, 102, 255, 0.055);
+  --light-card-border: rgba(0, 102, 255, 0.16);
+  --light-grid-color: rgba(0, 102, 255, 0.05);
 
-  /* ─── Dark Mode ─── */
+  /* Dark Mode */
   --dark-primary-color: #00d4ff;
   --dark-secondary-color: #7dd3fc;
   --dark-ternary-color: #a78bfa;
-  --dark-nav-background-color: rgba(8, 18, 36, 0.94);
-  --dark-main-background-color: #060d18;
-  --dark-mini-background-color: rgba(0, 212, 255, 0.07);
-  --dark-mini-background-color2: rgba(0, 212, 255, 0.1);
-  --dark-mini-background-color3: rgba(167, 139, 250, 0.12);
-  --dark-mini-background-color4: rgba(0, 212, 255, 0.22);
-  --dark-mini-background-color5: rgba(0, 212, 255, 0.11);
-  --dark-text-color1: #e2e8f0;
-  --dark-text-color2: #94a3b8;
+  --dark-nav-background-color: rgba(6, 14, 28, 0.95);
+  --dark-main-background-color: #020c14;
+  --dark-mini-background-color: rgba(0, 212, 255, 0.06);
+  --dark-mini-background-color2: rgba(0, 212, 255, 0.09);
+  --dark-mini-background-color3: rgba(167, 139, 250, 0.1);
+  --dark-mini-background-color4: rgba(0, 212, 255, 0.18);
+  --dark-mini-background-color5: rgba(0, 212, 255, 0.1);
+  --dark-text-color1: #e2f4ff;
+  --dark-text-color2: #5a7a8a;
   --dark-text-color3: #7dd3fc;
   --dark-break-line-gradient-color1: var(--dark-primary-color);
   --dark-break-line-gradient-color2: transparent;
@@ -81,11 +123,12 @@ a { text-decoration: none; }
   --dark-donut-block-4-color: #06d6a0;
   --dark-donut-block-5-color: #00d4ff;
   --dark-glow: rgba(0, 212, 255, 0.4);
-  --dark-card-bg: rgba(0, 212, 255, 0.04);
-  --dark-card-border: rgba(0, 212, 255, 0.14);
-  --dark-grid-color: rgba(0, 212, 255, 0.04);
+  --dark-card-bg: rgba(0, 212, 255, 0.03);
+  --dark-card-border: rgba(0, 212, 255, 0.12);
+  --dark-grid-color: rgba(0, 212, 255, 0.035);
 }
 
+/* ─── Theme Application ─── */
 .app.light-mode {
   --primary-color: var(--light-primary-color);
   --secondary-color: var(--light-secondary-color);
@@ -118,7 +161,7 @@ a { text-decoration: none; }
 .app.dark-mode {
   --primary-color: var(--dark-primary-color);
   --secondary-color: var(--dark-secondary-color);
-  --ternery-color: var(--dark-ternary-color);
+  --ternery-color: var(--dark-ternery-color);
   --nav-background-color: var(--dark-nav-background-color);
   --main-background-color: var(--dark-main-background-color);
   --mini-background-color: var(--dark-mini-background-color);
@@ -144,8 +187,28 @@ a { text-decoration: none; }
   --grid-color: var(--dark-grid-color);
 }
 
-@media (min-width: 0px) and (max-width: 510px) { :root { font-size: 12px; } }
-@media (min-width: 501px) and (max-width: 750px) { :root { font-size: 12px; } }
-@media (min-width: 751px) and (max-width: 1100px) { :root { font-size: 12px; } }
-@media only screen and (min-device-width: 701px) and (max-device-width: 1000px) and (orientation: landscape) { :root { font-size: 10px; } }
-@media only screen and (min-device-width: 120px) and (max-device-width: 700px) and (orientation: landscape) { :root { font-size: 8px; } }
+@media (max-width: 510px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (min-width: 501px) and (max-width: 750px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (min-width: 751px) and (max-width: 1100px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-device-width: 701px) and (max-device-width: 1000px) and (orientation: landscape) {
+  :root {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-device-width: 120px) and (max-device-width: 700px) and (orientation: landscape) {
+  :root {
+    font-size: 8px;
+  }
+}

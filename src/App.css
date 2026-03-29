@@ -5,7 +5,7 @@
 }
 
 * {
-  transition: background-color 0.75s ease, color 0.2s ease;
+  transition: background-color 0.6s ease, color 0.2s ease, border-color 0.3s ease;
 }
 
 /* ─── Sidebar ─── */
@@ -21,7 +21,7 @@
   min-width: 10rem;
   z-index: 100;
   border-left: 1px solid var(--card-border);
-  box-shadow: -6px 0 40px rgba(0, 0, 0, 0.35);
+  box-shadow: -8px 0 48px rgba(0, 0, 0, 0.4);
 }
 
 .body-container {
@@ -54,30 +54,27 @@
   z-index: 0;
 }
 
-/* Ambient radial glow */
+/* Ambient radial glow top-left */
 .section::after {
   content: "";
   position: absolute;
   top: -30%;
   left: -15%;
-  width: 70%;
+  width: 65%;
   height: 90%;
   background: radial-gradient(ellipse, var(--mini-background-color4) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
-/* Ensure children sit above grid */
-.section > * {
-  position: relative;
-  z-index: 1;
-}
+/* Push all section children above grid */
+.section > * { position: relative; z-index: 1; }
 
 /* ─── Section Titles ─── */
 .section .title {
-  font-family: "Orbitron", "Space Grotesk", sans-serif;
-  font-size: 2.4rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-top: 4.5rem;
   letter-spacing: 3px;
@@ -89,11 +86,12 @@
 }
 
 .section .description {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 300;
-  margin: 0.6rem 2rem 0;
+  margin: 0.5rem 2rem 0;
   color: var(--text-color2);
   line-height: 1.7;
   text-align: center;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
+  font-family: "Space Mono", monospace;
 }

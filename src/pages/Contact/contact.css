@@ -9,12 +9,13 @@
   bottom: 2%;
 }
 
+/* ─── Left Wrapper ─── */
 .section.contact .wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 60%;
+  width: 55%;
   position: relative;
 }
 
@@ -33,73 +34,126 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  height: 18rem;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
 }
 
-/* ─── Contact Form Container ─── */
+.section.contact .contact-links { width: 100%; }
+
+.section.contact .platform-links .box-title {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-color2);
+  margin-bottom: 0.75rem;
+}
+
+/* ─── Platform row ─── */
+.section.contact .platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ─── Contact Card ─── */
+.section.contact .contact-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: none;
+}
+
+.section.contact .contact-card:hover {
+  border-color: var(--platform-color, var(--primary-color));
+  background: color-mix(in srgb, var(--platform-color, var(--primary-color)) 10%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--platform-color, var(--primary-color)) 40%, transparent);
+}
+
+.section.contact .contact-card-icon {
+  height: 1.4rem;
+  transition: transform 0.25s ease;
+}
+
+.section.contact .contact-card:hover .contact-card-icon {
+  transform: scale(1.15);
+}
+
+.section.contact .contact-card-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-color2);
+  transition: color 0.25s ease;
+}
+
+.section.contact .contact-card:hover .contact-card-label {
+  color: var(--text-color1);
+}
+
+/* ─── Right: Form ─── */
 .section.contact .contact-form {
-  width: 40%;
-  min-height: fit-content;
+  width: 42%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .section.contact .contact-form form {
-  position: relative;
   width: 100%;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 18px;
+  padding: 1.8rem;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
+/* ─── Form Rails ─── */
 .section.contact .input-form-rail {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: fit-content;
-  margin: 0.75rem 0;
+  margin: 0.65rem 0;
 }
 
-.section.contact .input-form-rail.fourth-rail {
-  justify-content: flex-end;
-}
+.section.contact .input-form-rail.fourth-rail { justify-content: flex-end; }
 
 .section.contact .contact-form .input-field {
   position: relative;
   width: 100%;
 }
 
-.section.contact .input-form-rail.first-rail .input-field {
-  width: 48%;
-}
+.section.contact .input-form-rail.first-rail .input-field { width: 48%; }
 
 .section.contact .input-form-rail .input-field input,
 .section.contact .input-form-rail .input-field textarea {
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
+  width: 100%; max-width: 100%; min-width: 100%;
 }
 
-/* ─── Input Fields ─── */
+/* ─── Inputs ─── */
 .section.contact .contact-form .input-field input,
 .section.contact .contact-form .input-field textarea {
   border: 0;
   border-bottom: 1px solid var(--card-border);
   display: block;
-  padding: 1.5rem 0.8rem 0.6rem;
-  font-size: 0.95rem;
+  padding: 1.4rem 0.6rem 0.5rem;
+  font-size: 0.9rem;
   line-height: 1.5em;
-  background-color: transparent;
+  background: transparent;
   border-radius: 0;
   color: var(--text-color1);
+  font-family: "Space Grotesk", sans-serif;
   transition: border-bottom-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -119,21 +173,21 @@
 .section.contact .contact-form .input-field textarea:valid {
   outline: 0;
   border-bottom-color: var(--primary-color);
-  box-shadow: 0 2px 0 var(--primary-color), 0 4px 12px rgba(0, 212, 255, 0.15);
+  box-shadow: 0 2px 0 var(--primary-color), 0 4px 10px rgba(0, 212, 255, 0.1);
 }
 
 /* ─── Animated Label ─── */
 .section.contact .contact-form .input-field .form-label {
   position: absolute;
-  top: 1.25rem;
+  top: 1.2rem;
   left: 0;
   pointer-events: none;
-  padding: 0 0.8rem;
+  padding: 0 0.6rem;
 }
 
 .section.contact .contact-form .input-field .form-label-letter {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   min-width: 5px;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   color: var(--text-color2);
@@ -143,63 +197,31 @@ input:focus + .form-label .form-label-letter,
 input:valid + .form-label .form-label-letter,
 textarea:focus + .form-label .form-label-letter,
 textarea:valid + .form-label .form-label-letter {
-  transform: translateY(-0.9rem);
-  font-size: 0.72rem !important;
+  transform: translateY(-0.85rem);
+  font-size: 0.7rem !important;
   color: var(--primary-color);
 }
 
-/* ─── Submit Button ─── */
+/* ─── Submit Button (Magnetic) ─── */
 .section.contact .contact-form .submit-button {
   background: linear-gradient(135deg, var(--mini-background-color4), var(--mini-background-color3));
   border: 1px solid var(--primary-color);
-  padding: 0.9rem 0;
+  padding: 0.85rem 1.8rem;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: none;
   color: var(--primary-color);
-  width: 50%;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 12px var(--mini-background-color4);
+  font-family: "Space Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 14px var(--mini-background-color4);
 }
 
 .section.contact .contact-form .submit-button:hover {
   background: var(--mini-background-color4);
-  box-shadow: 0 0 20px var(--glow), 0 4px 16px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
-}
-
-.section.contact .contact-form .submit-button:active {
-  transform: scale(0.97);
-}
-
-/* ─── Contact Link Boxes ─── */
-.section.contact .platform-links .box-title {
-  font-size: 0.85rem;
-  margin: 0.5rem;
-  color: var(--text-color2);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
-}
-
-.section.contact .platform-links .contact-links {
-  margin: 0.75rem 1rem;
-}
-
-.section.contact .platforms .contact-link img,
-.section.contact .platforms .social-link img {
-  height: 2rem;
-  margin: 0.75rem;
-  transition: all 0.25s ease;
-  filter: grayscale(0.3);
-}
-
-.section.contact .platforms .contact-link img:hover,
-.section.contact .platforms .social-link img:hover {
-  transform: translateY(-4px) scale(1.12);
-  filter: grayscale(0) drop-shadow(0 0 8px var(--glow));
+  box-shadow: 0 0 24px var(--glow), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* ─── Send Status ─── */
@@ -207,26 +229,22 @@ textarea:valid + .form-label .form-label-letter {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 }
 
-.section.contact .sending-status .sending-status-icon {
-  height: 1rem;
-  margin-left: 0.5rem;
-}
+.section.contact .sending-status-icon { height: 1rem; }
+.section.contact .button-text { font-size: 0.78rem; }
 
-.section.contact .sending-status .button-text { font-size: 0.9rem; }
-
+/* ─── Responsive ─── */
 @media (max-width: 750px) {
   .section.contact .content {
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    overflow-y: auto;
   }
   .section.contact .contact-form,
-  .section.contact .wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .section.contact .contact-form { padding: 0 1rem; }
+  .section.contact .wrapper { width: 95%; padding: 0 0.5rem; }
+  .section.contact .wrapper { margin-bottom: 1rem; }
 }

@@ -1,0 +1,44 @@
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  will-change: transform;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  box-shadow: 0 0 8px var(--glow);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--primary-color);
+  opacity: 0.5;
+  background: transparent;
+}
+
+.cursor-dot.hover {
+  width: 12px;
+  height: 12px;
+  background: var(--ternery-color);
+  box-shadow: 0 0 16px var(--ternery-color);
+}
+
+.cursor-ring.hover {
+  width: 52px;
+  height: 52px;
+  opacity: 0.3;
+  border-color: var(--ternery-color);
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+}

@@ -18,38 +18,106 @@
   box-shadow: 0 0 8px var(--glow);
 }
 
-.section.about .container .content {
-  width: 60%;
-  margin: 3rem;
-  line-height: 2rem;
-  font-size: 1rem;
-  color: var(--text-color1);
+/* ─── Glass Card ─── */
+.section.about .content {
+  width: 62%;
+  margin: 2.5rem 3rem;
+  padding: 2.5rem 3rem;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 2rem 2.5rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), 0 0 1px var(--card-border);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.section.about .content:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 60px rgba(0, 212, 255, 0.1),
+    0 0 1px var(--primary-color),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.section.about .about-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--text-color1);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* ─── Stat Chips ─── */
+.section.about .stat-chips {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.section.about .stat-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem 1.4rem;
+  background: var(--mini-background-color);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  min-width: 90px;
+  transition: all 0.3s ease;
+}
+
+.section.about .stat-chip:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 16px var(--glow);
+  transform: translateY(-2px);
+}
+
+.section.about .stat-value {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--ternery-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section.about .stat-label {
+  font-size: 0.7rem;
+  color: var(--text-color2);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+  margin-top: 0.2rem;
+}
+
+/* ─── CTA Link ─── */
 .section.about .contact-link {
   color: var(--primary-color);
-  cursor: pointer;
-  display: inline;
+  cursor: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-weight: 600;
-  transition: all 0.2s ease;
+  font-size: 1rem;
+  transition: all 0.25s ease;
   text-shadow: 0 0 8px var(--glow);
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
 }
 
 .section.about .contact-link:hover {
   color: var(--ternery-color);
-  text-shadow: 0 0 14px var(--glow);
+  text-shadow: 0 0 16px var(--glow);
+  transform: translateX(4px);
 }
 
 @media (max-width: 750px) {
-  .section.about .container .content {
-    width: 85%;
+  .section.about .content {
+    width: 88%;
     margin: 1.5rem;
     padding: 1.5rem;
   }
