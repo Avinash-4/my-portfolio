@@ -7,37 +7,34 @@
   z-index: 9999;
   border-radius: 50%;
   will-change: transform;
-  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1), 
+              height 0.4s cubic-bezier(0.22, 1, 0.36, 1), 
+              opacity 0.3s ease, 
+              background-color 0.3s ease,
+              border-color 0.3s ease;
+  transform-origin: center center;
 }
 
+/* Inner dot uses difference blend mode to always be visible and contrast perfectly */
 .cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--primary-color);
-  box-shadow: 0 0 8px var(--glow);
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
 }
 
+/* Outer ring acts as a frosted glass aura rather than a simple border */
 .cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid var(--primary-color);
-  opacity: 0.5;
-  background: transparent;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.cursor-dot.hover {
-  width: 12px;
-  height: 12px;
-  background: var(--ternery-color);
-  box-shadow: 0 0 16px var(--ternery-color);
-}
-
-.cursor-ring.hover {
-  width: 52px;
-  height: 52px;
-  opacity: 0.3;
-  border-color: var(--ternery-color);
-}
+/* Hover expansion removed as per user request */
 
 @media (pointer: coarse) {
   .cursor-dot, .cursor-ring { display: none; }
