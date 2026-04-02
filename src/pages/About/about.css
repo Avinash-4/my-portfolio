@@ -1,3 +1,11 @@
+/* Allow card to breathe past the 100vh clip */
+.section.about {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
 .section.about .container {
   display: flex;
   flex-direction: column;
@@ -18,10 +26,69 @@
   box-shadow: 0 0 8px var(--glow);
 }
 
-/* ─── Glass Card ─── */
-.section.about .content {
+/* ─── Spinning-border wrapper ─────────────────────────────────────────────── */
+
+.section.about .content-wrapper {
+  position: relative;
   width: 62%;
   margin: 2.5rem 3rem;
+  border-radius: 22px;
+}
+
+/* Soft ambient glow behind the card — fades in on hover */
+.section.about .content-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  border-radius: 40px;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    var(--primary-color),
+    transparent 68%
+  );
+  opacity: 0;
+  filter: blur(28px);
+  z-index: 0;
+  transition: opacity 0.55s ease;
+  pointer-events: none;
+}
+
+.section.about .content-wrapper:hover::before {
+  opacity: 0.14;
+}
+
+/* One-shot shimmer sweep across the card on hover entry */
+.section.about .content-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    108deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.055) 50%,
+    transparent 62%
+  );
+  transform: translateX(-110%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section.about .content-wrapper:hover::after {
+  animation: aboutShimmer 0.65s ease forwards;
+}
+
+@keyframes aboutShimmer {
+  from { transform: translateX(-110%); }
+  to   { transform: translateX(110%); }
+}
+
+/* ─── Glass Card ──────────────────────────────────────────────────────────── */
+
+.section.about .content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   padding: 2.5rem 3rem;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -31,16 +98,77 @@
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
 }
 
-.section.about .content:hover {
-  transform: translateY(-5px);
+.section.about .content-wrapper:hover .content {
+  border-color: rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 20px 60px rgba(0, 212, 255, 0.1),
-    0 0 1px var(--primary-color),
-    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    0 24px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
+
+/* ─── Current role strip ──────────────────────────────────────────────────── */
+
+.current-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.9rem;
+  margin-bottom: 1.4rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.strip-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: livePulse 2s ease-out infinite;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+}
+
+@keyframes livePulse {
+  0%  { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  70% { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
+  100%{ box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+.strip-item {
+  color: var(--text-color2);
+  font-weight: 500;
+}
+
+.strip-role {
+  color: var(--text-color1);
+  font-weight: 600;
+}
+
+.strip-company {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.strip-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-color2);
+}
+
+.strip-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+/* ─── About text ──────────────────────────────────────────────────────────── */
 
 .section.about .about-text {
   font-size: 1rem;
@@ -49,7 +177,69 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
-/* ─── Stat Chips ─── */
+/* ─── Expertise Pillars ───────────────────────────────────────────────────── */
+
+.expertise-row {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.expertise-card {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.expertise-card:hover {
+  border-color: color-mix(in srgb, var(--exp-color) 40%, transparent);
+  background: color-mix(in srgb, var(--exp-color) 5%, transparent);
+  transform: translateY(-3px);
+}
+
+.exp-icon {
+  color: var(--exp-color);
+  display: flex;
+  align-items: center;
+}
+
+.exp-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-color1);
+  letter-spacing: 0.02em;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.1rem;
+}
+
+.exp-tag {
+  font-size: 0.62rem;
+  font-weight: 500;
+  padding: 0.18rem 0.55rem;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--exp-color) 12%, transparent);
+  color: var(--exp-color);
+  border: 1px solid color-mix(in srgb, var(--exp-color) 25%, transparent);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ─── Stat Chips ──────────────────────────────────────────────────────────── */
+
 .section.about .stat-chips {
   display: flex;
   gap: 1rem;
@@ -58,67 +248,169 @@
 }
 
 .section.about .stat-chip {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.7rem 1.4rem;
+  padding: 0.85rem 1.6rem 0.7rem;
   background: var(--mini-background-color);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  min-width: 90px;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  min-width: 100px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
+/* Per-chip glow on hover using the accent color */
 .section.about .stat-chip:hover {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 16px var(--glow);
-  transform: translateY(-2px);
+  border-color: var(--chip-accent, var(--primary-color));
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--chip-accent, var(--primary-color)) 30%, transparent),
+    0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Soft glow blob inside chip, reveals on hover */
+.chip-glow-blob {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    color-mix(in srgb, var(--chip-accent, var(--primary-color)) 20%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section.about .stat-chip:hover .chip-glow-blob {
+  opacity: 1;
 }
 
 .section.about .stat-value {
+  position: relative;
+  z-index: 1;
   font-family: "Orbitron", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-color), var(--ternery-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--chip-accent, var(--primary-color));
+  line-height: 1;
 }
 
 .section.about .stat-label {
-  font-size: 0.7rem;
+  position: relative;
+  z-index: 1;
+  font-size: 0.68rem;
   color: var(--text-color2);
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: "Space Mono", monospace;
-  margin-top: 0.2rem;
+  margin-top: 0.35rem;
 }
 
-/* ─── CTA Link ─── */
-.section.about .contact-link {
-  color: var(--primary-color);
-  cursor: none;
+/* Animated accent bar at the bottom of each chip */
+.chip-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0;
+  background: var(--chip-accent, var(--primary-color));
+  box-shadow: 0 0 8px var(--chip-accent, var(--primary-color));
+  border-radius: 0 0 14px 14px;
+  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 2;
+}
+
+.chip-bar.active {
+  width: 100%;
+}
+
+/* ─── Traits row ──────────────────────────────────────────────────────────── */
+
+.traits-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.trait-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  padding: 0.32rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-color2);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+
+.trait-tag:hover {
+  color: var(--text-color1);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── CTA Link ────────────────────────────────────────────────────────────── */
+
+.section.about .contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.8rem;
+  color: var(--primary-color);
+  cursor: none;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.25s ease;
-  text-shadow: 0 0 8px var(--glow);
-  margin-top: 0.5rem;
   letter-spacing: 0.5px;
+  text-shadow: 0 0 8px var(--glow);
+  transition: color 0.25s ease, text-shadow 0.25s ease, gap 0.25s ease;
+  position: relative;
+}
+
+/* Underline that grows on hover */
+.section.about .contact-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary-color);
+  box-shadow: 0 0 6px var(--glow);
+  transition: width 0.3s ease;
 }
 
 .section.about .contact-link:hover {
   color: var(--ternery-color);
-  text-shadow: 0 0 16px var(--glow);
-  transform: translateX(4px);
+  text-shadow: 0 0 20px var(--glow);
+  gap: 0.85rem;
 }
 
+.section.about .contact-link:hover::after {
+  width: 100%;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
 @media (max-width: 750px) {
-  .section.about .content {
+  .section.about .content-wrapper {
     width: 88%;
     margin: 1.5rem;
+  }
+
+  .section.about .content {
     padding: 1.5rem;
   }
 }

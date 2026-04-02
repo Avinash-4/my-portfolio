@@ -103,7 +103,11 @@ function App() {
         </div>
         <div className="body-container">
           <section ref={refs.introRef}>
-            <Intro particlesReady={particlesReady} />
+            <Intro
+              particlesReady={particlesReady}
+              projectsRef={refs.projectsRef}
+              contactRef={refs.contactRef}
+            />
           </section>
           <section ref={refs.aboutRef}>
             <About contactRef={refs.contactRef} />

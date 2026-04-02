@@ -26,6 +26,10 @@ export interface ICareerItem {
   orgPosition: string;
   orgTenure: string;
   location: string;
+  about?: string;
+  techStack?: string[];
+  workDone?: string[];
+  highlights?: string[];
 }
 
 export type ISkills = ISkill[];

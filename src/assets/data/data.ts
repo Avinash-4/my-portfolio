@@ -117,15 +117,44 @@ export const carrerData: ICareerItem[] = [
     orgPosition: "Software Developer",
     orgTenure: "May 2020 - Apr 2021",
     location: "India",
+    about:
+      "Developed internal tools and systems to streamline airport operations and flight management workflows across nationwide infrastructure.",
+    techStack: ["java", "sql", "restapi", "html", "css"],
+    workDone: [
+      "Built RESTful APIs for flight scheduling and gate management systems",
+      "Developed internal dashboard for real-time flight status tracking",
+      "Maintained and optimized SQL databases handling passenger and flight data",
+      "Collaborated with operations teams to gather and implement business requirements",
+      "Wrote unit tests and participated in peer code reviews",
+    ],
+    highlights: [
+      "Reduced data retrieval time by 40% through targeted SQL query optimization",
+      "Gained foundation in enterprise-scale software development in a critical infrastructure environment",
+    ],
   },
   {
     id: 2,
     orgLogo: AmericanAirlineslogo,
     orgBGLogo: AmericanAirlinesbglogo,
     orgName: "American Airlines",
-    orgPosition: "Software Engineer -@CyberSecurity",
+    orgPosition: "Software Engineer — CyberSecurity",
     orgTenure: "Sep 2022 - Dec 2024",
-    location: "Fortworth, TX",
+    location: "Fort Worth, TX",
+    about:
+      "Engineered security-focused web applications for one of the world's largest airlines, protecting systems across enterprise infrastructure serving millions of passengers.",
+    techStack: ["reactjs", "typeScript", "angular", "java", "aws", "docker", "kubernetes", "jest"],
+    workDone: [
+      "Built and maintained security dashboards for real-time threat monitoring and incident response",
+      "Developed role-based access control (RBAC) systems for internal tooling used by security teams",
+      "Integrated CI/CD pipelines with automated security scanning gates",
+      "Migrated legacy Angular applications to React + TypeScript with zero downtime",
+      "Containerized microservices using Docker and orchestrated deployments on Kubernetes",
+      "Collaborated with security engineers to implement threat intelligence feeds and alerting",
+    ],
+    highlights: [
+      "Reduced security incident response time by 60% with new real-time dashboards",
+      "Delivered zero-downtime migrations for 3 critical production systems",
+    ],
   },
   {
     id: 3,
@@ -135,6 +164,20 @@ export const carrerData: ICareerItem[] = [
     orgPosition: "Software Developer",
     orgTenure: "Jan 2025 - Current",
     location: "Phoenix, AZ",
+    about:
+      "Building world-class payment and financial technology solutions at one of the most iconic global financial brands, contributing to systems that process millions of daily transactions.",
+    techStack: ["reactjs", "typeScript", "java", "aws", "sql", "docker", "kubernetes", "redux"],
+    workDone: [
+      "Developing React-based UIs for payment processing and fraud detection platforms",
+      "Building scalable Java microservices for financial transaction pipelines",
+      "Implementing real-time data visualization for fraud pattern analysis and reporting",
+      "Collaborating with product and design teams in an Agile/Scrum environment",
+      "Writing comprehensive unit and integration tests covering critical payment flows",
+    ],
+    highlights: [
+      "Contributing to systems that process millions of financial transactions daily",
+      "Part of the team modernizing core financial infrastructure at enterprise scale",
+    ],
   },
 ];
 
