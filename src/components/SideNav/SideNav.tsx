@@ -30,6 +30,7 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
   const { introRef, aboutRef, educationRef, careerRef, skillsRef, projectsRef, contactRef } = refs;
   const [isWinkEye, setWinkEye] = useState(false);
   const [animatedViewerCount, setAnimatedViewerCount] = useState(0);
+  const [activeUsers, setActiveUsers] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggleDarkMode = () => {
@@ -67,11 +68,12 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
   };
 
   useEffect(() => {
-    fetch(process.env.VIEWERCOUNT_END_POINT || "")
+    fetch("https://script.google.com/macros/s/AKfycbzBOEV_h3RraSK1bhrFWirWSJiNPIOe1RcThjwBEtPM_MZ4nQ0IC_lkJRzXj9yWkxWd8g/exec")
       .then((x) => x.json())
       .then((res) => {
-        if (res?.isSuccess && res.result?.viewerCount) {
-          animateCounter(0, res.result.viewerCount);
+        if (res?.ok) {
+          if (res.count > 0) animateCounter(0, res.count);
+          if (res.activeUsers > 0) setActiveUsers(res.activeUsers);
         }
       })
       .catch(() => {});
@@ -129,10 +131,13 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
         })}
       </nav>
 
-      <div className="visits">
-        <span className="visits-cursor">▋</span>
-        {animatedViewerCount.toLocaleString()}
-      </div>
+      {animatedViewerCount > 0 && (
+        <div className="visits">
+          <span className="visits-cursor">▋</span>
+          {animatedViewerCount.toLocaleString()} visits
+          {activeUsers > 0 && <span className="active-users"> · {activeUsers} online</span>}
+        </div>
+      )}
 
       <AnimatePresence mode="wait">
         <motion.img
