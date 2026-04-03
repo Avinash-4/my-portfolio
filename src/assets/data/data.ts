@@ -97,16 +97,17 @@ export const introInfo: {
   name: string;
   shortDesc: string;
 } = {
-  name: "Avinash",
+  name: "Avinash Chowdary Kongara",
   shortDesc: "I create value by building software",
 };
 
-export const aboutInfo: string = `I specialize in full-stack development, creating and integrating
-data-driven applications with effective interfaces to deliver dynamic
-user experiences. I also enjoy coding as a hobby, allowing me to
-explore new technologies and push the boundaries of what's possible.
-Trying to be a better version of myself every day in
-this fast moving world.`;
+export const aboutInfo: string = `Full-Stack Software Engineer with 4+ years of experience designing and shipping
+scalable, production-grade applications across Java, Spring Boot, React, and Node.js.
+Specialized in event-driven microservices with Vert.x, REST API development, and
+TypeScript-based UI component systems. Experienced in end-to-end cloud delivery —
+from Kubernetes deployments and CI/CD pipelines to DevSecOps practices — with a
+track record of optimizing system performance in Agile environments.
+Currently pursuing a Ph.D. in IT (AI) at University of the Cumberlands.`;
 
 export const carrerData: ICareerItem[] = [
   {
@@ -114,21 +115,22 @@ export const carrerData: ICareerItem[] = [
     orgLogo: AirportAuthoritylogo,
     orgBGLogo: AirportAuthoritylogoBG,
     orgName: "Airports Authority of India",
-    orgPosition: "Software Developer",
-    orgTenure: "May 2020 - Apr 2021",
-    location: "India",
+    orgPosition: "Software Developer (Intern)",
+    orgTenure: "May 2020 - Oct 2020",
+    location: "Hyderabad, India",
     about:
-      "Developed internal tools and systems to streamline airport operations and flight management workflows across nationwide infrastructure.",
-    techStack: ["java", "sql", "restapi", "html", "css"],
+      "Built interactive UI and backend systems for an internal aviation analytics platform, gaining hands-on experience with modern web technologies and CI/CD automation.",
+    techStack: ["java", "sql", "restapi", "html", "css", "typeScript", "reactjs", "nodejs"],
     workDone: [
-      "Built RESTful APIs for flight scheduling and gate management systems",
-      "Developed internal dashboard for real-time flight status tracking",
-      "Maintained and optimized SQL databases handling passenger and flight data",
-      "Collaborated with operations teams to gather and implement business requirements",
-      "Wrote unit tests and participated in peer code reviews",
+      "Built interactive UI screens using HTML5, CSS, TypeScript, RxJS, AJAX, and React for an internal aviation analytics system",
+      "Implemented Node.js for server-side rendering and backend logic",
+      "Integrated third-party APIs (Axios, GraphQL) to enable dynamic, real-time data updates",
+      "Developed reusable React patterns (HOCs, Render Props) to improve modularity and code reuse",
+      "Utilized Jenkins for CI/CD automation, reducing deployment time and improving release reliability",
+      "Implemented advanced Java programming for backend integrations (multithreading, collections, exception handling)",
     ],
     highlights: [
-      "Reduced data retrieval time by 40% through targeted SQL query optimization",
+      "Delivered a fully functional aviation analytics UI from scratch within the internship period",
       "Gained foundation in enterprise-scale software development in a critical infrastructure environment",
     ],
   },
@@ -137,23 +139,25 @@ export const carrerData: ICareerItem[] = [
     orgLogo: AmericanAirlineslogo,
     orgBGLogo: AmericanAirlinesbglogo,
     orgName: "American Airlines",
-    orgPosition: "Software Engineer — CyberSecurity",
+    orgPosition: "Software Engineer (Cybersecurity)",
     orgTenure: "Sep 2022 - Dec 2024",
     location: "Fort Worth, TX",
     about:
-      "Engineered security-focused web applications for one of the world's largest airlines, protecting systems across enterprise infrastructure serving millions of passengers.",
-    techStack: ["reactjs", "typeScript", "angular", "java", "aws", "docker", "kubernetes", "jest"],
+      "Engineered security-focused web applications and micro-frontend systems for one of the world's largest airlines, protecting enterprise infrastructure serving millions of passengers.",
+    techStack: ["reactjs", "typeScript", "angular", "java", "docker", "kubernetes", "jest", "python", "nodejs"],
     workDone: [
-      "Built and maintained security dashboards for real-time threat monitoring and incident response",
-      "Developed role-based access control (RBAC) systems for internal tooling used by security teams",
-      "Integrated CI/CD pipelines with automated security scanning gates",
-      "Migrated legacy Angular applications to React + TypeScript with zero downtime",
-      "Containerized microservices using Docker and orchestrated deployments on Kubernetes",
-      "Collaborated with security engineers to implement threat intelligence feeds and alerting",
+      "Worked on advanced UI design, application deployment, and web development using React v18, JavaScript, FastAPI, Python, React Native TypeScript, Node.js, Next.js, HTML5, Ant Design, CSS, and REST API development using Java",
+      "Built reusable React component libraries used across multiple micro-frontends, increasing dev efficiency and UI consistency",
+      "Implemented micro-frontend architecture (Module Federation, single-spa) for independent deployment of feature apps",
+      "Developed Backstage.io developer portal plugins using React, TypeScript, and Python scripting",
+      "Integrated HashiCorp Vault with Kubernetes for dynamic secrets management, improving application security posture",
+      "Automated CI/CD workflows using GitHub Actions, optimizing build, test, and deployment pipelines",
+      "Deployed applications in Azure shared Kubernetes clusters using Docker",
+      "Worked extensively with DB2, PostgreSQL, and MS SQL databases for backend integration and performance tuning",
     ],
     highlights: [
-      "Reduced security incident response time by 60% with new real-time dashboards",
-      "Delivered zero-downtime migrations for 3 critical production systems",
+      "Delivered micro-frontend architecture enabling independent deployment of feature apps at scale",
+      "Improved application security posture by integrating HashiCorp Vault with Kubernetes for dynamic secrets management",
     ],
   },
   {
@@ -161,22 +165,26 @@ export const carrerData: ICareerItem[] = [
     orgLogo: AmexLogoBG,
     orgBGLogo: AmexLogo,
     orgName: "American Express",
-    orgPosition: "Software Developer",
+    orgPosition: "Software AI Engineer",
     orgTenure: "Jan 2025 - Current",
     location: "Phoenix, AZ",
     about:
-      "Building world-class payment and financial technology solutions at one of the most iconic global financial brands, contributing to systems that process millions of daily transactions.",
-    techStack: ["reactjs", "typeScript", "java", "aws", "sql", "docker", "kubernetes", "redux"],
+      "Building a Governance application for automation of Gen-AI/ML model analysis using the Vert.x framework, driving high-performance event-driven microservices at one of the most iconic global financial brands.",
+    techStack: ["reactjs", "typeScript", "java", "sql", "docker", "kubernetes", "redux"],
     workDone: [
-      "Developing React-based UIs for payment processing and fraud detection platforms",
-      "Building scalable Java microservices for financial transaction pipelines",
-      "Implementing real-time data visualization for fraud pattern analysis and reporting",
-      "Collaborating with product and design teams in an Agile/Scrum environment",
-      "Writing comprehensive unit and integration tests covering critical payment flows",
+      "Developing a Governance application for automation of Gen-AI/ML model analysis built on the Vert.x framework (Java) with a React-based UI",
+      "Developed Elasticsearch capability for the application, enabling fast user search across the entire platform with regular indexing",
+      "Built scalable, event-driven microservices using Vert.x and Java, enabling high-performance asynchronous workloads",
+      "Developed RESTful APIs using the Vert.x toolkit and Java, supporting asynchronous data flows and integrating with internal/external services",
+      "Designed and optimized complex PostgreSQL queries, views, and stored procedures, improving performance by 30%",
+      "Automated data transformation and orchestration flows using ACE integration patterns and BPMN workflows",
+      "Participated in full SDLC including requirements gathering, technical design, development, testing, and deployment",
+      "Leveraged Maven, Git, and CI/CD pipelines for automated build, test, and deployment processes",
+      "Collaborated in Agile ceremonies including grooming, planning, and retrospectives to improve team delivery",
     ],
     highlights: [
-      "Contributing to systems that process millions of financial transactions daily",
-      "Part of the team modernizing core financial infrastructure at enterprise scale",
+      "Improved PostgreSQL query performance by 30% through schema design, indexing, and stored procedure optimization",
+      "Delivered Elasticsearch-powered search capability enabling instant results across the entire Governance application",
     ],
   },
 ];
@@ -294,7 +302,7 @@ export const skills: ISkills = [
     icon: AzureIcon,
     projectsCount: 1,
     skillLevelPercentage: 60,
-    isActive: false,
+    isActive: true,
     experienceType: "relative",
     startDate: "03/2023",
     displayOrder: 7,
@@ -306,8 +314,8 @@ export const skills: ISkills = [
       "Google Cloud Platform is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products.",
     icon: GCPIcon,
     projectsCount: 1,
-    skillLevelPercentage: 30,
-    isActive: false,
+    skillLevelPercentage: 55,
+    isActive: true,
     experienceType: "relative",
     startDate: "08/2024",
     displayOrder: 8,
@@ -462,11 +470,10 @@ export const skills: ISkills = [
       "A JavaScript runtime built on the Chrome V8 engine, used for building server-side web applications and other backend services in JavaScript.",
     icon: NodeIcon,
     projectsCount: 3,
-    skillLevelPercentage: 20,
-    isActive: false,
-    experienceType: "fixed",
-    startDate: "08/2021",
-    endDate: "12/2025",
+    skillLevelPercentage: 70,
+    isActive: true,
+    experienceType: "relative",
+    startDate: "05/2020",
     displayOrder: 17,
   },
   // {
@@ -597,9 +604,9 @@ export const contactLinks: IContactLink[] = [
   {
     id: "mail",
     icon: MailIcon,
-    link: "mailto:avinash18ck@gmail.com",
+    link: "mailto:avinashchowdarykongara4@gmail.com",
     label: "Mail",
-    socialId: "avinash18ck@gmail.com",
+    socialId: "avinashchowdarykongara4@gmail.com",
   },
 ];
 

@@ -90,15 +90,33 @@
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-color2);
+  -webkit-text-fill-color: var(--text-color2);
+  background: none;
   font-family: "Space Grotesk", sans-serif;
 }
 
 .section.projects .projects-details .project-card.selected .title {
   color: var(--primary-color);
+  -webkit-text-fill-color: var(--primary-color);
 }
 
 .section.projects .projects-details .project-card .logo {
   height: 1.3rem;
+}
+
+.section.projects .projects-details .project-card .project-card-icon {
+  display: flex;
+  align-items: center;
+  color: var(--text-color2);
+  opacity: 0.6;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.section.projects .projects-details .project-card.selected .project-card-icon,
+.section.projects .projects-details .project-card:hover .project-card-icon {
+  color: var(--primary-color);
+  opacity: 1;
 }
 
 /* ─── Description ─── */

@@ -14,6 +14,30 @@ import LockIcon from "../../assets/images/lock.png";
 import "./projects.css";
 import ImagePreloader from "../../common/utils/utilities";
 
+const PROJECT_ICONS: Record<string, JSX.Element> = {
+  dashboard: (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+      <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+    </svg>
+  ),
+  pro4: (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+    </svg>
+  ),
+  "website-tracker": (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+    </svg>
+  ),
+  "cube-chat": (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  ),
+};
+
 export default function Projects({ isCurrent }: { isCurrent: boolean }) {
   const [selectedProject, setSelectedProject] = useState<IProject>(
     projects[defaultProjectKey]
@@ -112,6 +136,7 @@ export default function Projects({ isCurrent }: { isCurrent: boolean }) {
                     whileTap={{ scale: 0.97 }}
                     data-hover
                   >
+                    <span className="project-card-icon">{PROJECT_ICONS[project.id]}</span>
                     <div className="title">{project.title}</div>
                     {project.logo && <img src={project.logo} className="logo" />}
                   </motion.li>

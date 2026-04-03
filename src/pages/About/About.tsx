@@ -5,7 +5,7 @@ import "./about.css";
 import { pageInfo, aboutInfo } from "../../assets/data/data";
 
 const stats = [
-  { value: 5,  suffix: "+", label: "Years Exp.", color: "#38bdf8" },
+  { value: 4,  suffix: "+", label: "Years Exp.", color: "#38bdf8" },
   { value: 3,  suffix: "",  label: "Companies",  color: "#a78bfa" },
   { value: 10, suffix: "+", label: "Projects",   color: "#4ade80" },
 ];
@@ -54,7 +54,7 @@ const expertise = [
     ),
     title: "Frontend",
     color: "#38bdf8",
-    tags: ["React", "TypeScript", "Angular", "Redux"],
+    tags: ["React", "TypeScript", "Redux", "Material UI"],
   },
   {
     icon: (
@@ -64,7 +64,7 @@ const expertise = [
     ),
     title: "Backend",
     color: "#a78bfa",
-    tags: ["Node.js", ".NET", "Go", "REST APIs"],
+    tags: ["Java", "Spring Boot", "Vert.x", "Node.js"],
   },
   {
     icon: (
@@ -74,7 +74,7 @@ const expertise = [
     ),
     title: "Cloud & DevOps",
     color: "#4ade80",
-    tags: ["AWS", "Azure", "Docker", "Kubernetes"],
+    tags: ["GCP", "Azure", "Docker", "Kubernetes"],
   },
 ];
 
@@ -193,7 +193,7 @@ export default function About({ contactRef }: { contactRef: RefObject<HTMLElemen
               transition={{ duration: 0.5, delay: 0.15 }}
             >
               <span className="strip-live-dot" />
-              <span className="strip-item strip-role">Software Developer</span>
+              <span className="strip-item strip-role">Software AI Engineer</span>
               <span className="strip-sep">·</span>
               <span className="strip-item strip-company">American Express</span>
               <span className="strip-sep">·</span>

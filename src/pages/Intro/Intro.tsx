@@ -39,22 +39,24 @@ const ROLES = [
 ];
 
 const STATS = [
-  { label: "Years Exp",  value: 5,  suffix: "+", color: "#38bdf8" },
-  { label: "Companies",  value: 5,  suffix: "",  color: "#a78bfa" },
+  { label: "Years Exp",  value: 4,  suffix: "+", color: "#38bdf8" },
+  { label: "Companies",  value: 3,  suffix: "",  color: "#a78bfa" },
   { label: "Projects",   value: 10, suffix: "+", color: "#4ade80" },
 ];
 
 const TICKER_SKILLS = [
   { label: "React", color: "#61dafb" },
   { label: "TypeScript", color: "#3b82f6" },
-  { label: "Node.js", color: "#4ade80" },
-  { label: "AWS", color: "#fb923c" },
+  { label: "Java", color: "#fb923c" },
+  { label: "Spring Boot", color: "#4ade80" },
+  { label: "Vert.x", color: "#34d399" },
+  { label: "Node.js", color: "#68d391" },
   { label: "Python", color: "#a78bfa" },
-  { label: "Go", color: "#34d399" },
   { label: "Docker", color: "#38bdf8" },
   { label: "Kubernetes", color: "#7dd3fc" },
-  { label: ".NET", color: "#818cf8" },
-  { label: "MongoDB", color: "#4ade80" },
+  { label: "GCP", color: "#f472b6" },
+  { label: "PostgreSQL", color: "#818cf8" },
+  { label: "Redux", color: "#a78bfa" },
 ];
 
 /* ── Typewriter — isolated so its state updates don't re-render Intro ── */

@@ -3,9 +3,7 @@ import "./cursor.css";
 
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
   const pos = useRef({ x: -100, y: -100 });
-  const ringPos = useRef({ x: -100, y: -100 });
   const rafId = useRef<number>(0);
 
   useEffect(() => {
@@ -13,17 +11,9 @@ export default function CustomCursor() {
       pos.current = { x: e.clientX, y: e.clientY };
     };
 
-    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-
     const animate = () => {
-      ringPos.current.x = lerp(ringPos.current.x, pos.current.x, 0.14);
-      ringPos.current.y = lerp(ringPos.current.y, pos.current.y, 0.14);
-
       if (dotRef.current) {
         dotRef.current.style.transform = `translate(${pos.current.x}px, ${pos.current.y}px) translate(-50%, -50%)`;
-      }
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate(${ringPos.current.x}px, ${ringPos.current.y}px) translate(-50%, -50%)`;
       }
       rafId.current = requestAnimationFrame(animate);
     };
@@ -31,14 +21,8 @@ export default function CustomCursor() {
     rafId.current = requestAnimationFrame(animate);
     document.addEventListener("mousemove", moveCursor);
 
-    const hoverOn = () => {
-      dotRef.current?.classList.add("hover");
-      ringRef.current?.classList.add("hover");
-    };
-    const hoverOff = () => {
-      dotRef.current?.classList.remove("hover");
-      ringRef.current?.classList.remove("hover");
-    };
+    const hoverOn = () => dotRef.current?.classList.add("hover");
+    const hoverOff = () => dotRef.current?.classList.remove("hover");
 
     // Re-attach whenever DOM changes (simple approach)
     const attach = () => {
@@ -61,10 +45,5 @@ export default function CustomCursor() {
     };
   }, []);
 
-  return (
-    <>
-      <div ref={dotRef} className="cursor-dot" />
-      <div ref={ringRef} className="cursor-ring" />
-    </>
-  );
+  return <div ref={dotRef} className="cursor-dot" />;
 }
