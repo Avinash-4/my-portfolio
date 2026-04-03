@@ -74,6 +74,10 @@ export const pageInfo: IPageInfo = {
     title: "Me Myself & I",
     description: "A little boasting",
   },
+  education: {
+    title: "Education",
+    description: "The academic foundations behind the engineering",
+  },
   career: {
     title: "Career",
     description: "Learn, Grow, Excel",
@@ -84,7 +88,7 @@ export const pageInfo: IPageInfo = {
   },
   projects: {
     title: "Projects",
-    description: "Bringing ideas to life - one at a time",
+    description: "Bringing ideas to life · Enterprise work is under NDA",
   },
   contact: {
     title: "Contact",
@@ -588,6 +592,18 @@ export const projects: IProjectDict = {
     logo: "",
     gif: "",
     techStack: ["reactjs", "nodejs", "expressjs", "mongodb", "websockets"],
+  },
+  aigovernance: {
+    id: "ai-governance",
+    title: "AI Governance Platform",
+    description:
+      "Enterprise-grade governance platform for automation of Gen-AI/ML model analysis and compliance workflows. Built on the Vert.x framework (Java) with a React UI. Features Elasticsearch-powered search with real-time indexing, BPMN workflow orchestration, and PostgreSQL optimized for 30% performance improvement.",
+    githubLink: "",
+    projectLink: "",
+    image: "",
+    logo: "",
+    gif: "",
+    techStack: ["reactjs", "java", "sql", "typeScript", "redux"],
   },
 };
 

@@ -58,22 +58,26 @@ export default function Contact() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<SendStatus>(SendStatus.INACTIVE);
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("avinashchowdarykongara4@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus(SendStatus.TRIGGERED);
-    fetch(`${process.env.FOLIO_API_ENDPOINT}/message`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, subject, message }),
-    })
-      .then((res) => {
-        setStatus(res.status === 200 || res.status === 201 ? SendStatus.SENT : SendStatus.FAILED);
-      })
-      .catch(() => setStatus(SendStatus.FAILED))
-      .finally(() => {
-        setTimeout(() => setStatus(SendStatus.INACTIVE), 10000);
-      });
+    const mailto = `mailto:avinashchowdarykongara4@gmail.com`
+      + `?subject=${encodeURIComponent(subject || "Portfolio Inquiry")}`
+      + `&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+    window.open(mailto, "_blank");
+    setStatus(SendStatus.SENT);
+    setTimeout(() => {
+      setStatus(SendStatus.INACTIVE);
+      setName(""); setEmail(""); setSubject(""); setMessage("");
+    }, 3000);
   };
 
   const renderFormLabel = (label: string) =>
@@ -136,6 +140,23 @@ export default function Contact() {
                 })}
               </div>
             </div>
+            {/* Copy email button */}
+            <div className="copy-email-row">
+              <span className="copy-email-addr">avinashchowdarykongara4@gmail.com</span>
+              <button className="copy-email-btn" onClick={copyEmail} title="Copy email" data-hover>
+                {copied ? (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                ) : (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                )}
+                <span>{copied ? "Copied!" : "Copy"}</span>
+              </button>
+            </div>
+
             <div className="contact-links">
               <div className="box-title">Follow me on</div>
               <div className="platforms">
@@ -160,6 +181,56 @@ export default function Contact() {
                 })}
               </div>
             </div>
+            {/* Recommendations link */}
+            <motion.a
+              href="https://www.linkedin.com/in/avinashchowdary04/details/recommendations/"
+              target="_blank"
+              rel="noreferrer"
+              className="recommendations-link"
+              whileHover={{ x: 4 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              View LinkedIn recommendations
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7M7 7h10v10"/>
+              </svg>
+            </motion.a>
+
+            {/* LinkedIn Preview Card */}
+            <motion.a
+              href="https://www.linkedin.com/in/avinashchowdary04/"
+              target="_blank"
+              rel="noreferrer"
+              className="linkedin-preview"
+              whileHover={{ scale: 1.02, y: -3 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              <div className="li-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0077b5">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <span className="li-header-text">LinkedIn Profile</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="li-arrow">
+                  <path d="M7 17L17 7M7 7h10v10"/>
+                </svg>
+              </div>
+              <div className="li-body">
+                <div className="li-avatar">AK</div>
+                <div className="li-info">
+                  <div className="li-name">Avinash Chowdary Kongara</div>
+                  <div className="li-title">Software AI Engineer · American Express</div>
+                  <div className="li-location">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Scottsdale, AZ
+                  </div>
+                </div>
+              </div>
+            </motion.a>
           </div>
         </motion.div>
 

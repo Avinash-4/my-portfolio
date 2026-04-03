@@ -10,9 +10,12 @@ import Contact from "./pages/Contact/Contact";
 import Intro from "./pages/Intro/Intro";
 import Projects from "./pages/Projects/Projects";
 import Skills from "./pages/Skills/Skills";
+import Education from "./pages/Education/Education";
 import SideNav from "./components/SideNav/SideNav";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
+import BackToTop from "./components/BackToTop/BackToTop";
 
 import "./App.css";
 import { TrackerWrapper } from "./components/TrackerWrapper";
@@ -29,12 +32,13 @@ const roles = [
 
 function App() {
   const refs: IPageRefs = {
-    introRef: useRef<HTMLElement>(null),
-    aboutRef: useRef<HTMLElement>(null),
-    careerRef: useRef<HTMLElement>(null),
-    skillsRef: useRef<HTMLElement>(null),
-    projectsRef: useRef<HTMLElement>(null),
-    contactRef: useRef<HTMLElement>(null),
+    introRef:     useRef<HTMLElement>(null),
+    aboutRef:     useRef<HTMLElement>(null),
+    educationRef: useRef<HTMLElement>(null),
+    careerRef:    useRef<HTMLElement>(null),
+    skillsRef:    useRef<HTMLElement>(null),
+    projectsRef:  useRef<HTMLElement>(null),
+    contactRef:   useRef<HTMLElement>(null),
   };
 
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -94,6 +98,8 @@ function App() {
       </AnimatePresence>
 
       <div className={`app ${isDarkMode ? "dark-mode" : "light-mode"}`}>
+        <ScrollProgress />
+        <BackToTop />
         <div className="side-nav-container">
           <SideNav
             refs={refs}
@@ -111,6 +117,9 @@ function App() {
           </section>
           <section ref={refs.aboutRef}>
             <About contactRef={refs.contactRef} />
+          </section>
+          <section ref={refs.educationRef}>
+            <Education />
           </section>
           <section ref={refs.careerRef}>
             <Career />

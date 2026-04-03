@@ -29,6 +29,11 @@
   height: 100%;
 }
 
+@media (max-width: 750px) {
+  .side-nav-container { display: none; }
+  .body-container { width: 100%; }
+}
+
 /* ─── Sections ─── */
 .section {
   height: 100vh;

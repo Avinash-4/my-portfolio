@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://uat-anufolio.onrender.com/api/message\" -X POST -H \"Content-Type: application/json\" -d '{\"name\":\"test\",\"email\":\"test@test.com\",\"subject\":\"test\",\"message\":\"test\"}' --max-time 10)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://asia-south1-lexical-archery-394216.cloudfunctions.net/viewercount\" --max-time 10)"
+    ]
+  }
+}

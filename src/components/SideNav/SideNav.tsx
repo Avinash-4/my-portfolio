@@ -17,18 +17,20 @@ interface INavBarProps {
 }
 
 const NAV_ITEMS = [
-  { key: "intro",    label: "Home" },
-  { key: "about",    label: "About" },
-  { key: "career",   label: "Career" },
-  { key: "skills",   label: "Skills" },
-  { key: "projects", label: "Projects" },
-  { key: "contact",  label: "Contact" },
+  { key: "intro",     label: "Home" },
+  { key: "about",     label: "About" },
+  { key: "education", label: "Education" },
+  { key: "career",    label: "Career" },
+  { key: "skills",    label: "Skills" },
+  { key: "projects",  label: "Projects" },
+  { key: "contact",   label: "Contact" },
 ] as const;
 
 export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProps) {
-  const { introRef, aboutRef, careerRef, skillsRef, projectsRef, contactRef } = refs;
+  const { introRef, aboutRef, educationRef, careerRef, skillsRef, projectsRef, contactRef } = refs;
   const [isWinkEye, setWinkEye] = useState(false);
   const [animatedViewerCount, setAnimatedViewerCount] = useState(0);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggleDarkMode = () => {
     setWinkEye(true);
@@ -36,29 +38,32 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
     setIsDarkMode(!isDarkMode);
   };
 
-  const isIntroActive    = useIntersectionObserver(introRef,    { threshold: 0.5 });
-  const isAboutActive    = useIntersectionObserver(aboutRef,    { threshold: 0.5 });
-  const isCareerActive   = useIntersectionObserver(careerRef,   { threshold: 0.5 });
-  const isSkillsActive   = useIntersectionObserver(skillsRef,   { threshold: 0.5 });
-  const isProjectsActive = useIntersectionObserver(projectsRef, { threshold: 0.5 });
-  const isContactActive  = useIntersectionObserver(contactRef,  { threshold: 0.5 });
+  const isIntroActive      = useIntersectionObserver(introRef,     { threshold: 0.5 });
+  const isAboutActive      = useIntersectionObserver(aboutRef,     { threshold: 0.5 });
+  const isEducationActive  = useIntersectionObserver(educationRef, { threshold: 0.5 });
+  const isCareerActive     = useIntersectionObserver(careerRef,    { threshold: 0.5 });
+  const isSkillsActive     = useIntersectionObserver(skillsRef,    { threshold: 0.5 });
+  const isProjectsActive   = useIntersectionObserver(projectsRef,  { threshold: 0.5 });
+  const isContactActive    = useIntersectionObserver(contactRef,   { threshold: 0.5 });
 
   const activeMap: Record<string, boolean> = {
-    intro:    isIntroActive,
-    about:    isAboutActive,
-    career:   isCareerActive,
-    skills:   isSkillsActive,
-    projects: isProjectsActive,
-    contact:  isContactActive,
+    intro:     isIntroActive,
+    about:     isAboutActive,
+    education: isEducationActive,
+    career:    isCareerActive,
+    skills:    isSkillsActive,
+    projects:  isProjectsActive,
+    contact:   isContactActive,
   };
 
   const refMap: Record<string, React.RefObject<HTMLElement>> = {
-    intro:    introRef,
-    about:    aboutRef,
-    career:   careerRef,
-    skills:   skillsRef,
-    projects: projectsRef,
-    contact:  contactRef,
+    intro:     introRef,
+    about:     aboutRef,
+    education: educationRef,
+    career:    careerRef,
+    skills:    skillsRef,
+    projects:  projectsRef,
+    contact:   contactRef,
   };
 
   useEffect(() => {
@@ -84,25 +89,21 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
     }, 100);
   }
 
-  const activeKey = NAV_ITEMS.find((item) => activeMap[item.key])?.key ?? "";
-
-  return (
-    <div className="side-nav">
-      {/* ─── Logo with spinning border ─── */}
+  const navContent = (mobile = false) => (
+    <>
       <div className="logo-wrapper">
         <div className="logo-ring" />
         <img
           className="logo-img"
           src={isWinkEye ? LogoWinkEye : Logo}
-          alt="anufolio"
-          onClick={() => handleScroll(introRef)}
+          alt="logo"
+          onClick={() => { handleScroll(introRef); setMobileOpen(false); }}
           onMouseEnter={() => setWinkEye(true)}
           onMouseLeave={() => setWinkEye(false)}
           data-hover
         />
       </div>
 
-      {/* ─── Nav Links ─── */}
       <nav className="nav-links">
         {NAV_ITEMS.map((item) => {
           const isActive = activeMap[item.key];
@@ -110,14 +111,13 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
             <div key={item.key}>
               <div
                 className={`side-nav-item${isActive ? " active" : ""}`}
-                onClick={() => handleScroll(refMap[item.key])}
+                onClick={() => { handleScroll(refMap[item.key]); if (mobile) setMobileOpen(false); }}
                 data-hover
               >
-                {/* Sliding layoutId indicator */}
                 {isActive && (
                   <motion.div
                     className="nav-active-bar"
-                    layoutId="nav-indicator"
+                    layoutId={mobile ? "nav-indicator-mobile" : "nav-indicator"}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -129,13 +129,11 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
         })}
       </nav>
 
-      {/* ─── Visitor Counter ─── */}
       <div className="visits">
         <span className="visits-cursor">▋</span>
         {animatedViewerCount.toLocaleString()}
       </div>
 
-      {/* ─── Mode Toggle ─── */}
       <AnimatePresence mode="wait">
         <motion.img
           key={isDarkMode ? "light" : "dark"}
@@ -150,6 +148,51 @@ export default function SideNav({ refs, isDarkMode, setIsDarkMode }: INavBarProp
           transition={{ duration: 0.25 }}
         />
       </AnimatePresence>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      {/* Desktop side nav */}
+      <div className="side-nav desktop-nav">
+        {navContent(false)}
+      </div>
+
+      {/* Mobile hamburger button */}
+      <button
+        className="mobile-hamburger"
+        onClick={() => setMobileOpen((o) => !o)}
+        aria-label="Toggle menu"
+      >
+        <span className={`ham-line${mobileOpen ? " open" : ""}`} />
+        <span className={`ham-line${mobileOpen ? " open" : ""}`} />
+        <span className={`ham-line${mobileOpen ? " open" : ""}`} />
+      </button>
+
+      {/* Mobile overlay */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            <motion.div
+              className="mobile-overlay-bg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={() => setMobileOpen(false)}
+            />
+            <motion.div
+              className="mobile-nav-drawer side-nav"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              {navContent(true)}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

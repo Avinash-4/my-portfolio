@@ -235,6 +235,148 @@ textarea:valid + .form-label .form-label-letter {
 .section.contact .sending-status-icon { height: 1rem; }
 .section.contact .button-text { font-size: 0.78rem; }
 
+/* ─── Copy Email ─── */
+.copy-email-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+}
+
+.copy-email-addr {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--text-color2);
+  letter-spacing: 0.02em;
+}
+
+.copy-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  color: var(--text-color2);
+  font-size: 0.7rem;
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.copy-email-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+}
+
+/* ─── Recommendations Link ─── */
+.recommendations-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-family: "Space Mono", monospace;
+  color: var(--text-color2);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0;
+}
+
+.recommendations-link:hover {
+  color: var(--primary-color);
+}
+
+/* ─── LinkedIn Preview ─── */
+.linkedin-preview {
+  display: block;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: none;
+}
+
+.linkedin-preview:hover {
+  border-color: #0077b5;
+  box-shadow: 0 0 20px rgba(0, 119, 181, 0.2);
+}
+
+.li-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.li-header-text {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-color2);
+  flex: 1;
+}
+
+.li-arrow { color: var(--text-color2); opacity: 0.5; }
+.linkedin-preview:hover .li-arrow { opacity: 1; color: #0077b5; }
+
+.li-body {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.li-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0077b5, #00a0dc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.li-info { display: flex; flex-direction: column; gap: 0.2rem; }
+
+.li-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-color1);
+}
+
+.li-title {
+  font-size: 0.75rem;
+  color: var(--text-color2);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.li-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--text-color2);
+  font-family: "Space Mono", monospace;
+  opacity: 0.7;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 750px) {
   .section.contact .content {

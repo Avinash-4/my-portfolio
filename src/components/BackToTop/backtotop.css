@@ -1,0 +1,29 @@
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  left: 1.5rem;
+  z-index: 500;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 12px rgba(56, 189, 248, 0.15);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.back-to-top:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+@media (max-width: 750px) {
+  .back-to-top { bottom: 5rem; left: 1rem; }
+}

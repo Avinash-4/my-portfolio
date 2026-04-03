@@ -3,13 +3,14 @@ import { RefObject } from "react";
 export interface IPageRefs {
   introRef: RefObject<HTMLElement>;
   aboutRef: RefObject<HTMLElement>;
+  educationRef: RefObject<HTMLElement>;
   careerRef: RefObject<HTMLElement>;
   skillsRef: RefObject<HTMLElement>;
   projectsRef: RefObject<HTMLElement>;
   contactRef: RefObject<HTMLElement>;
 }
 
-type PageKey = "about" | "career" | "skills" | "projects" | "contact";
+type PageKey = "about" | "education" | "career" | "skills" | "projects" | "contact";
 
 type PageInfo = {
   title: string;

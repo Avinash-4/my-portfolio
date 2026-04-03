@@ -43,21 +43,30 @@
   gap: 0.6rem;
 }
 
-/* ─── Project Tabs ─── */
-.section.projects .projects-details .projects-list {
-  list-style: none;
-  padding: 3px;
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
+/* ─── Project Tabs — scrolling ticker ─── */
+.section.projects .projects-details .projects-list-wrapper {
+  overflow: hidden;
   width: 100%;
-  gap: 0.6rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
-.section.projects .projects-details .projects-list::-webkit-scrollbar { height: 3px; }
-.section.projects .projects-details .projects-list::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, var(--primary-color), var(--ternery-color));
-  border-radius: 3px;
+.section.projects .projects-details .projects-list-track {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  padding: 3px 0;
+  width: max-content;
+  animation: projectsTicker 18s linear infinite;
+}
+
+.section.projects .projects-details .projects-list-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes projectsTicker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .section.projects .projects-details .project-card {
@@ -216,6 +225,38 @@
   object-fit: cover;
 }
 
+.section.projects .project-private-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(56, 189, 248, 0.03) 0px,
+    rgba(56, 189, 248, 0.03) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  color: var(--text-color2);
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section.projects .project-private-screen svg {
+  color: var(--primary-color);
+  opacity: 0.6;
+}
+
+.section.projects .private-sub {
+  font-size: 0.55rem;
+  letter-spacing: 1.5px;
+  opacity: 0.45;
+}
+
 /* ─── Play Icon ─── */
 .section.projects .play-icon {
   position: absolute;
@@ -245,7 +286,7 @@
   }
   .section.projects .project-monitor-box,
   .section.projects .wrapper { width: 100%; justify-content: center; }
-  .section.projects .projects-details .projects-list { overflow-x: hidden; }
+  .section.projects .projects-details .projects-list-wrapper { mask-image: none; -webkit-mask-image: none; }
   .section.projects .projects-details .project-description {
     height: 30%; width: 100%; overflow-y: auto;
   }
