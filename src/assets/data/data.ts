@@ -119,8 +119,8 @@ export const carrerData: ICareerItem[] = [
     orgLogo: AirportAuthoritylogo,
     orgBGLogo: AirportAuthoritylogoBG,
     orgName: "Airports Authority of India",
-    orgPosition: "Software Developer (Intern)",
-    orgTenure: "May 2020 - Oct 2020",
+    orgPosition: "Software Developer",
+    orgTenure: "Jan 2020 - Apr 2021",
     location: "Hyderabad, India",
     about:
       "Built interactive UI and backend systems for an internal aviation analytics platform, gaining hands-on experience with modern web technologies and CI/CD automation.",
@@ -630,7 +630,7 @@ export const socialLinks: ISocialLink[] = [
   {
     id: "linkedin",
     icon: LinkedInIcon,
-    link: "https://www.linkedin.com/in/avinashchowdary04/",
+    link: "https://www.linkedin.com/in/avinash444/",
     label: "LinkedIn",
     socialId: "Avinash chowdary",
   },

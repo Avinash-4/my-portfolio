@@ -42,7 +42,7 @@ function StatsBar() {
     >
       {[
         { value: 3, suffix: "", label: "Companies" },
-        { value: 4, suffix: "+", label: "Years" },
+        { value: 6, suffix: "+", label: "Years" },
         { value: 2, suffix: "", label: "Countries" },
         { value: 15, suffix: "+", label: "Tech Skills" },
       ].map((stat, i) => (

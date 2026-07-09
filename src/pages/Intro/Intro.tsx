@@ -39,7 +39,7 @@ const ROLES = [
 ];
 
 const STATS = [
-  { label: "Years Exp",  value: 4,  suffix: "+", color: "#38bdf8" },
+  { label: "Years Exp",  value: 6,  suffix: "+", color: "#38bdf8" },
   { label: "Companies",  value: 3,  suffix: "",  color: "#a78bfa" },
   { label: "Projects",   value: 10, suffix: "+", color: "#4ade80" },
 ];

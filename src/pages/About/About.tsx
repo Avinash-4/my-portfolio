@@ -5,7 +5,7 @@ import "./about.css";
 import { pageInfo, aboutInfo } from "../../assets/data/data";
 
 const stats = [
-  { value: 4,  suffix: "+", label: "Years Exp.", color: "#38bdf8" },
+  { value: 6,  suffix: "+", label: "Years Exp.", color: "#38bdf8" },
   { value: 3,  suffix: "",  label: "Companies",  color: "#a78bfa" },
   { value: 10, suffix: "+", label: "Projects",   color: "#4ade80" },
 ];

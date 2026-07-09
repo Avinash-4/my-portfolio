@@ -201,7 +201,7 @@ export default function Contact() {
 
             {/* LinkedIn Preview Card */}
             <motion.a
-              href="https://www.linkedin.com/in/avinashchowdary04/"
+              href="https://www.linkedin.com/in/avinash444/"
               target="_blank"
               rel="noreferrer"
               className="linkedin-preview"
